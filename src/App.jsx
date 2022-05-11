@@ -2,13 +2,13 @@ import { GlobalStyle } from './styles/global';
 
 import { Router } from './routes';
 
-function App() {
+const App = () => {
   return (
     <>
       <GlobalStyle />
       <Router />
     </>
   );
-}
+};
 
 export default App;
