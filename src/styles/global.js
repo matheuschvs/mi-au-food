@@ -93,6 +93,22 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    background: var(--background);
+  }
+
+  body {
+    color: var(--text);
+  }
+
+  h1, h2 {
+    color: var(--title);
+  }
+
+  h1, h2 {
+    color: var(--subtitle);
+  }
+
   h1 { font: var(--title-1); }
   h2 { font: var(--title-2); }
   h3 { font: var(--title-3); }
