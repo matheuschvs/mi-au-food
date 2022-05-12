@@ -57,11 +57,11 @@ export const Form = styled.form`
 `;
 
 export const DivTeste = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 318px;
+  height: 318px;
   border-radius: 50%;
   margin: 5em auto;
-  border: 1px solid #000;
+  border: 1px solid #ffff;
   background: radial-gradient(circle at 50% 25%, black 5%, transparent 5%),
     radial-gradient(
       closest-side circle at 50% 25%,
