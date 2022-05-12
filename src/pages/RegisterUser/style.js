@@ -78,21 +78,48 @@ export const DivTeste = styled.div`
 `;
 
 export const Input = styled.input`
+  width: 50%;
+  height: 5vh;
+  background: #fff5f5;
+  margin-bottom: 3vh;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-left: 30%;
+  padding-left: 20px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+
+  label {
+    color: #ffff;
+    position: absolute;
+    left: 25px;
+    top: 3px;
+    transition: 0.8s;
+    top: ${props => (props.valid ? '-15px' : '3px')};
+    left: ${props => (props.valid ? '5px' : '25px')};
+    font-size: ${props => (props.valid ? '12px' : '16px')};
+  }
+  &:hover,
+  &:focus-within {
+    label {
+      color: var(--title);
+    }
+  }
+  label {
+    color: var(--title);
+    font-size: 12px;
+    top: -15px;
+    left: 5px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
   @media (min-width: 1024px) {
     width: 45%;
-    height: 5vh;
-    background: #fff5f5;
-    margin-bottom: 3vh;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
     margin-left: 30%;
     padding-left: 20px;
-    border: none;
-    padding: 1rem;
-    font-size: 24px;
-
-    &:focus {
-      outline: none;
-    }
   }
 `;
