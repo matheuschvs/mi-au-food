@@ -41,17 +41,15 @@ export const Form = styled.form`
       margin-top: 120px;
       text-align: center;
       color: #fff5f5;
-      margin-bottom: 70px;
+      margin-bottom: 120px;
     }
 
     h3 {
       height: 107px;
       line-height: 68px;
       margin-left: 30%;
-      margin-top: 110px;
       text-align: center;
       color: #fff5f5;
-      margin-bottom: 70px;
     }
   }
 `;
@@ -81,40 +79,26 @@ export const Input = styled.input`
   width: 50%;
   height: 5vh;
   background: #fff5f5;
-  margin-bottom: 3vh;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-left: 30%;
-  padding-left: 20px;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
+  margin-bottom: 25px;
+  outline: none;
 
-  label {
-    color: #ffff;
+  &::placeholder {
+    color: var(--title);
     position: absolute;
     left: 25px;
-    top: 3px;
     transition: 0.8s;
     top: ${props => (props.valid ? '-15px' : '3px')};
     left: ${props => (props.valid ? '5px' : '25px')};
-    font-size: ${props => (props.valid ? '12px' : '16px')};
+    font-size: 1rem;
   }
-  &:hover,
   &:focus-within {
-    label {
-      color: var(--title);
+    ::placeholder {
+      font-size: 1rem;
+      top: -15px;
+      left: 5px;
     }
-  }
-  label {
-    color: var(--title);
-    font-size: 12px;
-    top: -15px;
-    left: 5px;
-  }
-
-  &:focus {
-    outline: none;
   }
 
   @media (min-width: 1024px) {
