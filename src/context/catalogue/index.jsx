@@ -7,15 +7,16 @@ const CatalogueContext = createContext([])
 
 export const CatalogueProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    const [root, setRoot] = useState("")
     useEffect(()=>{
-      API.get("product")
+      API.get(`product${root}`)
       .then((response) => {setProducts(response.data)})
-    }, [])
+    }, [root])
   
 
     return (
         <CatalogueContext.Provider
-        value= {{products}}>
+        value= {{products , setRoot}}>
           {children}
         </CatalogueContext.Provider>
     )
