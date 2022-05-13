@@ -2,9 +2,14 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { Input, DivTeste, Container, Form } from './style';
+import { DivTeste, Container, Form } from './style';
+import { Input } from '../../components/Input';
 
-export const RegisterUser = () => {
+/* eslint-disable */
+
+export const UserRegister = () => {
+  /* eslint-disable */
+
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -35,8 +40,6 @@ export const RegisterUser = () => {
     resolver: yupResolver(formSchema),
   });
 
-  console.log(register, errors);
-
   const onSubmitFunction = data => {
     toast(`Bem vindo(a), ${data.name}!`);
   };
@@ -46,12 +49,35 @@ export const RegisterUser = () => {
       <DivTeste />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <div>
-          <h1>Registrese e faça parte da família Mi-Au Food</h1>
-          <Input placeholder="nome" />
-          <Input placeholder="Email" />
-          <Input placeholder="Senha" />
-          <Input placeholder="Confirmar Senha" />
-          <h3>Já possui conta? Faça LINK</h3>
+          <h1>Registre-se e faça parte da família Mi-Au Food</h1>
+          <Input
+            label="nome"
+            name="name"
+            register={register}
+            error={errors.name?.message}
+          />
+          <Input
+            label="email"
+            name="email"
+            register={register}
+            error={errors.email?.message}
+          />
+          <Input
+            type="password"
+            label="senha"
+            name="password"
+            register={register}
+            error={errors.password?.message}
+          />
+          <Input
+            type="password"
+            label="confimar senha"
+            name="passwordConfirm"
+            register={register}
+            error={errors.passwordConfirm?.message}
+          />
+          <button type="submit">Registrar</button>
+          <h3>Já possui conta? Faça login</h3>
         </div>
       </Form>
     </Container>
