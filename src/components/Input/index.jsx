@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import InputStyled from './style';
 
-export const Input = ({ label, name, register, ...rest }) => {
+export const Input = ({ label, name, register, error = '', ...rest }) => {
   const [isValid, setIsValid] = useState(false);
 
   return (
     <InputStyled valid={isValid}>
+      <div>{!!error && <span> - {error}</span>}</div>
       <label>{label.toUpperCase()}</label>
       <input
         {...rest}

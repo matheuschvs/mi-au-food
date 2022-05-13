@@ -22,7 +22,6 @@ export const Form = styled.form`
     margin-top: 10vh;
     width: 50vw;
     height: 80vh;
-    margin-right: 0px;
     display: flex;
     flex-direction: column;
     border-radius: 550px 0px 0px 550px;
@@ -32,26 +31,50 @@ export const Form = styled.form`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-left: 10%;
+      height: 100%;
     }
 
     h1 {
-      height: 107px;
-      line-height: 68px;
-      margin-left: 30%;
-      margin-top: 120px;
+      line-height: 38px;
+      margin-left: 10%;
+      margin-top: 1.2rem;
       text-align: center;
+      width: 25vw;
       color: #fff5f5;
-      margin-bottom: 70px;
+      font-size: 1.4rem;
     }
 
     h3 {
-      height: 107px;
-      line-height: 68px;
-      margin-left: 30%;
-      margin-top: 110px;
       text-align: center;
       color: #fff5f5;
-      margin-bottom: 70px;
+      font-size: 0.7rem;
+      margin-left: 10%;
+      margin-top: 0.6rem;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      gap: 10px;
+      width: 94px;
+      height: 40px;
+      left: 1225px;
+      top: 597.4px;
+      background: rgba(231, 0, 0, 0.95);
+      border: 1px dashed rgba(231, 0, 0, 0.95);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      color: #fff5f5;
+      margin-left: 10%;
+      margin-top: 0.6rem;
+
+      &:hover {
+        background: rgba(200, 0, 0, 0.95);
+      }
     }
   }
 `;
@@ -75,51 +98,4 @@ export const DivTeste = styled.div`
       transparent 100%
     ),
     linear-gradient(to right, white 50%, black 50%);
-`;
-
-export const Input = styled.input`
-  width: 50%;
-  height: 5vh;
-  background: #fff5f5;
-  margin-bottom: 3vh;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  margin-left: 30%;
-  padding-left: 20px;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-
-  label {
-    color: #ffff;
-    position: absolute;
-    left: 25px;
-    top: 3px;
-    transition: 0.8s;
-    top: ${props => (props.valid ? '-15px' : '3px')};
-    left: ${props => (props.valid ? '5px' : '25px')};
-    font-size: ${props => (props.valid ? '12px' : '16px')};
-  }
-  &:hover,
-  &:focus-within {
-    label {
-      color: var(--title);
-    }
-  }
-  label {
-    color: var(--title);
-    font-size: 12px;
-    top: -15px;
-    left: 5px;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  @media (min-width: 1024px) {
-    width: 45%;
-    margin-left: 30%;
-    padding-left: 20px;
-  }
 `;

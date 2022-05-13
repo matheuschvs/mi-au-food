@@ -15,7 +15,7 @@ import { ShopRegister } from '../pages/ShopRegister';
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/a" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />
@@ -28,7 +28,7 @@ export const Router = () => {
       </Route>
       <Route path="/entrar" element={<Login />} />
       <Route path="/registro">
-        <Route path="/" element={<UserRegister />} />
+        <Route path="usuario" element={<UserRegister />} />
         <Route path="loja" element={<ShopRegister />} />
       </Route>
     </Routes>

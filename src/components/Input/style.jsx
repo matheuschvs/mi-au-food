@@ -4,11 +4,9 @@ const InputStyled = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid #cddfe3;
-  width: 50%;
-  height: 5vh;
-  margin: 5px;
-  padding: 0 5px;
-  margin-top: 18px;
+  width: 70%;
+  max-height: 35px;
+  margin-top: 1.4rem;
   position: relative;
   transition: 0.8s;
   background: #fff5f5;
@@ -19,11 +17,9 @@ const InputStyled = styled.div`
     background: transparent;
     position: absolute;
     border: none;
-    height: 5vh;
     outline: none;
     width: 100%;
     font-size: 1rem;
-    margin-bottom: 3vh;
     color: var(--title);
   }
 
@@ -35,14 +31,14 @@ const InputStyled = styled.div`
     transition: 0.8s;
     top: ${props => (props.valid ? '-15px' : '3px')};
     left: ${props => (props.valid ? '5px' : '25px')};
-    font-size: 1rem;
-    padding-top: 10px;
+    font-size: 0.7rem;
+    padding-top: 5px;
   }
 
   &:focus-within {
     label {
-      font-size: 1rem;
-      top: -25px;
+      font-size: 0.7rem;
+      top: -15px;
       left: 5px;
     }
   }
