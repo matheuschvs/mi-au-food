@@ -191,6 +191,15 @@ export const Form = styled.form`
     margin-top: 1.4rem;
   }
 
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: #fff5f5;
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+    cursor: pointer;
+  }
+
   @media (min-width: 1024px) {
     animation: none;
     background: var(--primary-color);

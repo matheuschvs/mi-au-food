@@ -2,6 +2,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import {
   BackgroundIMG,
   Container,
@@ -98,7 +99,9 @@ export const UserRegister = () => {
             error={errors.passwordConfirm?.message}
           />
           <button type="submit">Registrar</button>
-          <h3>Já possui conta? Faça login</h3>
+          <h3>
+            Já possui conta? Faça <Link to="/registro">login</Link>
+          </h3>
         </div>
       </Form>
     </Container>
