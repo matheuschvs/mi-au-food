@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Input, DivTeste, Container, Form } from './style';
 
-export const RegisterUser = () => {
+export const UserRegister = () => {
   const formSchema = yup.object().shape({
     name: yup
       .string()
