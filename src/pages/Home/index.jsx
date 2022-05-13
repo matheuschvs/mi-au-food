@@ -5,6 +5,7 @@ import { useState} from 'react';
 import { Container } from './style';
 import { Display } from '../../components/Display';
 import { Cart } from '../../components/Cart';
+import { NavBar } from '../../components/NavBar';
 
 
 export const Home = () => {
@@ -20,17 +21,7 @@ export const Home = () => {
   <main>
     <h1>Home</h1> 
     <Container>
-      <nav>
-        <button>Todos</button>
-        <button>Alimentos</button>
-        <button>Brinquedos</button>
-        <button>Farmácia</button>
-        <button>Higiene</button>
-        <button>Acessórios</button>
-        {/* <div> 
-          <input type="text"/>
-        </div> */}
-      </nav>
+      <NavBar/>
       <div>
       <Display products={products}  addTocart={addTocart} />
       <Cart cart={cart}/>

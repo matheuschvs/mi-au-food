@@ -21,6 +21,17 @@ aside{
 
 h2, h4{ color: var(--background);}
 
+button{
+  background: var(--secondary-color);
+  border-radius: 1rem;
+  border: none;
+  height: 2rem;
+  font-family: "Ubuntu";
+  font-size: 1.2rem;
+  color: var(--background);
+  /* padding: 0 1rem; */
+}
+
 @media (min-width: 850px){
 
       footer{
