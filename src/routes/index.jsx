@@ -8,7 +8,7 @@ import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
 import { Cart } from '../pages/Cart';
 import { NoContent } from '../pages/NoContent';
-import { Login } from '../pages/Login';
+import { LoginPage } from '../pages/LoginPage';
 import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
 
@@ -26,7 +26,7 @@ export const Router = () => {
         <Route path="carrinho" element={<Cart />} />
         <Route path="*" element={<NoContent />} />
       </Route>
-      <Route path="/entrar" element={<Login />} />
+      <Route path="/entrar" element={<LoginPage />} />
       <Route path="/registro">
         <Route path="usuario" element={<UserRegister />} />
         <Route path="loja" element={<ShopRegister />} />
