@@ -157,7 +157,7 @@ export const Form = styled.form`
     text-align: center;
     width: 60vw;
     max-width: 290px;
-    color: #fff5f5;
+    color: #ffffff;
     font-size: 1.2rem;
   }
 

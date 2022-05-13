@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const InputStyled = styled.div`
+export const InputStyled = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid #cddfe3;
@@ -8,10 +8,20 @@ const InputStyled = styled.div`
   max-height: 35px;
   margin-top: 1.4rem;
   position: relative;
+  padding-left: 2rem;
   transition: 0.8s;
   background: #fff5f5;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+
+  div {
+    margin-bottom: 3.2rem;
+    margin-left: 2.2rem;
+    span {
+      font-weight: bold;
+      color: var(--secondary-color-1);
+    }
+  }
 
   input {
     background: transparent;
@@ -40,8 +50,7 @@ const InputStyled = styled.div`
       font-size: 0.7rem;
       top: -15px;
       left: 5px;
+      font-weight: bold;
     }
   }
 `;
-
-export default InputStyled;
