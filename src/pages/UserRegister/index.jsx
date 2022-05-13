@@ -2,7 +2,21 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { DivTeste, Container, Form } from './style';
+import {
+  BackgroundIMG,
+  Container,
+  Form,
+  IMG5,
+  IMG6,
+  IMG7,
+  IMG8,
+  ContainerIMG,
+  Title,
+} from './style';
+import image5 from '../../assets/image5.png';
+import image6 from '../../assets/image6.png';
+import image7 from '../../assets/image7.png';
+import image8 from '../../assets/image8.png';
 import { Input } from '../../components/Input';
 
 /* eslint-disable */
@@ -46,7 +60,14 @@ export const UserRegister = () => {
 
   return (
     <Container>
-      <DivTeste />
+      <Title>Mi-Au Food</Title>
+      <ContainerIMG>
+        <IMG5 src={image5} alt="imagem mulher com cachorro" />
+        <IMG7 src={image7} alt="imagem homem com cachorro" />
+        <IMG8 src={image8} alt="imagem mulher com gatinho" />
+        <IMG6 src={image6} alt="imagem gato tela registro" />
+      </ContainerIMG>
+      <BackgroundIMG />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <div>
           <h1>Registre-se e faça parte da família Mi-Au Food</h1>
