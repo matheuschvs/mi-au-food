@@ -3,6 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
 import {
   BackgroundIMG,
   Container,
@@ -25,26 +27,22 @@ import { Input } from '../../components/Input';
 export const UserRegister = () => {
   /* eslint-disable */
 
+  const { signUp } = useContext(AuthContext);
+
   const formSchema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Nome obrigatório')
-      .matches(
-        /^[a-zA-Z]+$/,
-        'Nome de usuário inválido. Somente letras, sem espaços.',
-      ),
+    name: yup.string().required('Nome obrigatório'),
     email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
     password: yup
       .string()
       .required('Senha obrigatória')
       .matches(
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
-        'Pelo menos uma letra maiúscula, um número e caractere especial, 8 caracteres mínimos.',
+        'Mínimo 6 digitos',
       ),
-    confirmPassword: yup
+    passwordConfirm: yup
       .string()
-      .required('Senha obrigatória.')
-      .oneOf([yup.ref('password'), null], 'Senhas diferentes.'),
+      .oneOf([yup.ref('password')], 'Senhas diferentes')
+      .required('Campo obrigatório!'),
   });
 
   const {
@@ -56,7 +54,8 @@ export const UserRegister = () => {
   });
 
   const onSubmitFunction = data => {
-    toast(`Bem vindo(a), ${data.name}!`);
+    signUp(data);
+    toast.success(`Bem vindo(a), ${data.name}!`);
   };
 
   return (
@@ -100,7 +99,7 @@ export const UserRegister = () => {
           />
           <button type="submit">Registrar</button>
           <h3>
-            Já possui conta? Faça <Link to="/registro">login</Link>
+            Já possui conta? Faça <Link to="/entrar">login</Link>
           </h3>
         </div>
       </Form>

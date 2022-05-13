@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { InputStyled } from './style';
 
-export const Input = ({ label, name, register, error = '', ...rest }) => {
+export const Input = ({ label, name, register, error, ...rest }) => {
   const [isValid, setIsValid] = useState(false);
 
   return (
