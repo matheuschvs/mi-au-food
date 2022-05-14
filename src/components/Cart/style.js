@@ -19,7 +19,7 @@ aside{
   display: none;
 }
 
-h2, h4{ color: var(--background);}
+h2, h3{ color: var(--background);}
 
 button{
   background: var(--secondary-color);
@@ -29,7 +29,6 @@ button{
   font-family: "Ubuntu";
   font-size: 1.2rem;
   color: var(--background);
-  /* padding: 0 1rem; */
 }
 
 @media (min-width: 850px){
@@ -46,6 +45,7 @@ button{
         margin: 10px;
         border-radius: 1rem;
         text-align: center;
+        padding: 0.6rem 0;
       }
       aside h2{
         margin: 10px;
@@ -58,13 +58,11 @@ button{
         overflow-y: auto;
         margin: 10px auto;
       }
-      aside ul h3{
+      aside ul h4{
+        font-size: 1.2rem;
         margin: 20px;
+        color: var(--text);
       }
-      aside button{
-        margin: 10px;
-      }
-
       aside div{
       display: flex;
       width: 100%;

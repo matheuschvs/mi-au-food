@@ -16,14 +16,14 @@ export const Cart = ({cart}) =>{
           {cart.map(product =><Card product={product} cartSize/>)}
         </ul>
              <div>
-             <h4>Total:</h4>
-             <h4> R$ 100,00</h4>
+             <h3>Total:</h3>
+             <h3> R$ 100,00</h3>
              </div>
              <button>Finalizar Compra</button>
       </>
     ):(
       <ul>
-         <h3>Carrinho vazio</h3>
+         <h4>Carrinho vazio</h4>
       </ul>
     )}
 

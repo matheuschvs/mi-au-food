@@ -5,11 +5,11 @@ import { Card } from "../Card";
 import { useCatalogue } from "../../context/catalogue";
 
 export const Display = ({ addTocart}) => {
-  const { products } = useCatalogue()
+  const { catalogue } = useCatalogue()
 
   return(
     <Container>
-      {products.map((product) => <Card product={product} addTocart={addTocart} /> )}
+      {catalogue.map((product) => <Card product={product} addTocart={addTocart} /> )}
     </Container>
   )
 }

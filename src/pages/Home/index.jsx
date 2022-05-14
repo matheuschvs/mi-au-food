@@ -11,8 +11,7 @@ export const Home = () => {
     setCart([...cart, product]);
   }
   return(
-  <main>
-    <h1>Home</h1> 
+
     <Container>
       <NavBar/>
       <div>
@@ -20,6 +19,6 @@ export const Home = () => {
       <Cart cart={cart}/>
       </div>
     </Container>     
-  </main>
+
   );
 };
