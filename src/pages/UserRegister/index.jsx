@@ -34,15 +34,12 @@ export const UserRegister = () => {
     email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
     password: yup
       .string()
-      .required('Senha obrigatória')
-      .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
-        'Mínimo 6 digitos',
-      ),
+      .min(6, "Mínimo 6 dígitos")
+      .required('Senha obrigatória'),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref('password')], 'Senhas diferentes')
-      .required('Campo obrigatório!'),
+      .required('Campo obrigatório'),
   });
 
   const {
@@ -64,8 +61,8 @@ export const UserRegister = () => {
       <ContainerIMG>
         <IMG5 src={image5} alt="imagem mulher com cachorro" />
         <IMG7 src={image7} alt="imagem homem com cachorro" />
-        <IMG8 src={image8} alt="imagem mulher com gatinho" />
-        <IMG6 src={image6} alt="imagem gato tela registro" />
+        <IMG8 src={image8} alt="imagem mulher com gato filhote" />
+        <IMG6 src={image6} alt="imagem gato plano de fundo" />
       </ContainerIMG>
       <BackgroundIMG />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>

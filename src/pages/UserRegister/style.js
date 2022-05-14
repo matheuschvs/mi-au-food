@@ -133,7 +133,8 @@ export const Form = styled.form`
   justify-content: center;
   width: 90%;
   max-width: 350px;
-  height: 46vh;
+  min-width: 310px;
+  height: 49vh;
   margin: 0 auto;
   margin-top: 260px;
   background: var(--primary-color);
@@ -168,7 +169,7 @@ export const Form = styled.form`
     align-items: center;
     padding: 15px;
     gap: 10px;
-    width: 94px;
+    width: 10vh;
     height: 40px;
     left: 1225px;
     top: 597.4px;
@@ -237,8 +238,8 @@ export const Form = styled.form`
     }
 
     h1 {
-      line-height: 38px;
-      margin-bottom: 1.4rem;
+      line-height: 30px;
+      margin-bottom: 0.7rem;
       margin-left: 10%;
       width: 25vw;
       max-width: 25vw;
@@ -256,8 +257,8 @@ export const Form = styled.form`
       align-items: center;
       padding: 15px;
       gap: 10px;
-      width: 94px;
-      height: 40px;
+      width: 12vh;
+      height: 45px;
       left: 1225px;
       top: 597.4px;
       background: rgba(231, 0, 0, 0.95);
