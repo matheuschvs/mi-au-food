@@ -1,8 +1,16 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable no-unused-vars */
-import { Header } from './Header';
-import { Main } from './Main';
+import { useState } from 'react';
+import { Main, Header, Botoes, Lixo } from './Main';
+
+import botaoMenor from '../../img/Button Primary (1).svg';
+import botaoMaior from '../../img/Button Primary.svg';
+
+import lixoIcone from '../../img/trash-2.svg';
 
 const cart = [
   {
@@ -54,8 +62,8 @@ export const ShoppingCartPage = () => {
 
               <h3>{item.name}</h3>
               <h5>Quantidade</h5>
+
               <h5>Preço</h5>
-              <h4>R$ {item.price.toFixed(2).replace('.', ',')}</h4>
             </li>
           ))}
         </ul>
