@@ -25,7 +25,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 25%;
+  top: 27%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -55,37 +55,16 @@ export const IMG5 = styled.img`
   width: 318px;
   height: 333px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @media (min-width: 1024px) {
+    margin-left: 15vw;
+  }
 `;
 
 export const IMG6 = styled.img`
   @media (min-width: 1024px) {
-    margin-left: -85px;
-  }
-  @media (min-width: 1200px) {
-    margin-left: 0px;
+    margin-left: 5vw;
     width: 234px;
     height: 226px;
-    margin-left: -100px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-`;
-
-export const IMG7 = styled.img`
-  width: 208px;
-  height: 205px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-`;
-
-export const IMG8 = styled.img`
-  @media (min-width: 1024px) {
-    margin-top: 50px;
-    margin-left: 20px;
-  }
-  @media (min-width: 1200px) {
-    width: 235px;
-    height: 239px;
-    margin-top: 0px;
-    margin-left: 0px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -97,7 +76,7 @@ export const ContainerIMG = styled.section`
     column-count: 2;
     margin: 0 auto;
     max-width: 580px;
-    margin-left: 5vw;
+    margin-left: 2vw;
     justify-content: center;
     align-items: center;
   }
@@ -130,7 +109,8 @@ export const Form = styled.form`
   justify-content: center;
   width: 90%;
   max-width: 350px;
-  height: 50vh;
+  min-width: 310px;
+  height: 55vh;
   margin: 0 auto;
   margin-top: 260px;
   background: var(--primary-color);
@@ -147,6 +127,39 @@ export const Form = styled.form`
     margin-left: 0;
     height: 100%;
   }
+
+  section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 1.4rem;
+
+    input,
+    select {
+      height: 45px;
+      border-bottom: 2px solid #cddfe3;
+      width: 70%;
+      max-height: 45px;
+      position: relative;
+      padding-left: 1.4rem;
+      transition: 0.8s;
+      background: #fff5f5;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      color: var(--title);
+      font-size: 0.7rem;
+      color: var(--title);
+    }
+
+    select {
+      margin-right: 8px;
+      border-right: 10px solid transparent;
+      color: var(--title);
+    }
+  }
   h1 {
     line-height: 20px;
     text-align: center;
@@ -162,7 +175,7 @@ export const Form = styled.form`
     align-items: center;
     padding: 15px;
     gap: 10px;
-    width: 94px;
+    width: 10vh;
     height: 40px;
     left: 1225px;
     top: 597.4px;
@@ -193,8 +206,8 @@ export const Form = styled.form`
   @media (min-width: 1024px) {
     animation: none;
     background: var(--primary-color);
-    width: 50vw;
-    max-width: 50vw;
+    width: 55vw;
+    max-width: 55vw;
     height: 60vh;
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
@@ -207,13 +220,17 @@ export const Form = styled.form`
     button {
       margin-left: 15%;
     }
+
+    section {
+      margin-left: 22.5%;
+    }
   }
   @media (min-width: 1200px) {
     animation: none;
     background: var(--primary-color);
     width: 45vw;
     max-width: 50vw;
-    height: 60vh;
+    height: 75vh;
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
@@ -223,11 +240,12 @@ export const Form = styled.form`
       margin-left: 10%;
     }
     h1 {
-      line-height: 38px;
+      line-height: 30px;
+      margin-bottom: 0.7rem;
       margin-left: 10%;
-      width: 25vw;
+      width: 20vw;
       max-width: 25vw;
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
     h3 {
       margin-left: 10%;
@@ -239,8 +257,8 @@ export const Form = styled.form`
       align-items: center;
       padding: 15px;
       gap: 10px;
-      width: 94px;
-      height: 40px;
+      width: 12vh;
+      height: 45px;
       left: 1225px;
       top: 597.4px;
       background: rgba(231, 0, 0, 0.95);
@@ -251,5 +269,10 @@ export const Form = styled.form`
       margin-left: 10%;
       margin-top: 1.8rem;
     }
+    section {
+      margin-left: 20%;
+    }
   }
 `;
+
+export const InputCity = styled.input``;

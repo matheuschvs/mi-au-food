@@ -35,14 +35,11 @@ export const UserRegister = () => {
     password: yup
       .string()
       .required('Senha obrigatória')
-      .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
-        'Mínimo 6 digitos',
-      ),
+      .min(8, 'Mínimo 8 dígitos'),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref('password')], 'Senhas diferentes')
-      .required('Campo obrigatório!'),
+      .required('Campo obrigatório'),
   });
 
   const {
@@ -92,7 +89,7 @@ export const UserRegister = () => {
           />
           <Input
             type="password"
-            label="confimar senha"
+            label="confirmar senha"
             name="passwordConfirm"
             register={register}
             error={errors.passwordConfirm?.message}

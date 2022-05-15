@@ -5,7 +5,7 @@ export const InputStyled = styled.div`
   align-items: center;
   border-bottom: 2px solid #cddfe3;
   width: 70%;
-  max-height: 35px;
+  max-height: 45px;
   margin-top: 1.4rem;
   position: relative;
   padding-left: 2rem;
@@ -13,16 +13,15 @@ export const InputStyled = styled.div`
   background: #fff5f5;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-
   div {
-    margin-bottom: 3.2rem;
-    margin-left: 2.2rem;
+    margin-bottom: 4rem;
+    margin-left: 45%;
     span {
       font-weight: bold;
+      font-size: 0.8rem;
       color: var(--secondary-color-1);
     }
   }
-
   input {
     background: transparent;
     position: absolute;
@@ -32,7 +31,6 @@ export const InputStyled = styled.div`
     font-size: 1rem;
     color: var(--title);
   }
-
   label {
     color: var(--title);
     position: absolute;
@@ -42,13 +40,12 @@ export const InputStyled = styled.div`
     top: ${props => (props.valid ? '-15px' : '3px')};
     left: ${props => (props.valid ? '5px' : '25px')};
     font-size: 0.7rem;
-    padding-top: 5px;
+    padding-top: 15px;
   }
-
   &:focus-within {
     label {
       font-size: 0.7rem;
-      top: -15px;
+      top: -25px;
       left: 5px;
       font-weight: bold;
     }
