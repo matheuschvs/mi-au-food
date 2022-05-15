@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Container, Form, Box, Input, IMG } from './style';
-import { Button } from '../../components/Header/Button';
+import { Button } from '../../components/Button';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import { useContext } from 'react';
@@ -44,7 +44,6 @@ export const LoginPage = () => {
 
   return (
     <Container>
-      <IMG src={loginBG} />
       <Form>
         <Box onSubmit={handleSubmit(submitLogin)}>
           <h1>Faça seu Login</h1>
@@ -71,6 +70,7 @@ export const LoginPage = () => {
           </Link>
         </Box>
       </Form>
+      <IMG src={loginBG} />
     </Container>
   );
 };
