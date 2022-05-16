@@ -1,13 +1,17 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import useContext from 'react';
+import { CartContext } from '../../Providers/cart';
 import { Main, Header, Botoes, Lixo } from './Main';
 
 import botaoMenor from '../../img/Button Primary (1).svg';
+
 import botaoMaior from '../../img/Button Primary.svg';
 
 import lixoIcone from '../../img/trash-2.svg';
@@ -48,6 +52,8 @@ const cart = [
 ];
 
 export const ShoppingCartPage = () => {
+  console.log(useContext(CartContext));
+
   return (
     <div>
       <Header>
