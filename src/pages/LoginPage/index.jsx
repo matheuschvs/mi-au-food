@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/auth';
 import { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import loginBG from '../../assets/Rectangle 15.png';
+import { Header } from '../../components/Header';
 
 export const LoginPage = () => {
   const { signIn } = useContext(AuthContext);
@@ -43,34 +44,36 @@ export const LoginPage = () => {
   };
 
   return (
-    <Container>
-      <Form>
-        <Box onSubmit={handleSubmit(submitLogin)}>
-          <h1>Faça seu Login</h1>
-          <Input
-            placeholder="Email"
-            type="name"
-            label="nome"
-            {...register('name')}
-            error={errors.name?.message}
-          ></Input>
+    <>
+      <Header />
+      <Container>
+        <Form>
+          <Box onSubmit={handleSubmit(submitLogin)}>
+            <h1>Faça seu Login</h1>
+            <Input
+              label="email"
+              name="email"
+              register={register}
+              error={errors.email?.message}
+            ></Input>
 
-          <Input
-            placeholder="Senha"
-            type="password"
-            label="senha"
-            {...register('password')}
-            error={errors.password?.message}
-          ></Input>
-          <ToastContainer />
-          <Button type="submit">Login</Button>
+            <Input
+              type="password"
+              label="senha"
+              name="password"
+              register={register}
+              error={errors.password?.message}
+            ></Input>
+            <ToastContainer />
+            <Button type="submit">Login</Button>
 
-          <Link to="/registro">
-            <h3>Não possui conta? Registre-se</h3>
-          </Link>
-        </Box>
-      </Form>
-      <IMG src={loginBG} />
-    </Container>
+            <Link to="/registro">
+              <h3>Não possui conta? Registre-se</h3>
+            </Link>
+          </Box>
+          <IMG src={loginBG} />
+        </Form>
+      </Container>
+    </>
   );
 };

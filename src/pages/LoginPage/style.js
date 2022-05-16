@@ -20,7 +20,7 @@ export const Container = styled.div`
       rgba(231, 0, 0, 0.8) 100%
     );
   }
-  @media (max-width: 1023px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,31 +50,28 @@ export const Form = styled.form`
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       background: var(--primary-color);
-      margin-top: 10vh;
+      margin-top: 3vh;
       width: 50vw;
-      height: 65vh;
+      height: 58vh;
       border-radius: 550px 0px 0px 550px;
       div {
         padding: 10px;
         width: 850px;
       }
       h1 {
-        height: 107px;
-        margin-left: 30%;
+        height: 90px;
         text-align: center;
         color: #fff5f5;
+        font-size: 30px;
       }
       h3 {
         line-height: 120px;
-        margin-left: 185px;
         text-align: center;
         color: #fff5f5;
         font-size: 15px;
       }
-    }
-    h1 {
-      font-size: 30px;
     }
     h3 {
       text-align: center;
@@ -95,6 +92,8 @@ export const Box = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     margin-top: 10vh;
+    width: 50%;
+    margin-left: 20%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -136,18 +135,14 @@ export const Box = styled.div`
 export const Input = styled.input`
   @media (min-width: 1024px) {
     width: 45%;
-    margin-left: 30%;
-    padding-left: 20px;
   }
   height: 5vh;
   background: #fff5f5;
   margin-bottom: 3vh;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-left: 30%;
   border: none;
   font-size: 1rem;
-
   &:hover,
   &:focus-within {
     label {
