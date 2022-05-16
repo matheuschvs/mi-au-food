@@ -71,8 +71,8 @@ export const LoginPage = () => {
               <h3>Não possui conta? Registre-se</h3>
             </Link>
           </Box>
+          <IMG src={loginBG} />
         </Form>
-        <IMG src={loginBG} />
       </Container>
     </>
   );
