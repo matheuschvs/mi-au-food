@@ -15,12 +15,12 @@ export const InputStyled = styled.div`
   border-radius: 20px;
   div {
     margin-bottom: -4.5rem;
-    margin-left: 50%;
     span {
       font-weight: bold;
       width: 9rem;
       font-size: 1rem;
       color: var(--secondary-color-1);
+      margin-left: 7rem;
     }
   }
   input {
@@ -31,6 +31,10 @@ export const InputStyled = styled.div`
     width: 100%;
     font-size: 1rem;
     color: var(--title);
+
+    &::placeholder {
+      color: var(--title);
+    }
   }
   label {
     color: var(--title);
@@ -38,7 +42,7 @@ export const InputStyled = styled.div`
     left: 25px;
     top: 3px;
     transition: 0.8s;
-    top: ${props => (props.valid ? '-15px' : '3px')};
+    top: ${props => (props.valid ? '-2rem' : '3px')};
     left: ${props => (props.valid ? '5px' : '25px')};
     font-size: 1rem;
     padding-top: 15px;

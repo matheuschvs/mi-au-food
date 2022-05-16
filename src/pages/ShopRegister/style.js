@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -25,7 +26,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 27%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -52,19 +53,22 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 23vw;
-  height: 39vh;
+  width: 36vw;
+  height: 59vh;
+  margin-top: 15vh;
+  transform: rotate(20deg);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1024px) {
-    margin-left: 15vw;
+    margin-left: 10vw;
   }
 `;
 
 export const IMG6 = styled.img`
+  transform: rotate(-30deg);
   @media (min-width: 1024px) {
-    margin-left: 5vw;
-    width: 13.125vw;
-    height: 23vh;
+    position: absolute;
+    width: 26.125vw;
+    height: 39vh;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -76,7 +80,7 @@ export const ContainerIMG = styled.section`
     column-count: 2;
     margin: 0 auto;
     max-width: 580px;
-    margin-left: 2vw;
+    margin-left: 5vw;
     justify-content: center;
     align-items: center;
   }
@@ -108,11 +112,11 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   width: 90%;
-  max-width: 350px;
-  min-width: 310px;
-  height: 55vh;
+  max-width: 380px;
+  min-width: 320px;
+  height: 65vh;
   margin: 0 auto;
-  margin-top: 260px;
+  margin-top: 200px;
   background: var(--primary-color);
   mix-blend-mode: normal;
   opacity: 0.8;
@@ -140,7 +144,7 @@ export const Form = styled.form`
       height: 45px;
       margin-top: 1.4rem;
       border-bottom: 2px solid #cddfe3;
-      width: 100%;
+      width: 50%;
       max-height: 45px;
       position: relative;
       padding-left: 1.4rem;
@@ -157,8 +161,9 @@ export const Form = styled.form`
     }
 
     div {
-      width: 100%;
+      width: 50%;
     }
+
     }
   }
   h1 {

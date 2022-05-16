@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
 import {
@@ -14,8 +14,8 @@ import {
   ContainerIMG,
   Title,
 } from './style';
-import image5 from '../../assets/image3.png';
-import image6 from '../../assets/image4.png';
+import image5 from '../../assets/gatoEngrenagem1.svg';
+import image6 from '../../assets/gatoengrenagem.svg';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
@@ -25,6 +25,8 @@ export const ShopRegister = () => {
   /* eslint-disable */
 
   const { signUp } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const selects = [
     { id: 'AC', text: 'Acre' },
@@ -67,8 +69,10 @@ export const ShopRegister = () => {
       .string()
       .oneOf([yup.ref('password')], 'Senhas diferentes')
       .required('Campo obrigatório'),
-    cidade: yup.string().required('Nome obrigatório'),
+    cidade: yup.string().required('Cidade obrigatória'),
     estado: yup.string(),
+    cep: yup.string().required('CEP obrigatório'),
+    email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   });
 
   const {
@@ -80,7 +84,10 @@ export const ShopRegister = () => {
   });
 
   const onSubmitFunction = data => {
-    signUp(data, toast.success(`Bem vindo(a), ${data.name}!`));
+    const newData = { ...data, type: 'shop' };
+    signUp(newData, navigate('/entrar', { replace: true }));
+    toast.success(`Bem vindo(a), ${data.name}!`)
+    console.log(newData);
   };
 
   return (
@@ -96,10 +103,9 @@ export const ShopRegister = () => {
           <h1>Seja uma empresa parceira da Mi-Au Food</h1>
           <Input
             label="CEP"
-            name="CEP"
+            name="cep"
             register={register}
-            error={errors.CEP?.message}
-            disable
+            error={errors.cep?.message}
           />
           <section>
             <select name="estado" {...register('estado')}>
@@ -109,10 +115,9 @@ export const ShopRegister = () => {
             </select>
             <Input
               type="text"
-              label="Cidade"
+              placeholder="Cidade"
               name="cidade"
               register={register}
-              error={errors.cidade?.message}
             />
           </section>
           <Input
@@ -134,6 +139,12 @@ export const ShopRegister = () => {
             name="name"
             register={register}
             error={errors.name?.message}
+          />
+          <Input
+            label="Email"
+            name="email"
+            register={register}
+            error={errors.email?.message}
           />
           <button type="submit">Registrar</button>
           <h3>

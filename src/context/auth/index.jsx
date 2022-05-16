@@ -50,7 +50,6 @@ export const AuthProvider = ({ children }) => {
 
       setUser(userResponse);
       setToken(accessToken);
-      console.log('ok');
 
       callback();
     } catch (err) {
