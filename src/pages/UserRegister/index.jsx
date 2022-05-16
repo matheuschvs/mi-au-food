@@ -35,8 +35,8 @@ export const UserRegister = () => {
     email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
     password: yup
       .string()
-      .min(6, "Mínimo 6 dígitos")
-      .required('Senha obrigatória'),
+      .required('Senha obrigatória')
+      .min(8, 'Mínimo 8 dígitos'),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref('password')], 'Senhas diferentes')
@@ -90,7 +90,7 @@ export const UserRegister = () => {
           />
           <Input
             type="password"
-            label="Confimar senha"
+            label="confirmar senha"
             name="passwordConfirm"
             register={register}
             error={errors.passwordConfirm?.message}

@@ -25,7 +25,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 27%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -101,7 +101,6 @@ export const ContainerIMG = styled.section`
     justify-content: center;
     align-items: center;
   }
-
   @media (min-width: 1200px) {
     display: block;
     column-count: 2;
@@ -118,12 +117,10 @@ const appearFromLeft = keyframes`
         opacity: 0;
         transform: translateX(-50px)
     }
-
     to{
         opacity: 0.8;
         transform: translateX(0px)
     }
-
 `;
 
 export const Form = styled.form`
@@ -143,7 +140,6 @@ export const Form = styled.form`
   box-shadow: inset 0px 3px 4px 3px rgba(255, 245, 245, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 8px;
-
   div {
     display: flex;
     flex-direction: column;
@@ -152,7 +148,6 @@ export const Form = styled.form`
     margin-left: 0;
     height: 100%;
   }
-
   h1 {
     line-height: 20px;
     text-align: center;
@@ -161,7 +156,6 @@ export const Form = styled.form`
     color: #ffffff;
     font-size: 1.2rem;
   }
-
   button {
     display: flex;
     flex-direction: row;
@@ -179,19 +173,16 @@ export const Form = styled.form`
     border-radius: 8px;
     color: #fff5f5;
     margin-top: 1.2rem;
-
     &:hover {
       background: rgba(200, 0, 0, 0.95);
     }
   }
-
   h3 {
     text-align: center;
     color: #fff5f5;
     font-size: 0.8rem;
     margin-top: 1.4rem;
   }
-
   a {
     text-decoration: none;
     text-align: center;
@@ -200,7 +191,6 @@ export const Form = styled.form`
     margin-top: 1.4rem;
     cursor: pointer;
   }
-
   @media (min-width: 1024px) {
     animation: none;
     background: var(--primary-color);
@@ -212,7 +202,6 @@ export const Form = styled.form`
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
-
     div,
     h1,
     h3,
@@ -220,7 +209,6 @@ export const Form = styled.form`
       margin-left: 15%;
     }
   }
-
   @media (min-width: 1200px) {
     animation: none;
     background: var(--primary-color);
@@ -232,11 +220,9 @@ export const Form = styled.form`
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
-
     div {
       margin-left: 10%;
     }
-
     h1 {
       line-height: 30px;
       margin-bottom: 0.7rem;
@@ -245,11 +231,9 @@ export const Form = styled.form`
       max-width: 25vw;
       font-size: 1.8rem;
     }
-
     h3 {
       margin-left: 10%;
     }
-
     button {
       display: flex;
       flex-direction: row;

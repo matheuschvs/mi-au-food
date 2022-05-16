@@ -31,6 +31,7 @@ export const InputStyled = styled.div`
     width: 100%;
     font-size: 1rem;
     color: var(--title);
+    
     &::placeholder {
       color: var(--title);
     }
