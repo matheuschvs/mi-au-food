@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { AuthProvider } from './auth';
 import { CatalogueProvider } from './catalogue';
 
