@@ -1,8 +1,7 @@
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
 import {
@@ -29,6 +28,8 @@ export const UserRegister = () => {
 
   const { signUp } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   const formSchema = yup.object().shape({
     name: yup.string().required('Nome obrigatório'),
     email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
@@ -51,8 +52,8 @@ export const UserRegister = () => {
   });
 
   const onSubmitFunction = data => {
-    signUp(data);
-    toast.success(`Bem vindo(a), ${data.name}!`);
+    const newData = { ...data, type: 'user' };
+    signUp(newData, navigate('/entrar', { replace: true }));
   };
 
   return (
@@ -61,28 +62,28 @@ export const UserRegister = () => {
       <ContainerIMG>
         <IMG5 src={image5} alt="imagem mulher com cachorro" />
         <IMG7 src={image7} alt="imagem homem com cachorro" />
-        <IMG8 src={image8} alt="imagem mulher com gatinho" />
-        <IMG6 src={image6} alt="imagem gato tela registro" />
+        <IMG8 src={image8} alt="imagem mulher com gato filhote" />
+        <IMG6 src={image6} alt="imagem gato plano de fundo" />
       </ContainerIMG>
       <BackgroundIMG />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <div>
           <h1>Registre-se e faça parte da família Mi-Au Food</h1>
           <Input
-            label="nome"
+            label="Nome"
             name="name"
             register={register}
             error={errors.name?.message}
           />
           <Input
-            label="email"
+            label="Email"
             name="email"
             register={register}
             error={errors.email?.message}
           />
           <Input
             type="password"
-            label="senha"
+            label="Senha"
             name="password"
             register={register}
             error={errors.password?.message}
