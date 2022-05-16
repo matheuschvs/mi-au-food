@@ -40,15 +40,15 @@ export const InputStyled = styled.div`
     left: 25px;
     top: 3px;
     transition: 0.8s;
-    top: ${props => (props.valid ? '-15px' : '3px')};
+    top: ${props => (props.valid ? '-25px' : '3px')};
     left: ${props => (props.valid ? '5px' : '25px')};
     font-size: 0.7rem;
-    padding-top: 15px;
+    padding-top: 5px;
   }
 
   &:focus-within {
     label {
-      font-size: 0.7rem;
+      font-size: 1rem;
       top: -25px;
       left: 5px;
       font-weight: bold;
