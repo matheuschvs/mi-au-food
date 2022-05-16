@@ -86,8 +86,6 @@ export const ShopRegister = () => {
   const onSubmitFunction = data => {
     const newData = { ...data, type: 'shop' };
     signUp(newData, navigate('/entrar', { replace: true }));
-    toast.success(`Bem vindo(a), ${data.name}!`)
-    console.log(newData);
   };
 
   return (
