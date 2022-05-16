@@ -7,7 +7,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable no-unused-vars */
 import useContext from 'react';
-import { CartContext } from '../../Providers/cart';
+
 import { Main, Header, Botoes, Lixo } from './Main';
 
 import botaoMenor from '../../img/Button Primary (1).svg';
@@ -52,8 +52,6 @@ const cart = [
 ];
 
 export const ShoppingCartPage = () => {
-  console.log(useContext(CartContext));
-
   return (
     <div>
       <Header>
