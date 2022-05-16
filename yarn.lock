@@ -8447,6 +8447,7 @@ eslint-config-airbnb@latest:
     react: ^18.1.0
     react-animations: ^1.0.0
     react-dom: ^18.1.0
+    react-feather: ^2.0.9
     react-hook-form: ^7.31.1
     react-router-dom: latest
     react-scripts: 5.0.1
@@ -10219,7 +10220,7 @@ eslint-config-airbnb@latest:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -10397,6 +10398,17 @@ eslint-config-airbnb@latest:
   version: 6.0.11
   resolution: "react-error-overlay@npm:6.0.11"
   checksum: ce7b44c38fadba9cedd7c095cf39192e632daeccf1d0747292ed524f17dcb056d16bc197ddee5723f9dd888f0b9b19c3b486c430319e30504289b9296f2d2c42
+  languageName: node
+  linkType: hard
+
+"react-feather@npm:^2.0.9":
+  version: 2.0.9
+  resolution: "react-feather@npm:2.0.9"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^16.8.6 || ^17
+  checksum: 8535541c1041ba9ce02e1b6fe4425dc6857030ae2223d89fa2aa1faf82b04e542c863b267ee7ba5961d22fe3216f43241200a5807d8a8df48a96485ac8b68bf7
   languageName: node
   linkType: hard
 
