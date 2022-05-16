@@ -52,8 +52,8 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 318px;
-  height: 333px;
+  width: 23vw;
+  height: 39vh;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1024px) {
     margin-left: 15vw;
@@ -63,8 +63,8 @@ export const IMG5 = styled.img`
 export const IMG6 = styled.img`
   @media (min-width: 1024px) {
     margin-left: 5vw;
-    width: 234px;
-    height: 226px;
+    width: 13.125vw;
+    height: 23vh;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -131,15 +131,16 @@ export const Form = styled.form`
   section {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     width: 70%;
-    margin-top: 1.4rem;
 
-    input,
+
     select {
       height: 45px;
+      margin-top: 1.4rem;
       border-bottom: 2px solid #cddfe3;
-      width: 70%;
+      width: 100%;
       max-height: 45px;
       position: relative;
       padding-left: 1.4rem;
@@ -150,14 +151,14 @@ export const Form = styled.form`
       border: none;
       outline: none;
       color: var(--title);
-      font-size: 0.7rem;
-      color: var(--title);
+      font-size: 1rem;
+      border-right: 10px solid transparent;
+      margin-right: 8px;
     }
 
-    select {
-      margin-right: 8px;
-      border-right: 10px solid transparent;
-      color: var(--title);
+    div {
+      width: 100%;
+    }
     }
   }
   h1 {
@@ -226,16 +227,9 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    animation: none;
-    background: var(--primary-color);
     width: 45vw;
     max-width: 50vw;
     height: 75vh;
-    border-radius: 550px 0px 0px 550px;
-    margin: 0px;
-    opacity: 1;
-    box-shadow: none;
-    backdrop-filter: none;
     div {
       margin-left: 10%;
     }
@@ -274,5 +268,3 @@ export const Form = styled.form`
     }
   }
 `;
-
-export const InputCity = styled.input``;
