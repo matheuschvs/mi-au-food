@@ -20,7 +20,7 @@ export const Container = styled.div`
       rgba(231, 0, 0, 0.8) 100%
     );
   }
-  @media (max-width: 1023px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,17 +53,18 @@ export const Form = styled.form`
       background: var(--primary-color);
       margin-top: 10vh;
       width: 50vw;
-      height: 65vh;
+      height: 58vh;
       border-radius: 550px 0px 0px 550px;
       div {
         padding: 10px;
         width: 850px;
       }
       h1 {
-        height: 107px;
+        height: 90px;
         margin-left: 30%;
         text-align: center;
         color: #fff5f5;
+        font-size: 30px;
       }
       h3 {
         line-height: 120px;
@@ -72,9 +73,6 @@ export const Form = styled.form`
         color: #fff5f5;
         font-size: 15px;
       }
-    }
-    h1 {
-      font-size: 30px;
     }
     h3 {
       text-align: center;
