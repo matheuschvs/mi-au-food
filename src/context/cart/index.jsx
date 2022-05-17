@@ -17,13 +17,13 @@ export const CartProvider = ({ children }) => {
     product => {
       const cartItem = cart.find(elem => elem.id === product.id);
 
-      if (cartItem) {
+      if (cartItem && cartItem.quantity) {
         cartItem.quantity += 1;
         const list = [...cart];
         setCart(list);
         return localStorage.setItem('@mi-au-food:cart', JSON.stringify(cart));
       }
-      cartItem.quantity = 1;
+      Object.assign(product, { quantity: 1 });
       const list = [...cart, product];
       setCart(list);
       return localStorage.setItem('@mi-au-food:cart', JSON.stringify(list));
@@ -44,13 +44,13 @@ export const CartProvider = ({ children }) => {
     product => {
       const cartItem = cart.find(elem => elem.id === product.id);
 
-      if (cartItem.quantity > 1) {
+      if (cartItem.quantity && cartItem.quantity > 1) {
         cartItem.quantity -= 1;
         const list = [...cart];
         setCart(list);
         return localStorage.setItem('@mi-au-food:cart', JSON.stringify(cart));
       }
-      removeFromCart(product);
+      removeFromCart(cartItem);
       return null;
     },
     [cart, removeFromCart],
