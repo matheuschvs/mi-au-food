@@ -5,10 +5,12 @@ import { useCatalogue } from '../../context/catalogue'
 import { StyledMain, ProductButton, Head3 } from './style';
 import { Card } from '../../components/Card'
 import { StyledDisplay } from '../../components/Display/style';
+import { useCart } from '../../context/cart';
 
 export const Product = () => {
   const params = useParams();
   const { catalogue } = useCatalogue();
+  const {addToCart} = useCart();
 
   const item = catalogue.find(product =>Number(product.id) === Number(params.productId))
   const options = catalogue.filter(product => product.type === item.type && product.petType === item.petType && product.id !== item.id)
@@ -25,7 +27,7 @@ export const Product = () => {
       <p>{item.description}</p>
         <section>
           <span>R$ {item.price.toFixed(2)}</span>
-          <ProductButton>Adicionar ao Carrinho</ProductButton>
+          <ProductButton  onClick={() =>addToCart(item)}>Adicionar ao Carrinho</ProductButton>
         </section>
     </div>
   </StyledMain>
