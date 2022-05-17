@@ -63,7 +63,7 @@ export const HeaderBar = styled.header`
 
 export const CartIcon = styled.img`
   display: block;
-  margin-right: 13px;
+  margin-right: 14px;
   @media (min-width: 1024px) {
     display: none;
   }
