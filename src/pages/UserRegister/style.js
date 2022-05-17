@@ -25,7 +25,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 27%;
+  margin-top: 230px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -134,6 +134,7 @@ export const Form = styled.form`
   width: 90%;
   max-width: 350px;
   height: 46vh;
+  min-height: 400px;
   margin: 0 auto;
   margin-top: 260px;
   background: var(--primary-color);
