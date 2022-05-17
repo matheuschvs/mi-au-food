@@ -7,6 +7,6 @@ export const RangeButton = styled.button`
   border-radius: 2px;
   font-size: 1rem;
   font-weight: bold;
-  background-color: var( --secondary-color);
+  background-color: var(--secondary-color);
   color: var(--background);
-`
+`;
