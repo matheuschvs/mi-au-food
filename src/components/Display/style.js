@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-export const Container = styled.ul`
+export const StyledDisplay = styled.ul`
 
 display: flex;
 width: 90%;
