@@ -24,6 +24,7 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 figure{
@@ -70,6 +71,10 @@ border-radius: 1rem;
 background-color: var(--secondary-color);
 color: var(--background);
 margin: 20px;
+
+&:hover{
+  background-color: var(--secondary-color-2);
+}
 `
 export const Head3 = styled.h3`
 text-align: center;

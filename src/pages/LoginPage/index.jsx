@@ -3,15 +3,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Container, Form, Box, Input, IMG } from './style';
 import { Button } from '../../components/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import { useContext } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
 import loginBG from '../../assets/Rectangle 15.png';
-import { Header } from '../../components/Header';
 
 export const LoginPage = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const schema = yup.object().shape({
     name: yup
@@ -38,20 +37,19 @@ export const LoginPage = () => {
     resolver: yupResolver(schema),
   });
 
-  const submitLogin = data => {
-    signIn(data);
-    toast.success(`Bem vindo(a), ${data.name}!`);
+  const redirectTo = () => {
+    navigate('/perfil/usuario', { replace: true });
   };
 
   return (
     <>
-      <Header />
       <Container>
         <Form>
-          <Box onSubmit={handleSubmit(submitLogin)}>
+          <Box>
             <h1>Faça seu Login</h1>
             <Input
-              label="email"
+              type="email"
+              label="Email"
               name="email"
               register={register}
               error={errors.email?.message}
@@ -64,14 +62,22 @@ export const LoginPage = () => {
               register={register}
               error={errors.password?.message}
             ></Input>
-            <ToastContainer />
-            <Button type="submit">Login</Button>
+            <Button
+              type="button"
+              onClick={() =>
+                signIn(
+                  { email: 'marcos@gmail.com', password: '123456' },
+                  redirectTo(),
+                )
+              }
+            >
+              Login
+            </Button>
 
             <Link to="/registro">
               <h3>Não possui conta? Registre-se</h3>
             </Link>
           </Box>
-          <IMG src={loginBG} />
         </Form>
       </Container>
     </>
