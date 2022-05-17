@@ -32,10 +32,9 @@ export const Container = styled.div`
 export const IMG = styled.img`
   @media (min-width: 1024px) {
     position: absolute;
-    width: 510px;
-    height: 514px;
+    width: 400px;
     left: 300px;
-    top: 143px;
+    top: 190px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     animation: 1s ${fadeAnimation};
   }
@@ -52,10 +51,9 @@ export const Form = styled.form`
       align-items: center;
       justify-content: center;
       background: var(--primary-color);
-      margin-top: 3vh;
-      width: 50vw;
+      margin-top: 13vh;
+      width: 100vw;
       height: 58vh;
-      border-radius: 550px 0px 0px 550px;
       div {
         padding: 10px;
         width: 850px;
@@ -93,7 +91,6 @@ export const Box = styled.div`
     display: flex;
     margin-top: 10vh;
     width: 50%;
-    margin-left: 20%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -143,6 +140,7 @@ export const Input = styled.input`
   border-radius: 20px;
   border: none;
   font-size: 1rem;
+  font-family: Roboto;
   &:hover,
   &:focus-within {
     label {
@@ -158,6 +156,7 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+
   @media (max-width: 1023px) {
     width: 149px;
     height: 21px;
