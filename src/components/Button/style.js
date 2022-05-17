@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const ButtonStyled = styled.button`
   @media (min-width: 1024px) {
     padding: 15px;
     gap: 10px;

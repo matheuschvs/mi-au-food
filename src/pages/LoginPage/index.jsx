@@ -1,32 +1,22 @@
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Container, Form, Box, Input, IMG } from './style';
-import { Button } from '../../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import { useContext } from 'react';
 import loginBG from '../../assets/Rectangle 15.png';
+import { Form, MainDiv, IMG, MainContainer } from './style';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { MiauFoodIcon } from '../../components/MiauFood Icon';
 
 export const LoginPage = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Nome obrigatório')
-      .matches(
-        /^[a-zA-Z]+$/,
-        'Nome de usuário inválido. Somente letras, sem espaços.',
-      ),
-    password: yup
-      .string()
-      .required('Senha obrigatória')
-      .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/,
-        'Pelo menos uma letra maiúscula, um número e caractere especial, 8 caracteres mínimos.',
-      ),
+    email: yup.string().required('É preciso um email para acessar o site'),
+    password: yup.string().required('É preciso uma senha para acessar o site'),
   });
 
   const {
@@ -38,48 +28,43 @@ export const LoginPage = () => {
   });
 
   const redirectTo = () => {
-    navigate('/perfil/usuario', { replace: true });
+    navigate('/inicio', { replace: true });
+  };
+
+  const onSubmitFunction = data => {
+    signIn(data, redirectTo);
   };
 
   return (
-    <>
-      <Container>
-        <Form>
-          <Box>
-            <h1>Faça seu Login</h1>
-            <Input
-              type="email"
-              label="Email"
-              name="email"
-              register={register}
-              error={errors.email?.message}
-            ></Input>
+    <MainContainer>
+      <header>
+        <MiauFoodIcon />
+      </header>
+      <MainDiv>
+        <IMG src={loginBG} />
+        <Form onSubmit={handleSubmit(onSubmitFunction)}>
+          <h1>Faça seu Login</h1>
+          <Input
+            label="Email"
+            name="email"
+            register={register}
+            error={errors.name?.message}
+          ></Input>
 
-            <Input
-              type="password"
-              label="senha"
-              name="password"
-              register={register}
-              error={errors.password?.message}
-            ></Input>
-            <Button
-              type="button"
-              onClick={() =>
-                signIn(
-                  { email: 'marcos@gmail.com', password: '123456' },
-                  redirectTo(),
-                )
-              }
-            >
-              Login
-            </Button>
+          <Input
+            type="password"
+            label="Senha"
+            name="password"
+            register={register}
+            error={errors.password?.message}
+          ></Input>
+          <Button text="Login" type="submit"></Button>
 
-            <Link to="/registro">
-              <h3>Não possui conta? Registre-se</h3>
-            </Link>
-          </Box>
+          <Link to="/registro/usuario">
+            <p>Não possui conta? Registre-se</p>
+          </Link>
         </Form>
-      </Container>
-    </>
+      </MainDiv>
+    </MainContainer>
   );
 };
