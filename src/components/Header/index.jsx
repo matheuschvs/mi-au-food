@@ -1,3 +1,5 @@
+import { HeaderBar } from './style';
+
 export const Header = () => {
-  return <header>Header</header>;
+  return <HeaderBar />;
 };

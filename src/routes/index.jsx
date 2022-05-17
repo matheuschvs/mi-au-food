@@ -1,14 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from '../layouts/Layout';
+import { RequireAuth } from './RequireAuth';
+
 import { LandingPage } from '../pages/LandingPage';
 import { Home } from '../pages/Home';
 import { Product } from '../pages/Product';
 import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
-import { Cart } from '../pages/Cart';
+import { ShoppingCartPage } from '../pages/ShoppingCartPage';
 import { NoContent } from '../pages/NoContent';
-import { Login } from '../pages/Login';
+import { LoginPage } from '../pages/LoginPage';
 import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
 
@@ -20,16 +22,39 @@ export const Router = () => {
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />
         <Route path="perfil">
-          <Route path="usuario" element={<UserProfile />} />
-          <Route path="loja" element={<ShopProfile />} />
+          <Route
+            path="usuario"
+            element={
+              <RequireAuth>
+                <UserProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="loja"
+            element={
+              <RequireAuth>
+                <ShopProfile />
+              </RequireAuth>
+            }
+          />
+          <Route index element={<NoContent />} />
         </Route>
-        <Route path="carrinho" element={<Cart />} />
+        <Route
+          path="carrinho"
+          element={
+            <RequireAuth>
+              <ShoppingCartPage />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NoContent />} />
       </Route>
-      <Route path="/entrar" element={<Login />} />
+      <Route path="/entrar" element={<LoginPage />} />
       <Route path="/registro">
         <Route path="usuario" element={<UserRegister />} />
         <Route path="loja" element={<ShopRegister />} />
+        <Route index element={<NoContent />} />
       </Route>
     </Routes>
   );
