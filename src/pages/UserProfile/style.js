@@ -164,7 +164,7 @@ export const Input = styled.input`
   font-family: Roboto;
 `;
 
-export const DivInput = styled.div`
+export const DivInput = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

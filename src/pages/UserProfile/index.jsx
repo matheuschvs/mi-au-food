@@ -16,12 +16,16 @@ import { useState } from 'react';
 import { StyledModal } from './style';
 import { FadingBackground } from './style';
 import Modal, { ModalProvider } from 'styled-react-modal';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 
 export const UserProfile = () => {
   const userInfo = JSON.parse(localStorage.getItem('@mi-au-food:user'));
 
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
+  const [userChangeInfo, setUserChangeInfo] = useState([]);
 
   function toggleModal(e) {
     setOpacity(0);
@@ -40,6 +44,28 @@ export const UserProfile = () => {
       setTimeout(resolve, 300);
     });
   }
+
+  const schema = yup.object().shape({
+    name: yup
+      .string()
+      .matches(
+        /^[a-zA-Z]+$/,
+        'Nome de usuário inválido. Somente letras, sem espaços.',
+      ),
+    email: yup.string(),
+    tel: yup.number(),
+    address: yup.string(),
+    cpf: yup.string(),
+    img: yup.string(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   return (
     <>
@@ -73,14 +99,50 @@ export const UserProfile = () => {
                     <button onClick={toggleModal}>X</button>
                   </EditX>
                   <DivInput>
-                    <Input placeholder="Nome"></Input>
-                    <Input placeholder="Email"></Input>
-                    <Input placeholder="Foto do perfil"></Input>
-                    <Input placeholder="Telefone"></Input>
-                    <Input placeholder="Endereço"></Input>
-                    <Input placeholder="CPF"></Input>
+                    <Input
+                      placeholder="Nome"
+                      type="name"
+                      label="Nome"
+                      name="name"
+                      register={register}
+                    ></Input>
+                    <Input
+                      placeholder="Email"
+                      type="email"
+                      label="Email"
+                      name="email"
+                      register={register}
+                    ></Input>
+                    <Input
+                      placeholder="Foto do perfil"
+                      type="img"
+                      label="Url da imagem"
+                      name="img"
+                      register={register}
+                    ></Input>
+                    <Input
+                      placeholder="Telefone"
+                      type="telefone"
+                      label="Telefone"
+                      name="tel"
+                      register={register}
+                    ></Input>
+                    <Input
+                      placeholder="Endereço"
+                      type="address"
+                      label="Endereço"
+                      name="address"
+                      register={register}
+                    ></Input>
+                    <Input
+                      placeholder="CPF"
+                      type="cpf"
+                      label="CPF"
+                      name="cpf"
+                      register={register}
+                    ></Input>
                   </DivInput>
-                  <button>Editar</button>
+                  <button type="submit">Editar</button>
                 </StyledModal>
               </div>
             </UserContainer>
