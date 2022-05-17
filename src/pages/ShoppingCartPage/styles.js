@@ -11,10 +11,6 @@ export const Carrinho = styled.div`
 `;
 
 export const Main = styled.div`
-  li {
-    margin-left: 50px;
-  }
-
   h2 {
     margin-top: 25px;
     margin-left: 50px;
@@ -23,7 +19,7 @@ export const Main = styled.div`
   }
   li {
     display: flex;
-    border: 1px solid red;
+    background-color: white;
     border-radius: 20px;
     width: 1200px;
     height: 200px;
@@ -93,3 +89,26 @@ export const Lixo = styled.div`
     margin-right: 7px;
   }
 `;
+export const Total = styled.div`
+  h2 {
+    font-size: 30px;
+
+    margin-left: 1000px;
+  }
+  button {
+    margin-top: 20px;
+    margin-left: 1000px;
+    background-color: red;
+    color: white;
+    width: 250px;
+    height: 30px;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+`;
+export const Not = styled.div`
+  text-align: center;
+`;
+
+export const Todo = styled.div``;

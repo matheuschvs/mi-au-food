@@ -9,7 +9,7 @@
 import { useState } from 'react';
 import { Card } from '../../components/Card';
 import { useCart } from '../../context/cart';
-import { Main, Botoes, Lixo, Carrinho } from './Main';
+import { Main, Botoes, Lixo, Carrinho, Total, Not, Todo } from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
@@ -51,14 +51,20 @@ export const ShoppingCartPage = () => {
     },
   ]);
 
+  const CleanCar = () => {
+    setCurrentSale([]);
+  };
+
   return (
-    <div>
+    <Todo>
       <Carrinho>
         <h1>Carrinho</h1>
       </Carrinho>
 
       {currentSale.length === 0 ? (
-        <h1>Não existe produto no carrinho</h1>
+        <Not>
+          <h1>Não existe produto no carrinho</h1>
+        </Not>
       ) : (
         <Main>
           <ul>
@@ -80,8 +86,14 @@ export const ShoppingCartPage = () => {
               </li>
             ))}
           </ul>
+          <Total>
+            <h2>Total({currentSale.length} item) R$ </h2>
+            <button onClick={CleanCar} type="button">
+              Limpar o carrinho
+            </button>
+          </Total>
         </Main>
       )}
-    </div>
+    </Todo>
   );
 };
