@@ -91,6 +91,7 @@ export const GlobalStyle = createGlobalStyle`
   
   * {
     box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
   }
 
   body {
@@ -98,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: var(--text);
+    color: var(--text); 
   }
 
   h1, h2 {
