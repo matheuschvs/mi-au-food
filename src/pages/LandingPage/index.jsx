@@ -20,6 +20,14 @@ import {
   Contact,
 } from './style';
 
+const devs = [
+  { name: 'Thiago Brandão', instagram: '/', github: '/', linkedin: '/' },
+  { name: 'Beatriz Costa', instagram: '/', github: '/', linkedin: '/' },
+  { name: 'Matheus Chaves', instagram: '/', github: '/', linkedin: '/' },
+  { name: 'Adriano Nóbrega', instagram: '/', github: '/', linkedin: '/' },
+  { name: 'Lucas Golle', instagram: '/', github: '/', linkedin: '/' },
+];
+
 export const LandingPage = () => {
   return (
     <>
@@ -62,56 +70,20 @@ export const LandingPage = () => {
         <div>
           <Devs>
             <h4>Desenvolvido por:</h4>
-            <p>Thiago Brandão</p>
-            <Link target="_blank" to="/">
-              <Instagram />
-            </Link>
-            <Link target="_blank" to="/">
-              <GitHub />
-            </Link>
-            <Link target="_blank" to="/">
-              <Linkedin />
-            </Link>
-            <p>Beatriz Costa</p>
-            <Link target="_blank" to="/">
-              <Instagram />
-            </Link>
-            <Link target="_blank" to="/">
-              <GitHub />
-            </Link>
-            <Link target="_blank" to="/">
-              <Linkedin />
-            </Link>
-            <p>Matheus Chaves</p>
-            <Link target="_blank" to="/">
-              <Instagram />
-            </Link>
-            <Link target="_blank" to="/">
-              <GitHub />
-            </Link>
-            <Link target="_blank" to="/">
-              <Linkedin />
-            </Link>
-            <p>Adriano Nóbrega</p>
-            <Link target="_blank" to="/">
-              <Instagram />
-            </Link>
-            <Link target="_blank" to="/">
-              <GitHub />
-            </Link>
-            <Link target="_blank" to="/">
-              <Linkedin />
-            </Link>
-            <p>Lucas Golle</p>
-            <Link target="_blank" to="/">
-              <Instagram />
-            </Link>
-            <Link target="_blank" to="/">
-              <GitHub />
-            </Link>
-            <Link target="_blank" to="/">
-              <Linkedin />
-            </Link>
+            {devs.map(dev => (
+              <div key={dev.name}>
+                <p>{dev.name}</p>
+                <Link target="_blank" to={dev.instagram}>
+                  <Instagram />
+                </Link>
+                <Link target="_blank" to={dev.github}>
+                  <GitHub />
+                </Link>
+                <Link target="_blank" to={dev.linkedin}>
+                  <Linkedin />
+                </Link>
+              </div>
+            ))}
           </Devs>
           <Contact>
             <h4>Entre em contato:</h4>
