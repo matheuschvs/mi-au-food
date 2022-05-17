@@ -10,12 +10,12 @@ export const CatalogueProvider = ({children}) => {
     const [products, setProducts] = useState([])
     const [root, setRoot] = useState("")
 
-    const response = async () =>{
-      await API.get(`product`)
-      .then(response =>{
-         setProducts(response.data)
-        })
-    }
+    useEffect(()=>{
+      API.get(`product`)
+      .then((response) => {
+        setProducts(response.data)
+      })
+    }, [])
 
     useEffect(()=>{
       API.get(`product${root}`)
@@ -31,7 +31,8 @@ export const CatalogueProvider = ({children}) => {
 
     return (
         <CatalogueContext.Provider
-        value= {{ setRoot, filter, catalogue, products, response }}>
+        value= {{ setRoot, filter, catalogue, products }}>
+          
           {children}
         </CatalogueContext.Provider>
     )
