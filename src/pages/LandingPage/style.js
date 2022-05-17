@@ -5,6 +5,10 @@ import dogBackground from '../../assets/dog-face-mobile.png';
 
 export const Container = styled(motion.main)`
   padding: 5.93rem 1.143rem 0;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Opening = styled.section`

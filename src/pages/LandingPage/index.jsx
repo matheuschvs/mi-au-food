@@ -33,20 +33,26 @@ export const LandingPage = () => {
             <h3>Seu gato mais feliz com as rações premium</h3>
             <div>
               <img src={catImg} alt="um gato se espreguiçando" />
-              <GoToButton>Ver opções</GoToButton>
+              <Link to="/inicio">
+                <GoToButton>Ver opções</GoToButton>
+              </Link>
             </div>
           </article>
           <article>
             <h3>Os melhores brinquedos para pets do mercado</h3>
             <div>
-              <GoToButton>Eu quero</GoToButton>
+              <Link to="/inicio">
+                <GoToButton>Eu quero</GoToButton>
+              </Link>
               <img src={dogImg} alt="um cão atento" />
             </div>
           </article>
         </Cards>
         <Partners>
           <h3>Torne-se um parceiro e encontre os clientes mais próximos</h3>
-          <Button>Quero me registrar</Button>
+          <Link to="/registro/loja">
+            <Button>Quero me registrar</Button>
+          </Link>
         </Partners>
         <PartnersCount>
           <h4>Já somos 2560 parceiros registrados!</h4>
