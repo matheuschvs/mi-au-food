@@ -40,14 +40,10 @@ export const Router = () => {
           />
           <Route index element={<NoContent />} />
         </Route>
-        <Route
-          path="carrinho"
-          element={
-            <RequireAuth>
-              <ShoppingCartPage />
-            </RequireAuth>
-          }
-        />
+        <RequireAuth>
+          <Route path="carrinho" element={<ShoppingCartPage />} />
+        </RequireAuth>
+
         <Route path="*" element={<NoContent />} />
       </Route>
       <Route path="/entrar" element={<LoginPage />} />
