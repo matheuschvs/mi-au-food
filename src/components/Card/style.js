@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 export const Container= styled.li`
-width: ${(props)=>props.cartSize? "95%":"200px"};
+width: ${(props)=>props.cartSize? "94%":"200px"};
 height: ${(props)=>props.cartSize? "90px":"400px"};
 margin: 7px;
 display: flex;
@@ -38,6 +38,9 @@ box-shadow: 0px 4px 4px 0px #00000040;
     text-decoration: underline;
     cursor: pointer;
   }
+  button:hover{
+    background-color: var( --secondary-color-2);
+  }
   img:hover{
     cursor: pointer;
   }
@@ -46,7 +49,21 @@ box-shadow: 0px 4px 4px 0px #00000040;
     font-size:  ${(props)=>props.cartSize? "1rem":"1.5rem"};
     font-weight:700;
   }
-  button{
+  svg{
+    font-size: 0.8rem;
+  }
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+  }
+
+    @media (min-width: 850px){
+     
+    }
+`
+export const CardButton = styled.button`
+
     width: 2rem;
     height: 2rem;
     border-radius: 1rem;
@@ -56,21 +73,16 @@ box-shadow: 0px 4px 4px 0px #00000040;
     padding: 0;
     font-size: 1.5rem;
     margin: 0;
-  }
-  button:hover{
-    background-color: var( --secondary-color-2);
-  }
-  svg{
-    font-size: 0.8rem;
-  }
-  div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-      
-  }
-
-    @media (min-width: 850px){
-     
-    }
+    font-weight: bold;
+  
+`
+export const RangeButton = styled.button`
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var( --secondary-color);
+  color: var(--background);
 `
