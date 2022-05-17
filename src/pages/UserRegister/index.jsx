@@ -90,7 +90,7 @@ export const UserRegister = () => {
           />
           <Input
             type="password"
-            label="confirmar senha"
+            label="Confirmar senha"
             name="passwordConfirm"
             register={register}
             error={errors.passwordConfirm?.message}
