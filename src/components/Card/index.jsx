@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart";
-import { Container, CardButton, RangeButton } from "./style";
+import { QuantityController } from "../QuantityController";
+import { Container, CardButton } from "./style";
 
 export const Card = ({product, cartSize}) =>{
   const navigate = useNavigate()
@@ -22,10 +23,7 @@ export const Card = ({product, cartSize}) =>{
         </CardButton>
       </div>  
       <div>
-        {/* <p>Qtd: </p> */}
-        <RangeButton onClick={()=>addToCart(product)}> + </RangeButton>
-        <span>{product.quantity}</span> 
-        <RangeButton onClick={()=>reduceQuantity(product)}> - </RangeButton>
+        <QuantityController product={product}/>
         <span>R$ {product.price.toFixed(2)}</span>       
       </div>
     </>
