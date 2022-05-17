@@ -5,7 +5,7 @@ import { GoToButton } from '../../components/GoToButton';
 import catImg from '../../assets/cat.svg';
 import dogImg from '../../assets/dog.svg';
 
-import { Container, Opening, Cards } from './style';
+import { Container, Opening, Cards, Partners } from './style';
 
 export const LandingPage = () => {
   return (
@@ -30,6 +30,9 @@ export const LandingPage = () => {
           </div>
         </article>
       </Cards>
+      <Partners>
+        <h3>Torne-se um parceiro e encontre os clientes mais próximos</h3>
+      </Partners>
     </Container>
   );
 };
