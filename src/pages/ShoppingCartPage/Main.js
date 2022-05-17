@@ -1,62 +1,79 @@
 import styled from 'styled-components';
 
-export const Main = styled.div`
-  h2 {
+export const Carrinho = styled.div`
+  h1 {
+    width: 224px;
+    font-size: 50px;
+    margin-left: 120px;
     margin-top: 50px;
-    margin-left: 100px;
-    font-size: 32px;
+    margin-bottom: 50px;
+  }
+`;
+
+export const Main = styled.div`
+  li {
+    margin-left: 50px;
+  }
+
+  h2 {
+    margin-top: 25px;
+    margin-left: 50px;
+    width: 639px;
+    font-size: 20px;
   }
   li {
     display: flex;
     border: 1px solid red;
     border-radius: 20px;
-    margin-left: 100px;
-    margin-top: 50px;
-    background-color: white;
+    width: 1200px;
+    height: 200px;
+    margin-top: 1px;
+    margin-left: 120px;
+    margin-bottom: 20px;
   }
   img {
-    width: 257px;
-    height: 228px;
+    width: 150px;
+    height: 150px;
+
+    margin-left: 10px;
+    margin-top: 25px;
   }
   h3 {
-    font-size: 32px;
-    width: 700px;
-    margin-top: 20px;
+    width: 172px;
+    font-size: 20px;
+
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-weight: normal;
+    position: relative;
+    left: 180px;
   }
   h4 {
+    font-size: 16px;
+    margin-top: 40px;
     position: relative;
-    top: 50px;
-    right: 125px;
-    width: 200px;
-    font-size: 32px;
+    left: 108px;
   }
   h5 {
-    margin-left: 60px;
-    margin-right: 30px;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 20px;
+    width: 144px;
+    margin-top: 40px;
+    position: relative;
+    right: -45px;
   }
-`;
-export const Header = styled.div`
-  background-color: red;
-  width: 1600px;
-  height: 83px;
 `;
 
 export const Botoes = styled.div`
   display: flex;
-  width: 0px;
 
   img {
     width: 29.65px;
     height: 29.65;
-    margin-right: 65px;
+    margin-left: 25px;
     position: relative;
+    right: 205px;
     bottom: 50px;
-    right: 165px;
-  }
-  h2 {
-    font-size: 12px;
   }
 `;
 export const Lixo = styled.div`
@@ -65,13 +82,14 @@ export const Lixo = styled.div`
   height: 67px;
   border-radius: 30px;
   position: relative;
-  top: 150px;
-  right: 200px;
+  top: 100px;
+  right: 150px;
   text-align: center;
   img {
     width: 40px;
     height: 40px;
     text-align: center;
     margin-top: 10px;
+    margin-right: 7px;
   }
 `;
