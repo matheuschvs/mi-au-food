@@ -1,109 +1,99 @@
 import styled from 'styled-components';
 
 export const Main = styled.div`
-  @media (min-width: 1024px) {
+  
     display: flex;
     justify-content: space-around;
     margin-top: 3vw;
+    
   }
-  h3 {
-    margin: 1vw;
-    text-align: right;
-  }
-  h4 {
-    margin: 1vw;
-    text-align: right;
+
+  @media (max-width: 798px) {
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 `;
 
 export const BoasVindas = styled.h1`
   text-align: center;
-`;
-
-export const InfoContainer = styled.div`
-  @media (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  font-size: 45px;
+  margin-top: 20px;
+  @media (max-width: 798px) {
+    font-size: 25px;
   }
 `;
 
 export const UserContainer = styled.div`
-  @media (min-width: 1024px) {
-    background-color: #ffa459;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 100px 0px 0px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-    width: 463px;
-    height: 199px;
-    img {
-      margin-left: 10px;
-      width: 171px;
-      height: 181px;
-      border-radius: 250px;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-    p {
-      padding: 5px;
-    }
+  h2 {
+    font-size: 40px;
+    margin: 10px;
+  }
+  h3 {
+    font-size: 30px;
+    margin: 20px;
+  }
+  h4 {
+    font-size: 30px;
+    margin: 10px;
   }
 `;
 
 export const PetContainer = styled.div`
-  @media (min-width: 1024px) {
-    background-color: #ffa459;
-    display: flex;
-    align-items: center;
-    margin-left: 4vw;
-    border-radius: 100px 0px 0px 100px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    img {
-      margin-left: 3px;
-      margin-top: 5px;
-      width: 89px;
-      height: 88px;
-      border-radius: 250px;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-
-    button {
-    }
-
-    p {
-      padding: 5px;
-    }
-  }
-`;
-export const OrderBox = styled.div`
-  background-color: #ff5959;
-  border-radius: 15px;
-  padding: 2vw;
-  margin-top: 3vw;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  div {
-    width: 20vw;
-  }
-`;
-
-export const Order = styled.div`
+  background-color: #ffa459;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 5vw;
-  background-color: #fff5f5;
+  align-items: center;
+  margin-left: 4vw;
+  width: 300px;
+  border-radius: 100px 0px 0px 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  p {
-    margin-left: 1vw;
+  img {
+    margin-left: 3px;
+    margin-top: 5px;
+    width: 89px;
+    height: 88px;
+    border-radius: 250px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+  }
+
+  p {
+    padding: 5px;
+  }
+  @media (max-width: 798px) {
+    width: 95%;
+  }
+`;
+
+export const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #ffa459;
+`;
+export const ButtonAdicionar = styled.p`
+  font-size: 30px;
+  padding: 5px;
+  color: white;
+
+  &:hover {
+    background-color: #e76900;
+  }
+  background-color: #ffa459;
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
 `;
