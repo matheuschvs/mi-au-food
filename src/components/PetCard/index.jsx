@@ -1,7 +1,7 @@
 /* eslint-disable*/
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { ButtonEditar, InfoDiv, PetContainer } from './style';
+import { ButtonEditar, InfoDiv, PetContainer, PetsMain } from './style';
 import { FadingBackground } from './style';
 import Modal, { ModalProvider } from 'styled-react-modal';
 import { StyledModal } from './style';
@@ -72,7 +72,8 @@ export const PetCard = () => {
 
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
-      <div>
+      <PetsMain>
+        <h3>Seus Pets</h3>
         {pets &&
           pets.map(info => {
             return (
@@ -138,7 +139,7 @@ export const PetCard = () => {
               </PetContainer>
             );
           })}
-      </div>
+      </PetsMain>
     </ModalProvider>
   );
 };

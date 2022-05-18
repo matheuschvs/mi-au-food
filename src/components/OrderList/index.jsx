@@ -1,6 +1,6 @@
 /* eslint-disable*/
 import { useState, useEffect } from 'react';
-import { Order, OrderBox } from './style';
+import { MarginOrder, Order, OrderBox } from './style';
 import axios from 'axios';
 
 export const OrderList = () => {
@@ -20,26 +20,28 @@ export const OrderList = () => {
   // }, []);
 
   return (
-    <OrderBox>
-      <h3>Seus Pedidos</h3>
-      <Order>
-        <p>Pedido: id</p>
-        <p>Status: Enviado</p>
-        <p>Valor: R$110,00</p>
-        <p>Ok</p>
-      </Order>
-      <Order>
-        <p>Pedido: id</p>
-        <p>Status: Enviado</p>
-        <p>Valor: R$110,00</p>
-        <p>Ok</p>
-      </Order>
-      <Order>
-        <p>Pedido: id</p>
-        <p>Status: Enviado</p>
-        <p>Valor: R$110,00</p>
-        <p>Ok</p>
-      </Order>
-    </OrderBox>
+    <MarginOrder>
+      <OrderBox>
+        <h3>Seus Pedidos</h3>
+        <Order>
+          <p>Pedido: id</p>
+          <p>Status: Enviado</p>
+          <p>Valor: R$110,00</p>
+          <p>Ok</p>
+        </Order>
+        <Order>
+          <p>Pedido: id</p>
+          <p>Status: Enviado</p>
+          <p>Valor: R$110,00</p>
+          <p>Ok</p>
+        </Order>
+        <Order>
+          <p>Pedido: id</p>
+          <p>Status: Enviado</p>
+          <p>Valor: R$110,00</p>
+          <p>Ok</p>
+        </Order>
+      </OrderBox>
+    </MarginOrder>
   );
 };

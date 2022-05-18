@@ -21,10 +21,9 @@ export const PetContainer = styled.div`
   background-color: #ffa459;
   display: flex;
   align-items: center;
-  margin-left: 4vw;
-  width: 400px;
+  margin: 20px 30px 20px 30px;
   height: 130px;
-  margin-bottom: 10px;
+  
   border-radius: 100px 0px 0px 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   &:hover {
@@ -38,7 +37,6 @@ export const PetContainer = styled.div`
     margin-left: 3px;
     margin-top: 5px;
     width: 119px;
-    height: 118px;
     border-radius: 250px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
@@ -46,23 +44,57 @@ export const PetContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  button {
+    margin: 20px;
   }
 
   p {
     padding: 5px;
+    margin: 5px;
+    
   }
-  @media (max-width: 798px) {
+  @media (max-width: 1296px) {
     width: 95%;
+    height: 200px;
+    margin: 20px 30px 20px 30px;
+    img {
+      border-radius: 200px;
+      height: 190px;
+      width: 190px;
+    }
+  }
+`;
+
+export const PetsMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  h3 {
+    font-size: 30px;
+    text-align: right;
+    margin: 20px;
+  }
+  background-color: #fff5f5;
+  &:hover {
+    background-color: #fcdede;
+  }
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  @media (max-width: 1296px) {
+    margin: 50px;
+    p {
+      font-size: 25px;
+    }
+    h3 {
+      margin: 20px;
+    }
   }
 `;
 
 export const ButtonEditar = styled.p`
   cursor: pointer;
-  margin-right: 10px;
-  font-size: 25px;
+  margin: 20px 30px 20px 30px;
+  font-size: 20px;
   background-color: #fc943d;
   &:not(:last-child) {
   }

@@ -21,7 +21,7 @@ export const Adicionar = styled.p`
   font-size: 30px;
   padding: 5px;
   color: white;
-
+  margin: 10px;
   &:hover {
     background-color: #e76900;
   }

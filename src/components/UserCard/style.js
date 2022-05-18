@@ -25,8 +25,11 @@ export const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100px 0px 0px 100px;
     height: 199px;
-    width: 600px;
+    width: 500px;
     margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 20px;
+   
   }
   img {
     margin-left: 10px;
@@ -49,17 +52,32 @@ export const Container = styled.div`
   }
   p {
     padding: 5px;
+    margin-left: 20px;
   }
 
-  @media (max-width: 798px) {
+  @media (max-width: 1296px) {
     width: 100%;
+    height: 300px;
+    border-radius: 300px 0px 0px 300px;
+    img {
+      width: 280px;
+      height: 288px;
+    }
+    p{
+      font-size: 30px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+ 
   }
 `;
 export const InfoDiv = styled.div``;
 
 export const ButtonEditar = styled.p`
   cursor: pointer;
+
   margin-right: 10px;
+  margin-left: 10px;
   font-size: 30px;
   background-color: #e76900;
   &:not(:last-child) {
