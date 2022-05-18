@@ -18,12 +18,15 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+  }
+  @media (max-width: 1562px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     header {
-      margin-top: 0px;
+      margin-top: 50px;
       margin-left: 0px;
-      margin-bottom: 0px;
     }
   }
 `;
@@ -49,7 +52,7 @@ export const Form = styled.form`
     font-size: 50px;
     margin-top: 40px;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1562px) {
     border-radius: 10px;
     width: 100%;
     margin-bottom: 120px;
@@ -62,12 +65,14 @@ export const Form = styled.form`
       margin-left: 70px;
     }
   }
+  
+  }
 `;
 export const IMG = styled.img`
   width: 26%;
   height: 100%;
   margin-left: 15%;
-  @media (max-width: 1024px) {
+  @media (max-width: 1562px) {
     display: none;
   }
 `;
