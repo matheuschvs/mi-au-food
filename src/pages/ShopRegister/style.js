@@ -1,6 +1,8 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
+
 
 export const Container = styled(motion.div)`
   align-items: center;
@@ -91,8 +93,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 700px;
-    margin-left: 5vw;
+    max-width: 500px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -212,7 +214,6 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
     background: var(--primary-color);
     width: 60vw;
     max-width: 60vw;
@@ -222,6 +223,7 @@ export const Form = styled.form`
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
+
     div,
     h1,
     h3,

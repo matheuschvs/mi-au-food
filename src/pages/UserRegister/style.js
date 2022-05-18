@@ -25,7 +25,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 25%;
+  margin-top: 230px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -34,6 +34,7 @@ export const Title = styled.h1`
   text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
   color: rgba(231, 0, 0, 0.95);
   @media (min-width: 1024px) {
+    margin-top: 0px;
     top: 5%;
     left: 12%;
     transform: translate(-50%, -50%);
@@ -123,6 +124,17 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
@@ -130,7 +142,8 @@ export const Form = styled.form`
   justify-content: center;
   width: 90%;
   max-width: 350px;
-  height: 50vh;
+  height: 46vh;
+  min-height: 400px;
   margin: 0 auto;
   margin-top: 260px;
   background: var(--primary-color);
@@ -162,7 +175,7 @@ export const Form = styled.form`
     align-items: center;
     padding: 15px;
     gap: 10px;
-    width: 94px;
+    width: 10vh;
     height: 40px;
     left: 1225px;
     top: 597.4px;
@@ -191,7 +204,7 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 50vw;
     max-width: 50vw;
@@ -209,7 +222,6 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    animation: none;
     background: var(--primary-color);
     width: 45vw;
     max-width: 50vw;
@@ -223,7 +235,8 @@ export const Form = styled.form`
       margin-left: 10%;
     }
     h1 {
-      line-height: 38px;
+      line-height: 30px;
+      margin-bottom: 0.7rem;
       margin-left: 10%;
       width: 25vw;
       max-width: 25vw;
@@ -239,8 +252,8 @@ export const Form = styled.form`
       align-items: center;
       padding: 15px;
       gap: 10px;
-      width: 94px;
-      height: 40px;
+      width: 12vh;
+      height: 45px;
       left: 1225px;
       top: 597.4px;
       background: rgba(231, 0, 0, 0.95);

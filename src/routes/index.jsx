@@ -8,7 +8,7 @@ import { Home } from '../pages/Home';
 import { Product } from '../pages/Product';
 import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
-import { Cart } from '../pages/Cart';
+import { ShoppingCartPage } from '../pages/ShoppingCartPage';
 import { NoContent } from '../pages/NoContent';
 import { LoginPage } from '../pages/LoginPage';
 import { UserRegister } from '../pages/UserRegister';
@@ -44,7 +44,7 @@ export const Router = () => {
           path="carrinho"
           element={
             <RequireAuth>
-              <Cart />
+              <ShoppingCartPage />
             </RequireAuth>
           }
         />

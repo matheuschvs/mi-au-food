@@ -98,7 +98,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: var(--text);
+    color: var(--text); 
   }
 
   h1, h2 {

@@ -71,7 +71,6 @@ export const ShopRegister = () => {
     cidade: yup.string().required('Cidade obrigatória'),
     estado: yup.string(),
     cep: yup.string().required('CEP obrigatório'),
-    email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   });
 
   const {
