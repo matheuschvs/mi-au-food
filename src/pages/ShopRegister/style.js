@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
 
-
 export const Container = styled(motion.div)`
   align-items: center;
   height: 100vh;
@@ -111,6 +110,17 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
@@ -214,6 +224,7 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 60vw;
     max-width: 60vw;
