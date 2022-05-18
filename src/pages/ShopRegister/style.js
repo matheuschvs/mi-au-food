@@ -109,6 +109,17 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
@@ -142,7 +153,6 @@ export const Form = styled.form`
     margin: 0 auto;
     width: 70%;
 
-
     select {
       height: 45px;
       margin-top: 1.4rem;
@@ -166,8 +176,8 @@ export const Form = styled.form`
     div {
       width: 50%;
     }
+  }
 
-    }
   h1 {
     line-height: 20px;
     text-align: center;
@@ -212,10 +222,12 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 65vw;
     max-width: 65vw;
-    height:70vh;
+    height: 70vh;
+    
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
