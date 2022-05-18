@@ -13,8 +13,10 @@ export const AuthProvider = ({ children }) => {
     const localUser = localStorage.getItem('@mi-au-food:user');
     const localToken = localStorage.getItem('@mi-au-food:token');
 
+    const parsedUser = JSON.parse(localUser)
+
     if (localUser) {
-      setUser(localUser);
+      setUser(parsedUser);
     }
 
     if (localToken) {
