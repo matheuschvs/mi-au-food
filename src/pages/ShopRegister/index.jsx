@@ -15,6 +15,7 @@ import {
 } from './style';
 import image5 from '../../assets/TesteGatinho.png';
 import image6 from '../../assets/TesteGatinho1.png';
+
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
@@ -83,7 +84,7 @@ export const ShopRegister = () => {
   };
 
   return (
-    <Container animate={defaultAnimation} transition={defaultTransition}>
+    <Container>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
         <IMG6 src={image6} alt="imagem gato tela registro" />
