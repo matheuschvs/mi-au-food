@@ -260,7 +260,7 @@ export const Form = styled.form`
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 16px;
       gap: 10px;
       width: 12vh;
       height: 45px;
