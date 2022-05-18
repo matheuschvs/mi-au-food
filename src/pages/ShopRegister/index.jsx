@@ -18,11 +18,7 @@ import image6 from '../../assets/TesteGatinho1.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
-/* eslint-disable */
-
 export const ShopRegister = () => {
-  /* eslint-disable */
-
   const { signUp } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -106,7 +102,9 @@ export const ShopRegister = () => {
           <section>
             <select name="estado" {...register('estado')}>
               {selects.map(item => (
-                <option value={item.id}>{item.text}</option>
+                <option key={item.id} value={item.id}>
+                  {item.text}
+                </option>
               ))}
             </select>
             <Input

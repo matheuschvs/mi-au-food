@@ -24,12 +24,16 @@ export const NavStyled = styled.nav`
       background: none;
       border-radius: 1.5rem;
       border: 3px solid var(--primary-color);
+      color: var(--primary-color);
       max-width: 300px;
       height: 2.5rem;
       margin: 1rem;
+      padding: 0 5px;
+      align-items: center;
     }
     div:focus-within{
       border: 3px solid var(--primary-color-2);
+      color: var(--primary-color-2);
     }
     div input{
         background: none;
