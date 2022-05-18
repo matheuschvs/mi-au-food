@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
 
-
 export const Container = styled(motion.div)`
   align-items: center;
   height: 100vh;
@@ -56,22 +55,24 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 36vw;
-  height: 59vh;
-  margin-top: 15vh;
-  transform: rotate(20deg);
+  width: 32rem;
+  height: 32rem;
+  margin-left: 6vw;
+  margin-top: 18vh;
+  transform: rotate(15deg);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1024px) {
-    margin-left: 10vw;
   }
 `;
 
 export const IMG6 = styled.img`
-  transform: rotate(-30deg);
+  transform: rotate(-20deg);
   @media (min-width: 1024px) {
     position: absolute;
-    width: 26.125vw;
-    height: 39vh;
+    margin-bottom: 5vh;
+    margin-left: -3vw;
+    width: 23rem;
+    height: 23rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -82,8 +83,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 450px;
-    margin-left: 4vw;
+    max-width: 500px;
+    margin-left: 5vw;
     justify-content: center;
     align-items: center;
   }
@@ -128,6 +129,7 @@ export const Form = styled.form`
   width: 90%;
   max-width: 380px;
   min-width: 320px;
+  min-height: 600px;
   height: 65vh;
   margin: 0 auto;
   margin-top: 200px;
@@ -224,10 +226,9 @@ export const Form = styled.form`
   @media (min-width: 1024px) {
     animation: ${appearFromTop} 1s;
     background: var(--primary-color);
-    width: 65vw;
-    max-width: 65vw;
+    width: 60vw;
+    max-width: 60vw;
     height: 70vh;
-    
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
@@ -246,9 +247,11 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    width: 55vw;
+    width: 50vw;
     max-width: 55vw;
+    position: absolute;
     height: 75vh;
+    right: 0%;
     div {
       margin-left: 10%;
     }
@@ -268,7 +271,7 @@ export const Form = styled.form`
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 16px;
       gap: 10px;
       width: 12vh;
       height: 45px;
