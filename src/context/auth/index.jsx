@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     const localToken = localStorage.getItem('@mi-au-food:token');
 
     if (localUser) {
-      setUser(localUser);
+      setUser(JSON.parse(localUser));
     }
 
     if (localToken) {

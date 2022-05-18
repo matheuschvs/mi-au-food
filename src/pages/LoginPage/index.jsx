@@ -11,7 +11,7 @@ import { Button } from '../../components/Button';
 import { MiauFoodIcon } from '../../components/MiauFood Icon';
 
 export const LoginPage = () => {
-  const { signIn } = useContext(AuthContext);
+  const { user, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
@@ -28,7 +28,11 @@ export const LoginPage = () => {
   });
 
   const redirectTo = () => {
-    navigate('/perfil/usuario', { replace: true });
+    if(user.type === 'user'){
+      navigate('/perfil/usuario', { replace: true });
+    } else if (user.type === 'shop'){
+      navigate('/perfil/loja', { replace: true });
+    }
   };
 
   const onSubmitFunction = data => {
