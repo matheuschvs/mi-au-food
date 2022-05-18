@@ -1,8 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
 
-export const Container = styled(motion.div)`
+export const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -19,6 +18,10 @@ export const Container = styled(motion.div)`
       rgba(231, 105, 0, 0.24) 76.04%,
       rgba(231, 0, 0, 0.8) 100%
     );
+
+    section {
+      display: block;
+    }
   }
 `;
 
@@ -53,45 +56,34 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 36vw;
+  width: 30vw;
   height: 59vh;
   margin-top: 15vh;
-  transform: rotate(20deg);
+  transform: rotate(15deg);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  @media (min-width: 1024px) {
-    margin-left: 10vw;
-  }
+  display: block;
+  margin-left: 10vw;
 `;
 
 export const IMG6 = styled.img`
-  transform: rotate(-30deg);
-  @media (min-width: 1024px) {
-    position: absolute;
-    width: 26.125vw;
-    height: 39vh;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+  transform: rotate(-20deg);
+  display: block;
+  position: absolute;
+  width: 22.125vw;
+  height: 39vh;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
 export const ContainerIMG = styled.section`
   display: none;
-  @media (min-width: 1024px) {
-    display: block;
-    column-count: 2;
-    margin: 0 auto;
-    max-width: 580px;
-    margin-left: 5vw;
-    justify-content: center;
-    align-items: center;
-  }
+  column-count: 2;
+  margin: 0 auto;
+  max-width: 580px;
+  margin-left: 5vw;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 1200px) {
-    display: block;
-    column-count: 2;
-    margin: 0 auto;
     max-width: 700px;
-    margin-left: 5vw;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
@@ -139,7 +131,6 @@ export const Form = styled.form`
     margin: 0 auto;
     width: 70%;
 
-
     select {
       height: 45px;
       margin-top: 1.4rem;
@@ -163,9 +154,8 @@ export const Form = styled.form`
     div {
       width: 50%;
     }
-
-    }
   }
+
   h1 {
     line-height: 20px;
     text-align: center;
