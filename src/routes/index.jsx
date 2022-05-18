@@ -13,6 +13,7 @@ import { NoContent } from '../pages/NoContent';
 import { LoginPage } from '../pages/LoginPage';
 import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
+import { ProductRegistration } from '../pages/ProductRegistration';
 
 export const Router = () => {
   return (
@@ -20,6 +21,7 @@ export const Router = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
+        <Route path="registroProduto" element={<ProductRegistration />} />
         <Route path="produto/:productId" element={<Product />} />
         <Route path="perfil">
           <Route

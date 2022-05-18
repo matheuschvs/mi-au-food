@@ -50,3 +50,28 @@ export const Form = styled.div`
     bottom: 20px;
   }
 `;
+export const List = styled.div`
+  img {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  li {
+    display: flex;
+  }
+  h4 {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 250px;
+  }
+`;
+export const Botao = styled.div`
+  img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 100px;
+    right: 120px;
+  }
+`;

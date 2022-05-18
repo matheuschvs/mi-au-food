@@ -1,3 +1,7 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-console */
 /* eslint-disable import/order */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -5,14 +9,17 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
+
+import { API } from '../../services/api';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Form } from './styled';
+import { Form, List, Botao } from './styled';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import lixo from '../../assets/lixo.svg';
 
 export const ProductRegistration = () => {
   const schema = yup.object().shape({
@@ -43,7 +50,15 @@ export const ProductRegistration = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const token = localStorage.getItem('@pet:token');
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    API.get('/product').then(response => {
+      setProduct(response.data);
+    });
+  }, []);
+
+  const token = localStorage.getItem('@mi-au-food:token');
   const idUser = localStorage.getItem('@pet:id');
 
   const authAxios = axios.create({
@@ -67,9 +82,30 @@ export const ProductRegistration = () => {
       });
   };
 
+  const removeApi = id => {
+    authAxios
+      .delete(`https://json-server-kenziegroup.herokuapp.com/product/${id}`)
+      .then(response => {
+        location.reload(true);
+      });
+  };
+
   return (
     <div>
-      <Form>
+      <List>
+        <ul>
+          {product.map(item => (
+            <li>
+              <img src={item.img}></img>
+              <h4>{item.name}</h4>
+              <Botao>
+                <img onClick={() => removeApi(item.id)} src={lixo}></img>
+              </Botao>
+            </li>
+          ))}
+        </ul>
+      </List>
+      {/* <Form>
         <ToastContainer />
         <h1>Cadastro de produto</h1>
 
@@ -98,7 +134,7 @@ export const ProductRegistration = () => {
 
           <button>Adicionar</button>
         </form>
-      </Form>
+      </Form> */}
     </div>
   );
 };
