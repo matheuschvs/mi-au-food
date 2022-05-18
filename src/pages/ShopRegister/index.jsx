@@ -13,8 +13,8 @@ import {
   ContainerIMG,
   Title,
 } from './style';
-import image5 from '../../assets/gatoEngrenagem1.svg';
-import image6 from '../../assets/gatoengrenagem.svg';
+import image5 from '../../assets/TesteGatinho.png';
+import image6 from '../../assets/TesteGatinho1.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
