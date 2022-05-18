@@ -7,6 +7,9 @@ export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
   h1 {
     font-size: 2rem;
     color: #ffffff;
