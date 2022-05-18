@@ -61,6 +61,8 @@ export const ProductRegistration = () => {
   const token = localStorage.getItem('@mi-au-food:token');
   const idUser = localStorage.getItem('@pet:id');
 
+  console.log(token);
+
   const authAxios = axios.create({
     baseURL: 'https://json-server-kenziegroup.herokuapp.com/product',
     headers: {
@@ -95,7 +97,7 @@ export const ProductRegistration = () => {
       <List>
         <ul>
           {product.map(item => (
-            <li>
+            <li key={item.id}>
               <img src={item.img}></img>
               <h4>{item.name}</h4>
               <Botao>
