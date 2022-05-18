@@ -13,11 +13,13 @@ import { NoContent } from '../pages/NoContent';
 import { LoginPage } from '../pages/LoginPage';
 import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
+import { ProductRegistration } from '../pages/ProductRegistration';
 
 export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="novo-produto" element={<ProductRegistration />} />
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />
