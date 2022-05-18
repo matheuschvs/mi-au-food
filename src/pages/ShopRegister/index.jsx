@@ -105,7 +105,9 @@ export const ShopRegister = () => {
           <section>
             <select name="estado" {...register('estado')}>
               {selects.map(item => (
-                <option key={item.id} value={item.id}>{item.text}</option>
+                <option key={item.id} value={item.id}>
+                  {item.text}
+                </option>
               ))}
             </select>
             <Input
