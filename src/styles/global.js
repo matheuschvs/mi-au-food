@@ -123,7 +123,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ::-moz-selection {
     color: var(--primary-color);
-    background: var(--secondary-color);
+    background: var(--secondary-color-1);
   }
 
   ::selection {
