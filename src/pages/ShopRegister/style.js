@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -25,7 +26,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 27%;
+  margin-top: 170px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -34,6 +35,7 @@ export const Title = styled.h1`
   text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
   color: rgba(231, 0, 0, 0.95);
   @media (min-width: 1024px) {
+    margin-top: 0px;
     top: 5%;
     left: 12%;
     transform: translate(-50%, -50%);
@@ -52,19 +54,22 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 23vw;
-  height: 39vh;
+  width: 36vw;
+  height: 59vh;
+  margin-top: 15vh;
+  transform: rotate(20deg);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1024px) {
-    margin-left: 15vw;
+    margin-left: 10vw;
   }
 `;
 
 export const IMG6 = styled.img`
+  transform: rotate(-30deg);
   @media (min-width: 1024px) {
-    margin-left: 5vw;
-    width: 13.125vw;
-    height: 23vh;
+    position: absolute;
+    width: 26.125vw;
+    height: 39vh;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -75,8 +80,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 580px;
-    margin-left: 2vw;
+    max-width: 450px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -84,8 +89,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 700px;
-    margin-left: 5vw;
+    max-width: 500px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -102,17 +107,28 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 0.8;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 90%;
-  max-width: 350px;
-  min-width: 310px;
-  height: 55vh;
+  max-width: 380px;
+  min-width: 320px;
+  height: 65vh;
   margin: 0 auto;
-  margin-top: 260px;
+  margin-top: 200px;
   background: var(--primary-color);
   mix-blend-mode: normal;
   opacity: 0.8;
@@ -135,12 +151,11 @@ export const Form = styled.form`
     margin: 0 auto;
     width: 70%;
 
-
     select {
       height: 45px;
       margin-top: 1.4rem;
       border-bottom: 2px solid #cddfe3;
-      width: 100%;
+      width: 50%;
       max-height: 45px;
       position: relative;
       padding-left: 1.4rem;
@@ -157,8 +172,7 @@ export const Form = styled.form`
     }
 
     div {
-      width: 100%;
-    }
+      width: 50%;
     }
   }
   h1 {
@@ -205,16 +219,17 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
-    width: 55vw;
-    max-width: 55vw;
-    height: 60vh;
+    width: 65vw;
+    max-width: 65vw;
+    height: 70vh;
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
+
     div,
     h1,
     h3,
@@ -227,8 +242,8 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    width: 45vw;
-    max-width: 50vw;
+    width: 55vw;
+    max-width: 55vw;
     height: 75vh;
     div {
       margin-left: 10%;

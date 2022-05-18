@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { API } from '../../services/api';
@@ -50,7 +51,6 @@ export const AuthProvider = ({ children }) => {
 
       setUser(userResponse);
       setToken(accessToken);
-      console.log('ok');
 
       callback();
     } catch (err) {

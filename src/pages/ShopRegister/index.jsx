@@ -18,11 +18,7 @@ import image6 from '../../assets/gatoengrenagem.svg';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
-/* eslint-disable */
-
 export const ShopRegister = () => {
-  /* eslint-disable */
-
   const { signUp } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -71,7 +67,6 @@ export const ShopRegister = () => {
     cidade: yup.string().required('Cidade obrigatória'),
     estado: yup.string(),
     cep: yup.string().required('CEP obrigatório'),
-    email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   });
 
   const {
@@ -102,12 +97,14 @@ export const ShopRegister = () => {
             label="CEP"
             name="cep"
             register={register}
-            error={errors.cep?.messgit age}
+            error={errors.cep?.message}
           />
           <section>
             <select name="estado" {...register('estado')}>
               {selects.map(item => (
-                <option value={item.id}>{item.text}</option>
+                <option key={item.id} value={item.id}>
+                  {item.text}
+                </option>
               ))}
             </select>
             <Input
