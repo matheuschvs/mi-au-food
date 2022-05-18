@@ -34,6 +34,7 @@ export const Title = styled.h1`
   text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
   color: rgba(231, 0, 0, 0.95);
   @media (min-width: 1024px) {
+    margin-top: 0px;
     top: 5%;
     left: 12%;
     transform: translate(-50%, -50%);
@@ -123,6 +124,17 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
@@ -192,7 +204,7 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 50vw;
     max-width: 50vw;
@@ -210,7 +222,6 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    animation: none;
     background: var(--primary-color);
     width: 45vw;
     max-width: 50vw;

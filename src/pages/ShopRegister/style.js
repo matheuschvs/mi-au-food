@@ -1,6 +1,8 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
+
 
 export const Container = styled(motion.div)`
   align-items: center;
@@ -26,7 +28,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 170px;
+  margin-top: 170px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -35,6 +37,7 @@ export const Title = styled.h1`
   text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
   color: rgba(231, 0, 0, 0.95);
   @media (min-width: 1024px) {
+    margin-top: 0px;
     top: 5%;
     left: 12%;
     transform: translate(-50%, -50%);
@@ -79,8 +82,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 580px;
-    margin-left: 5vw;
+    max-width: 450px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -88,8 +91,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 700px;
-    margin-left: 5vw;
+    max-width: 500px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -115,7 +118,6 @@ export const Form = styled.form`
   max-width: 380px;
   min-width: 320px;
   height: 65vh;
-  min-height: 620px;
   margin: 0 auto;
   margin-top: 200px;
   background: var(--primary-color);
@@ -166,7 +168,6 @@ export const Form = styled.form`
     }
 
     }
-  }
   h1 {
     line-height: 20px;
     text-align: center;
@@ -211,16 +212,16 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
     background: var(--primary-color);
-    width: 55vw;
-    max-width: 55vw;
-    height: 60vh;
+    width: 65vw;
+    max-width: 65vw;
+    height:70vh;
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
+
     div,
     h1,
     h3,
@@ -233,8 +234,8 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    width: 45vw;
-    max-width: 50vw;
+    width: 55vw;
+    max-width: 55vw;
     height: 75vh;
     div {
       margin-left: 10%;
