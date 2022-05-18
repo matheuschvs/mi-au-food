@@ -214,7 +214,7 @@ export const UserModal = styled.div`
 export const ContainerModal = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   z-index: 30;

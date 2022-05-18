@@ -25,12 +25,16 @@ export const Header = () => {
 
   const { token, user } = useContext(AuthContext);
 
-  console.log(user.type);
-
   const [userModal, setUserModal] = useState(false);
+
+  const [modalMobile, setModalMobile] = useState(false);
 
   const showModal = () => {
     setUserModal(!userModal);
+  };
+
+  const showModalMob = () => {
+    setModalMobile(!modalMobile);
   };
 
   const navigate = useNavigate();
@@ -66,7 +70,7 @@ export const Header = () => {
               src={cartIcon}
               alt="imagem carrinho"
             />
-            <MenuIcon src={menuIcon} alt="imagem menu" />
+            <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
             <h3>{user.name}</h3>
             <IconUser onClick={showModal} src={userIcon} alt="imagem usuario" />
           </LogedIcons>
@@ -113,19 +117,19 @@ export const Header = () => {
           </div>
           <ContainerIMG>
             <CartIcon src={cartIcon} alt="imagem carrinho" />
-            <MenuIcon src={menuIcon} alt="imagem menu" />
+            <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
           </ContainerIMG>
         </HeaderBar>
       )}
-      <ContainerModal>
+      {modalMobile && <ContainerModal>
         <div>
           <h1>Mi-Au Food</h1>
-          <p>x</p>
+          <p onClick={showModalMob}>x</p>
         </div>
         <h2
           onClick={() => {
             goUserProfile();
-            showModal();
+            showModalMob();
           }}
         >
           Meu perfil
@@ -133,7 +137,7 @@ export const Header = () => {
         <h2
           onClick={() => {
             goCart();
-            showModal();
+            showModalMob();
           }}
         >
           Meu carrinho
@@ -141,7 +145,7 @@ export const Header = () => {
         <h2
           onClick={() => {
             goHome();
-            showModal();
+            showModalMob();
           }}
         >
           Catálogo
@@ -150,14 +154,13 @@ export const Header = () => {
           <LogoutIcon src={logoutIcon} alt="ícone logout" />
           <h2
             onClick={() => {
-              goHome();
-              showModal();
+              showModalMob();
             }}
           >
             Sair
           </h2>
         </section>
-      </ContainerModal>
+      </ContainerModal>}
     </>
   );
 };
