@@ -29,7 +29,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 20%;
+  top: 170px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -107,6 +107,7 @@ export const Form = styled.form`
   max-width: 380px;
   min-width: 320px;
   height: 65vh;
+  min-height: 620px;
   margin: 0 auto;
   margin-top: 200px;
   background: var(--primary-color);
