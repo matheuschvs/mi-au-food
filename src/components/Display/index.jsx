@@ -1,16 +1,16 @@
 /* eslint-disable */
 
-import { Container } from "./style";
+import { StyledDisplay } from "./style";
 import { Card } from "../Card";
 import { useCatalogue } from "../../context/catalogue";
 
-export const Display = ({ addTocart}) => {
+export const Display = () => {
   const { catalogue } = useCatalogue()
 
   return(
-    <Container>
-      {catalogue.map((product) => <Card product={product} addTocart={addTocart} /> )}
-    </Container>
+    <StyledDisplay>
+      {catalogue.map((product) => <Card product={product}  /> )}
+    </StyledDisplay>
   )
 }
 

@@ -1,6 +1,8 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
+
 
 export const Container = styled(motion.div)`
   align-items: center;
@@ -175,6 +177,7 @@ export const Form = styled.form`
       width: 50%;
     }
   }
+
   h1 {
     line-height: 20px;
     text-align: center;
@@ -224,6 +227,7 @@ export const Form = styled.form`
     width: 65vw;
     max-width: 65vw;
     height: 70vh;
+    
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;

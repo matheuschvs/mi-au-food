@@ -1,0 +1,76 @@
+import styled from 'styled-components';
+import Modal, { BaseModalBackground } from 'styled-react-modal';
+
+export const StyledModal = Modal.styled`
+  width: 30%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  opacity: ${props => props.opacity};
+  transition : all 0.3s ease-in-out;`;
+
+export const FadingBackground = styled(BaseModalBackground)`
+  opacity: ${props => props.opacity};
+  transition: all 0.3s ease-in-out;
+`;
+
+export const Container = styled.div`
+  background-color: #ffa459;
+
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px 0px 0px 100px;
+    height: 199px;
+    width: 600px;
+    margin-bottom: 30px;
+  }
+  img {
+    margin-left: 10px;
+    width: 171px;
+    height: 181px;
+    border-radius: 250px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &:hover {
+    background-color: #fc943d;
+  }
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  
+  }
+  p {
+    padding: 5px;
+  }
+
+  @media (max-width: 798px) {
+    width: 100%;
+  }
+`;
+export const InfoDiv = styled.div``;
+
+export const ButtonEditar = styled.p`
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 30px;
+  background-color: #e76900;
+  &:not(:last-child) {
+  }
+  &:hover {
+    color: ice;
+  }
+  background-color: #ffa459;
+  color: #fff5f5;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+`;
