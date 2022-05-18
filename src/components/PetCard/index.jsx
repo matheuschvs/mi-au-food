@@ -50,6 +50,18 @@ export const PetCard = () => {
       });
   }, []);
 
+  const patchAxios = data => {
+    axios.patch(
+      baseUrl,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+      data,
+    );
+  };
+
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -69,6 +81,10 @@ export const PetCard = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const submitChange = data => {
+    patchAxios(data);
+  };
 
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
@@ -94,7 +110,7 @@ export const PetCard = () => {
                   backgroundProps={{ opacity }}
                 >
                   <Form>
-                    <DivInput>
+                    <DivInput onSubmit={handleSubmit(submitChange)}>
                       <p>Editar informações</p>
                       <Input
                         placeholder="Nome"
@@ -132,7 +148,7 @@ export const PetCard = () => {
                         register={register}
                       ></Input>
                     </DivInput>
-                    <p>Enviar</p>
+                    <p type="submit">Enviar</p>
                   </Form>
                 </StyledModal>
                 <ButtonEditar onClick={toggleModal}>Editar</ButtonEditar>

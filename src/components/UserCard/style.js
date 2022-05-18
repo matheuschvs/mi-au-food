@@ -22,21 +22,19 @@ export const Container = styled.div`
 
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
     border-radius: 100px 0px 0px 100px;
     height: 199px;
     width: 500px;
     margin-bottom: 30px;
     margin-right: 10px;
     margin-left: 20px;
-   
   }
   img {
     margin-left: 10px;
     width: 171px;
     height: 181px;
     border-radius: 250px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   div {
     display: flex;
@@ -53,6 +51,7 @@ export const Container = styled.div`
   p {
     padding: 5px;
     margin-left: 20px;
+    font-size: 20px;
   }
 
   @media (max-width: 1296px) {
@@ -62,6 +61,7 @@ export const Container = styled.div`
     img {
       width: 280px;
       height: 288px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     p{
       font-size: 30px;

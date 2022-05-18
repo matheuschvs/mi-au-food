@@ -22,10 +22,10 @@ export const PetContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 20px 30px 20px 30px;
-  height: 130px;
+  height: 170px;
   
   border-radius: 100px 0px 0px 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
   &:hover {
     background-color: #fc943d;
   }
@@ -34,11 +34,12 @@ export const PetContainer = styled.div`
   
   }
   img {
-    margin-left: 3px;
-    margin-top: 5px;
-    width: 119px;
-    border-radius: 250px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: 10px;
+    height: 150px;
+    width: 150px;
+    border-radius: 258px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
   }
   div {
     display: flex;
@@ -50,6 +51,7 @@ export const PetContainer = styled.div`
   p {
     padding: 5px;
     margin: 5px;
+    font-size: 20px;
     
   }
   @media (max-width: 1296px) {
