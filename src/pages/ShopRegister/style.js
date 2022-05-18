@@ -113,7 +113,7 @@ const appearFromTop = keyframes`
         transform: translateY(-150px)
     }
     to{
-        opacity: 0.8;
+        opacity: 1;
         transform: translateY(0px)
     }
 `;
