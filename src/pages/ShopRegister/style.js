@@ -85,13 +85,8 @@ export const ContainerIMG = styled.section`
     align-items: center;
   }
   @media (min-width: 1200px) {
-    display: block;
-    column-count: 2;
-    margin: 0 auto;
     max-width: 700px;
     margin-left: 5vw;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
