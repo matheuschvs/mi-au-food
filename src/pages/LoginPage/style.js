@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  height: 58rem;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 245, 245, 0.8) 39.84%,
-    rgba(231, 105, 0, 0.24) 76.04%,
-    rgba(231, 0, 0, 0.8) 100%
-  );
-
   header {
     margin-top: 50px;
     margin-left: 24%;

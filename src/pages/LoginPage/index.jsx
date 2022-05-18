@@ -28,7 +28,7 @@ export const LoginPage = () => {
   });
 
   const redirectTo = () => {
-    navigate('/inicio', { replace: true });
+    navigate('/perfil/usuario', { replace: true });
   };
 
   const onSubmitFunction = data => {
@@ -58,7 +58,7 @@ export const LoginPage = () => {
             register={register}
             error={errors.password?.message}
           ></Input>
-          <Button text="Login" type="submit"></Button>
+          <Button text="Entrar" type="submit"></Button>
 
           <Link to="/registro/usuario">
             <p>Não possui conta? Registre-se</p>
