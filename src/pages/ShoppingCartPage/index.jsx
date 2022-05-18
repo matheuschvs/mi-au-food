@@ -13,6 +13,7 @@ import { Main, Botoes, Lixo, Carrinho, Total, Not, Todo } from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
+import { QuantityController } from '../../components/QuantityController';
 
 export const ShoppingCartPage = () => {
   const { cart, cartReducer, removeFromCart, reduceQuantity } = useCart();
@@ -37,7 +38,7 @@ export const ShoppingCartPage = () => {
       ) : (
         <Main>
           <ul>
-            {currentSale.map(item => (
+            {cart.map(item => (
               <li key={item.id}>
                 <img src={item.img}></img>
                 <h2>{item.name}</h2>
@@ -46,18 +47,20 @@ export const ShoppingCartPage = () => {
                 <h3>Preço</h3>
                 <h5>R$ {item.price}</h5>
                 <Botoes>
-                  <img src={iconMenos}></img>
-                  <img src={iconMais}></img>
+                  <QuantityController product={item} />
                 </Botoes>
                 <Lixo>
-                  <img onClick={removeFromCart} src={iconLixo}></img>
+                  <img
+                    onClick={() => removeFromCart(item)}
+                    src={iconLixo}
+                  ></img>
                 </Lixo>
               </li>
             ))}
           </ul>
           <Total>
             <h2>
-              Total({currentSale.length} item) R$ {cartReducer}
+              Total({cart.length} item) R$ {cartReducer}
             </h2>
             <button onClick={CleanCar} type="button">
               Limpar o carrinho
