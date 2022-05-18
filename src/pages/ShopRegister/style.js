@@ -1,8 +1,9 @@
 /* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import RegisterBG from '../../assets/imageBackground.png';
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   align-items: center;
   height: 100vh;
   width: 100vw;

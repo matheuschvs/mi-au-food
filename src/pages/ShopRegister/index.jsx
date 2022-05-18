@@ -84,7 +84,7 @@ export const ShopRegister = () => {
   };
 
   return (
-    <Container>
+    <Container animate={defaultAnimation} transition={defaultTransition}>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
         <IMG6 src={image6} alt="imagem gato tela registro" />

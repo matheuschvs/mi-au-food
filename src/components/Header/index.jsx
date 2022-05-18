@@ -28,7 +28,7 @@ export const Header = () => {
 
   return (
     <>
-      {/* <HeaderBar animate={defaultAnimation} transition={defaultTransition}>
+      <HeaderBar animate={defaultAnimation} transition={defaultTransition}>
         <h1>Mi-Au Food</h1>
         <div>
           <button onClick={() => goHome()} type="button">
@@ -40,15 +40,15 @@ export const Header = () => {
           <CartIcon src={cartIcon} alt="imagem carrinho" />
           <MenuIcon src={menuIcon} alt="imagem menu" />
         </ContainerIMG>
-      </HeaderBar> */}
-      <HeaderLogin>
+      </HeaderBar>
+      {/* <HeaderLogin>
         <h1>Mi-Au Food</h1>
         <LogedIcons>
           <CartIcon src={cartIcon} alt="imagem carrinho" />
           <h3>Fulano</h3>
           <userIcon src={userIcon} alt="imagem usuario" />
         </LogedIcons>
-      </HeaderLogin>
+      </HeaderLogin> */}
     </>
   );
 };
