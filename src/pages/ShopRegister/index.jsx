@@ -15,13 +15,11 @@ import {
 } from './style';
 import image5 from '../../assets/TesteGatinho.png';
 import image6 from '../../assets/TesteGatinho1.png';
+
+import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { Input } from '../../components/Input';
 
-/* eslint-disable */
-
 export const ShopRegister = () => {
-  /* eslint-disable */
-
   const { signUp } = useContext(AuthContext);
 
   const navigate = useNavigate();

@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "styled-tools": "^1.7.2",
-    "react-animations": "^1.0.0",
     "@hookform/resolvers": "^2.8.8",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -12,6 +10,7 @@
     "axios": "^0.27.2",
     "framer-motion": "^6.3.3",
     "react": "^18.1.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^18.1.0",
     "react-feather": "^2.0.9",
     "react-hook-form": "^7.31.1",
@@ -19,6 +18,8 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.1",
     "styled-components": "^5.3.5",
+    "styled-react-modal": "^3.0.0",
+    "styled-tools": "^1.7.2",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"
   },
