@@ -8,7 +8,7 @@ export const Main = styled.div`
     
   }
 
-  @media (max-width: 798px) {
+  @media (max-width: 1296px) {
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
@@ -28,6 +28,14 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  background-color: ;
+  &:hover {
+    background-color: #fcdede;
+  }
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 
   h2 {
     font-size: 40px;
@@ -71,7 +79,7 @@ export const PetContainer = styled.div`
   p {
     padding: 5px;
   }
-  @media (max-width: 798px) {
+  @media (max-width: 1296px) {
     width: 95%;
   }
 `;

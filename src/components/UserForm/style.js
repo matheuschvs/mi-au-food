@@ -11,6 +11,14 @@ export const Form = styled.div`
     text-align: center;
     font-size: 30px;
     cursor: pointer;
+    &:hover {
+      background-color: none;
+      color:#4AD44A;
+    }
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    
+    }
   }
 `;
 
@@ -18,7 +26,6 @@ export const Input = styled.input`
   height: 40px;
   background: #ffa459;
   margin-bottom: 3vh;
-  border-radius: 10px;
   border: none;
   font-family: Roboto;
   text-align: center;
