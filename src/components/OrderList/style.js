@@ -52,8 +52,3 @@ export const Order = styled.div`
   
   }
 `;
-export const MarginOrder = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 40px;
-`;
