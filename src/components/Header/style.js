@@ -85,6 +85,22 @@ export const HeaderLogin = styled.header`
     }
   }
 
+  p {
+    display: flex;
+    background-color: var(--background);
+    border-radius: 100%;
+    width: 1.5rem;
+    font-size: 1rem;
+    padding-top: 0.3rem;
+    font-weight: 600;
+    height: 1.5rem;
+    margin-left: -20px;
+    margin-top: -22px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   h3 {
     display: none;
     margin-right: 13px;
