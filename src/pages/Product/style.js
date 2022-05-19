@@ -71,7 +71,7 @@ border: none;
 border-radius: 1rem;
 background-color: var(--secondary-color);
 color: var(--background);
-margin: 20px;
+margin: 8px;
 
 &:hover{
   background-color: var(--secondary-color-2);

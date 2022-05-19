@@ -13,13 +13,18 @@ left: 0;
 display: ${props => (props.modal ? 'flex' : 'none')};
 justify-content: center;
 align-items: center;
+font-family: 'Ubuntu';
+
+label{
+  color: var(--background)
+}
 
 div{
   display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--secondary-color);
+    background: var(--secondary-color-1);
     width: 300px;
     height: 450px;
     border-radius: 1rem;
@@ -40,6 +45,7 @@ input{
     border: none;
     border-radius: 1rem;
     width: 90%;
+    font-family: 'Ubuntu';
 }
 
 `
