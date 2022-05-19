@@ -116,3 +116,11 @@ export const Todo = styled.div``;
 export const Esconder = styled.div`
   display: none;
 `;
+export const Final = styled.div`
+  button {
+    width: 250px;
+    height: 30px;
+    background-color: red;
+    color: white;
+  }
+`;
