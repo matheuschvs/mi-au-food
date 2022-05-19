@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/auth';
 import {
   BackgroundIMG,
@@ -77,9 +78,33 @@ export const ShopRegister = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = data => {
-    const newData = { ...data, type: 'shop' };
-    signUp(newData, navigate('/entrar', { replace: true }));
+  const onSubmitFunction = async ({
+    name,
+    cep,
+    email,
+    password,
+    cidade,
+    estado,
+  }) => {
+    try {
+      const newData = {
+        name,
+        cep,
+        email,
+        password,
+        cidade,
+        estado,
+        type: 'shop',
+      };
+      console.log(newData);
+      await signUp(
+        newData,
+        navigate('/entrar', { replace: true }),
+        toast.success(`Bem vindo/a ${name}`),
+      );
+    } catch (err) {
+      toast.error('Algo deu errado, confira todos os campos');
+    }
   };
 
   return (

@@ -3,8 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from '../../context/auth';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/auth';
 import {
   BackgroundIMG,
   Container,
@@ -52,11 +52,24 @@ export const UserRegister = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = data => {
-    const newData = { ...data, type: 'user' };
-    signUp(newData, navigate('/entrar', { replace: true }) && toast.success(`Bem vindo/a ${data.name}`));
+  const onSubmitFunction = async ({ name, email, password }) => {
+    try {
+      const newData = {
+        name,
+        email,
+        password,
+        type: 'user',
+      };
+      console.log(newData);
+      await signUp(
+        newData,
+        navigate('/entrar', { replace: true }),
+        toast.success(`Bem vindo/a ${name}`),
+      );
+    } catch (err) {
+      toast.error('Algo deu errado, confira todos os campos');
+    }
   };
-
   return (
     <Container>
       <Title>Mi-Au Food</Title>
