@@ -169,6 +169,11 @@ export const ContainerIMG = styled.section`
 export const LogedIcons = styled.section`
   display: flex;
   align-items: center;
+
+  button {
+    margin-right: 1rem;
+  }
+
   @media (min-width: 1024px) {
   }
 `;
