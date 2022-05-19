@@ -10,6 +10,8 @@ import { Lista } from './styles';
 export const InfoUser = ({ authAxios }) => {
   const [dados, setDados] = useState([]);
 
+  console.log(dados);
+
   useEffect(() => {
     authAxios
       .get(`https://json-server-kenziegroup.herokuapp.com/request`)

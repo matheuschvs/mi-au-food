@@ -11,6 +11,7 @@
 import { useState } from 'react';
 import { Card } from '../../components/Card';
 import { useCart } from '../../context/cart';
+import { useNavigate } from 'react-router-dom';
 import {
   Main,
   Botoes,
@@ -20,6 +21,7 @@ import {
   Not,
   Todo,
   Esconder,
+  Final,
 } from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
@@ -41,6 +43,7 @@ export const ShoppingCartPage = () => {
   const [final, setFinal] = useState([]);
   const [esconder, setEsconder] = useState(false);
   const [idPedido, setIdPedido] = useState();
+  const navigate = useNavigate();
 
   console.log();
 
@@ -72,14 +75,16 @@ export const ShoppingCartPage = () => {
           user: { name, email, tel, address, cpf, type },
         },
       )
+      .then(() => navigate('/perfil/usuario', { replace: true }))
 
       .catch(err => console.log(err));
   };
 
   return (
     <Todo>
-      <InfoUser authAxios={authAxios} />
-      <Esconder></Esconder>
+      <Esconder>
+        <InfoUser authAxios={authAxios} />
+      </Esconder>
 
       <Carrinho>
         <h1>Carrinho</h1>
@@ -114,15 +119,19 @@ export const ShoppingCartPage = () => {
           </ul>
           <Total>
             <h2>
-              Total({cart.length} item) R$ {cartReducer}
+              Total({cart.length} item) R${' '}
+              {cartReducer.toFixed(2).replace('.', ',')}
             </h2>
+            <Final>
+              {' '}
+              <button onClick={finalizarComprar}>Finalizar Comprar</button>
+            </Final>
             <button onClick={cleanCart} type="button">
               Limpar o carrinho
             </button>
           </Total>
         </Main>
       )}
-      <button onClick={finalizarComprar}>Finalizar Comprar</button>
     </Todo>
   );
 };
