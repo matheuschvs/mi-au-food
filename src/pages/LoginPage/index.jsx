@@ -17,8 +17,8 @@ export const LoginPage = () => {
   const from = location.state?.from?.pathname || null;
 
   const schema = yup.object().shape({
-    email: yup.string().required('É preciso um email para acessar o site'),
-    password: yup.string().required('É preciso uma senha para acessar o site'),
+    email: yup.string().email('E-mail inválido').required('E-mail obrigatória'),
+    password: yup.string().required('Senha obrigatória'),
   });
   const {
     register,
@@ -45,6 +45,7 @@ export const LoginPage = () => {
 
   const onSubmitFunction = data => {
     signIn(data, redirectTo);
+    console.log(errors);
   };
 
   return (
@@ -60,7 +61,7 @@ export const LoginPage = () => {
             label="Email"
             name="email"
             register={register}
-            error={errors.name?.message}
+            error={errors.email?.message}
           ></Input>
 
           <Input
