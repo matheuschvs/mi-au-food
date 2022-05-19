@@ -28,7 +28,7 @@ import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
-import { InfoUser } from '../../components/InfoUser';
+import { OrderList } from '../../components/OrderList';
 
 export const ShoppingCartPage = () => {
   const {
@@ -83,7 +83,7 @@ export const ShoppingCartPage = () => {
   return (
     <Todo>
       <Esconder>
-        <InfoUser authAxios={authAxios} />
+        <OrderList authAxios={authAxios} />
       </Esconder>
 
       <Carrinho>
