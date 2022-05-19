@@ -32,18 +32,15 @@ export const OrderList = () => {
     <MarginOrder>
       <OrderBox>
         <h3>Seus Pedidos</h3>
-        <Order>
-          <ul>
-            {dados.map(item => (
-              <li key={item.id}>
-                <p>Pedido: id {item.id}</p>
-                <p>Status: {item.status}</p>
-                <p>Valor: R$ {item.totalCarrinho}</p>
-                <p>Ok</p>
-              </li>
-            ))}
-          </ul>
-        </Order>
+
+        {dados.map(item => (
+          <Order>
+            <p>Pedido: id {item.id}</p>
+            <p>Status: {item.status}</p>
+            <p>Valor: R$ {item.totalCarrinho}</p>
+            <p>Ok</p>
+          </Order>
+        ))}
       </OrderBox>
     </MarginOrder>
   );

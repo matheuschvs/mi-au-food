@@ -6,8 +6,6 @@ import { DivInput, Form, Input } from './style';
 import { useAuth } from '../../context/auth';
 
 export const FormUser = ({ toggleModal }) => {
-  const userObject = JSON.parse(localStorage.getItem('@mi-au-food:user'));
-
   const { editProfile } = useAuth();
 
   const schema = yup.object().shape({

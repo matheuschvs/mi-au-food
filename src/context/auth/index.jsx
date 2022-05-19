@@ -35,7 +35,10 @@ export const AuthProvider = ({ children }) => {
   const Logoff = () => {
     setUser({});
     setToken('');
+<<<<<<< HEAD
+=======
     toast.success('Até a próxima!');
+>>>>>>> 08990eaef1b91d4585b1fd2e7bd8e9f83158bcc2
     localStorage.clear();
   };
 
@@ -75,6 +78,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+<<<<<<< HEAD
+  const editProfile = data => {
+    API.patch(`users/${user.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(response => {
+      setUser(response.data);
+      localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
+    });
+  };
+=======
   const editProfile = useCallback(
     data => {
       API.patch(`users/${user.id}`, data, {
@@ -88,6 +103,7 @@ export const AuthProvider = ({ children }) => {
     },
     [token, user.id],
   );
+>>>>>>> 08990eaef1b91d4585b1fd2e7bd8e9f83158bcc2
 
   const value = useMemo(
     () => ({
@@ -97,6 +113,7 @@ export const AuthProvider = ({ children }) => {
       signUp,
       editProfile,
       Logoff,
+      setUser,
     }),
     [user, token, editProfile],
   );

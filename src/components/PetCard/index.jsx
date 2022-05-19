@@ -9,14 +9,15 @@ import { DivInput, Form, Input } from '../UserForm/style';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/auth';
 
 export const PetCard = () => {
   const userObject = JSON.parse(localStorage.getItem('@mi-au-food:user'));
   const token = localStorage.getItem('@mi-au-food:token');
-  const [pets, setPets] = useState([]);
   const id = userObject.id;
   const baseUrl = `https://json-server-kenziegroup.herokuapp.com/users/${id}`;
-
+  const { user } = useAuth();
+  const [pets, setPets] = useState(user.pets || []);
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
 
@@ -38,17 +39,17 @@ export const PetCard = () => {
     });
   }
 
-  useEffect(() => {
-    axios
-      .get(baseUrl, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(response => {
-        setPets(response.data.pets);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(baseUrl, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //     .then(response => {
+  //       setPets(response.data.pets);
+  //     });
+  // }, []);
 
   const patchAxios = data => {
     axios.patch(
@@ -148,8 +149,8 @@ export const PetCard = () => {
                         name="img"
                         register={register}
                       ></Input>
+                      <button type="submit">Enviar</button>
                     </DivInput>
-                    <p type="submit">Enviar</p>
                   </Form>
                 </StyledModal>
               </PetContainer>
