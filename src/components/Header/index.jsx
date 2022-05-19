@@ -19,6 +19,7 @@ import userIcon from '../../assets/UserIconRed.png';
 import logoutIcon from '../../assets/logoutIcon.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { AuthContext } from '../../context/auth';
+import { useCart } from '../../context/cart';
 
 export const Header = () => {
   /* eslint-disable */
@@ -30,6 +31,8 @@ export const Header = () => {
   const [modalMobile, setModalMobile] = useState(false);
 
   const [modalLogoff, setModalLogoff] = useState(false);
+
+  const { cart } = useCart();
 
   const showModal = () => {
     setUserModal(!userModal);
@@ -86,7 +89,7 @@ export const Header = () => {
               src={cartIcon}
               alt="imagem carrinho"
             />
-            <p>1</p>
+            {cart.length > 0 && <p>{cart.length}</p>}
             <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
             <h3>{user.name}</h3>
             <IconUser onClick={showModal} src={userIcon} alt="imagem usuario" />
