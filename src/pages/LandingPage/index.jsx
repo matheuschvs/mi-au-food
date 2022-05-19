@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { Instagram, GitHub, Linkedin } from 'react-feather';
 
-import { Link } from 'react-router-dom';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 
 import { GoToButton } from '../../components/GoToButton';
 import { Button } from '../../components/Button';
+import { Carousel } from '../../components/Carousel';
 
 import catImg from '../../assets/cat.svg';
 import dogImg from '../../assets/dog.svg';
@@ -36,6 +37,7 @@ export const LandingPage = () => {
           <h1>Mi-Au Food</h1>
           <h2>Seu pet feliz de verdade</h2>
         </Opening>
+        <Carousel />
         <Cards>
           <article>
             <h3>Seu gato mais feliz com as rações premium</h3>
@@ -59,7 +61,7 @@ export const LandingPage = () => {
         <Partners>
           <h3>Torne-se um parceiro e encontre os clientes mais próximos</h3>
           <Link to="/registro/loja">
-            <Button>Quero me registrar</Button>
+            <Button text="Quero me registrar"></Button>
           </Link>
         </Partners>
         <PartnersCount>

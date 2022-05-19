@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from '../layouts/Layout';
 import { RequireAuth } from './RequireAuth';
+import { useAuth } from '../context/auth';
 
 import { LandingPage } from '../pages/LandingPage';
 import { Home } from '../pages/Home';
@@ -15,31 +16,22 @@ import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
 
 export const Router = () => {
+  const { user } = useAuth();
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />
-        <Route path="perfil">
-          <Route
-            path="usuario"
-            element={
-              <RequireAuth>
-                <UserProfile />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="loja"
-            element={
-              <RequireAuth>
-                <ShopProfile />
-              </RequireAuth>
-            }
-          />
-          <Route index element={<NoContent />} />
-        </Route>
+        <Route
+          path="perfil"
+          element={
+            <RequireAuth>
+              {user.type === 'user' ? <UserProfile /> : <ShopProfile />}
+            </RequireAuth>
+          }
+        />
         <Route
           path="carrinho"
           element={
@@ -54,7 +46,7 @@ export const Router = () => {
       <Route path="/registro">
         <Route path="usuario" element={<UserRegister />} />
         <Route path="loja" element={<ShopRegister />} />
-        <Route index element={<NoContent />} />
+        <Route index element={<UserRegister />} />
       </Route>
     </Routes>
   );
