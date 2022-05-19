@@ -12,12 +12,7 @@ export const Container = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 245, 245, 0.8) 39.84%,
-      rgba(231, 105, 0, 0.24) 76.04%,
-      rgba(231, 0, 0, 0.8) 100%
-    );
+    background: var(--gradient);
   }
 `;
 
@@ -165,7 +160,7 @@ export const Form = styled.form`
     text-align: center;
     width: 60vw;
     max-width: 290px;
-    color: #ffffff;
+    color: var(--background);
     font-size: 1.2rem;
   }
   button {
@@ -183,7 +178,7 @@ export const Form = styled.form`
     border: 1px dashed rgba(231, 0, 0, 0.95);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    color: #fff5f5;
+    color: var(--background);
     margin-top: 1.2rem;
     &:hover {
       background: rgba(200, 0, 0, 0.95);
@@ -191,14 +186,14 @@ export const Form = styled.form`
   }
   h3 {
     text-align: center;
-    color: #fff5f5;
+    color: var(--background);
     font-size: 0.8rem;
     margin-top: 1.4rem;
   }
   a {
     text-decoration: none;
     text-align: center;
-    color: #fff5f5;
+    color: var(--background);
     font-size: 0.8rem;
     margin-top: 1.4rem;
     cursor: pointer;
@@ -260,7 +255,7 @@ export const Form = styled.form`
       border: 1px dashed rgba(231, 0, 0, 0.95);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
-      color: #fff5f5;
+      color: var(--background);
       margin-left: 10%;
       margin-top: 1.8rem;
     }

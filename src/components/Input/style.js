@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InputStyled = styled.div`
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #cddfe3;
+  border-bottom: 2px solid var(--background-2);
   width: 70%;
   max-height: 5vh;
   min-height: 21px;

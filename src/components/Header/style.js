@@ -14,7 +14,7 @@ export const HeaderBar = styled.header`
 
   h1 {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--background);
     font-style: var(--title-1);
     cursor: pointer;
     font-weight: 500;
@@ -54,7 +54,7 @@ export const HeaderBar = styled.header`
     }
     h3 {
       margin-right: 100px;
-      color: #ffffff;
+      color: var(--background);
       font-size: 1rem;
       font-weight: 400;
       cursor: pointer;
@@ -77,12 +77,18 @@ export const HeaderLogin = styled.header`
 
   h1 {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: var(--background);
     font-style: var(--title-1);
     cursor: pointer;
     font-weight: 500;
     margin-left: 10px;
   }
+
+  button {
+    background: var(--background);
+    color: var(--title);
+  }
+
   @media (min-width: 420px) {
     h1 {
       font-size: 2rem;
@@ -108,7 +114,7 @@ export const HeaderLogin = styled.header`
   h3 {
     display: none;
     margin-right: 13px;
-    color: #ffffff;
+    color: var(--background);
     font-size: 1rem;
     font-weight: 400;
   }
@@ -355,7 +361,7 @@ export const ContainerModalLogoff = styled.div`
       border: 1px dashed rgba(231, 0, 0, 0.95);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
-      color: #fff5f5;
+      color: var(--background);
       margin-top: 1.2rem;
       &:hover {
         background: rgba(200, 0, 0, 0.95);
