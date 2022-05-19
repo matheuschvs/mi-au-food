@@ -13,16 +13,12 @@ import {
   ContainerIMG,
   Title,
 } from './style';
-import image5 from '../../assets/gatoEngrenagem1.svg';
-import image6 from '../../assets/gatoengrenagem.svg';
-import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
+import image5 from '../../assets/TesteGatinho.png';
+import image6 from '../../assets/TesteGatinho1.png';
+
 import { Input } from '../../components/Input';
 
-/* eslint-disable */
-
 export const ShopRegister = () => {
-  /* eslint-disable */
-
   const { signUp } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -71,7 +67,6 @@ export const ShopRegister = () => {
     cidade: yup.string().required('Cidade obrigatória'),
     estado: yup.string(),
     cep: yup.string().required('CEP obrigatório'),
-    email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   });
 
   const {
@@ -88,7 +83,7 @@ export const ShopRegister = () => {
   };
 
   return (
-    <Container animate={defaultAnimation} transition={defaultTransition}>
+    <Container>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
         <IMG6 src={image6} alt="imagem gato tela registro" />
@@ -107,7 +102,9 @@ export const ShopRegister = () => {
           <section>
             <select name="estado" {...register('estado')}>
               {selects.map(item => (
-                <option value={item.id}>{item.text}</option>
+                <option key={item.id} value={item.id}>
+                  {item.text}
+                </option>
               ))}
             </select>
             <Input

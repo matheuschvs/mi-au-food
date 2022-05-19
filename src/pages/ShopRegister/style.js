@@ -1,6 +1,7 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
 import RegisterBG from '../../assets/imageBackground.png';
+import { motion } from 'framer-motion';
 
 export const Container = styled(motion.div)`
   align-items: center;
@@ -19,6 +20,10 @@ export const Container = styled(motion.div)`
       rgba(231, 105, 0, 0.24) 76.04%,
       rgba(231, 0, 0, 0.8) 100%
     );
+
+    section {
+      display: block;
+    }
   }
 `;
 
@@ -26,7 +31,7 @@ export const Title = styled.h1`
   position: absolute;
   font-style: normal;
   text-align: center;
-  top: 170px;
+  margin-top: 170px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -35,6 +40,7 @@ export const Title = styled.h1`
   text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
   color: rgba(231, 0, 0, 0.95);
   @media (min-width: 1024px) {
+    margin-top: 0px;
     top: 5%;
     left: 12%;
     transform: translate(-50%, -50%);
@@ -53,22 +59,24 @@ export const BackgroundIMG = styled.div`
 `;
 
 export const IMG5 = styled.img`
-  width: 36vw;
-  height: 59vh;
-  margin-top: 15vh;
-  transform: rotate(20deg);
+  width: 32rem;
+  height: 32rem;
+  margin-left: 6vw;
+  margin-top: 18vh;
+  transform: rotate(15deg);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   @media (min-width: 1024px) {
-    margin-left: 10vw;
   }
 `;
 
 export const IMG6 = styled.img`
-  transform: rotate(-30deg);
+  transform: rotate(-20deg);
   @media (min-width: 1024px) {
     position: absolute;
-    width: 26.125vw;
-    height: 39vh;
+    margin-bottom: 5vh;
+    margin-left: -3vw;
+    width: 23rem;
+    height: 23rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
@@ -79,7 +87,7 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 580px;
+    max-width: 500px;
     margin-left: 5vw;
     justify-content: center;
     align-items: center;
@@ -88,8 +96,8 @@ export const ContainerIMG = styled.section`
     display: block;
     column-count: 2;
     margin: 0 auto;
-    max-width: 700px;
-    margin-left: 5vw;
+    max-width: 500px;
+    margin-left: 4vw;
     justify-content: center;
     align-items: center;
   }
@@ -106,6 +114,17 @@ const appearFromLeft = keyframes`
     }
 `;
 
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
+
 export const Form = styled.form`
   animation: ${appearFromLeft} 1s;
   display: flex;
@@ -114,8 +133,8 @@ export const Form = styled.form`
   width: 90%;
   max-width: 380px;
   min-width: 320px;
+  min-height: 600px;
   height: 65vh;
-  min-height: 620px;
   margin: 0 auto;
   margin-top: 200px;
   background: var(--primary-color);
@@ -140,7 +159,6 @@ export const Form = styled.form`
     margin: 0 auto;
     width: 70%;
 
-
     select {
       height: 45px;
       margin-top: 1.4rem;
@@ -164,9 +182,8 @@ export const Form = styled.form`
     div {
       width: 50%;
     }
-
-    }
   }
+
   h1 {
     line-height: 20px;
     text-align: center;
@@ -211,16 +228,17 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: none;
+    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
-    width: 55vw;
-    max-width: 55vw;
-    height: 60vh;
+    width: 60vw;
+    max-width: 60vw;
+    height: 70vh;
     border-radius: 550px 0px 0px 550px;
     margin: 0px;
     opacity: 1;
     box-shadow: none;
     backdrop-filter: none;
+
     div,
     h1,
     h3,
@@ -233,9 +251,11 @@ export const Form = styled.form`
     }
   }
   @media (min-width: 1200px) {
-    width: 45vw;
-    max-width: 50vw;
+    width: 50vw;
+    max-width: 55vw;
+    position: absolute;
     height: 75vh;
+    right: 0%;
     div {
       margin-left: 10%;
     }
@@ -255,7 +275,7 @@ export const Form = styled.form`
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 16px;
       gap: 10px;
       width: 12vh;
       height: 45px;
