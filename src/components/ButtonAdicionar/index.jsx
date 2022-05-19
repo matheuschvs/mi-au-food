@@ -8,12 +8,15 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from '../UserForm/style';
 import { useAuth } from '../../context/auth';
+import { API } from '../../services/api';
 
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
 
-  const { user } = useAuth();
+  const { user, setUser, token } = useAuth();
+
+  const [pets, setPets] = useState(user.pets || []);
 
   function toggleModal(e) {
     setOpacity(0);
@@ -33,21 +36,8 @@ export const ButtonAdicionar = ({ text }) => {
     });
   }
 
-  // const addPet = data => {
-  //   API.put(`/users{user.id}`,data, {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     }
-  //   })
-  // };
-
   const schema = yup.object().shape({
-    name: yup
-      .string()
-      .matches(
-        /^[a-zA-Z]+$/,
-        'Nome de usuário inválido. Somente letras, sem espaços.',
-      ),
+    name: yup.string(),
     email: yup.string().required('Digite sua senha para continuar'),
     password: yup.string().required('Digite sua senha para continuar'),
     breed: yup.string(),
@@ -62,6 +52,35 @@ export const ButtonAdicionar = ({ text }) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const addPet = data => {
+    API.put(`/users/${user.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(response => {
+      setUser(response.data);
+      return localStorage.setItem(
+        '@mi-au-food:user',
+        JSON.stringify(response.data),
+      );
+    });
+  };
+
+  //cath error e toast ^^^^
+
+  const submitChange = data => {
+    const dataPet = {
+      ...user,
+      password: data.password,
+      pets: [
+        ...pets,
+        { name: data.name, breed: data.breed, age: data.age, img: data.img },
+      ],
+    };
+    addPet(dataPet);
+    toggleModal();
+  };
 
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
@@ -97,7 +116,7 @@ export const ButtonAdicionar = ({ text }) => {
               type="text"
               label="Raça"
               name="breed"
-              {...register('bred')}
+              {...register('breed')}
             ></Input>
             <Input
               placeholder="Idade"
@@ -121,8 +140,8 @@ export const ButtonAdicionar = ({ text }) => {
               name="password"
               {...register('password')}
             ></Input>
+            <button type="submit">Enviar</button>
           </DivInput>
-          <p type="submit">Enviar</p>
         </Form>
       </StyledModal>
     </ModalProvider>

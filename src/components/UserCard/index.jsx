@@ -1,7 +1,6 @@
 /* eslint-disable*/
-import axios from 'axios';
 import { User } from 'react-feather';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   ButtonEditar,
   Container,
@@ -15,11 +14,6 @@ import { FormUser } from '../../components/UserForm';
 import { useAuth } from '../../context/auth';
 
 export const UserCard = () => {
-  // const userObject = JSON.parse(localStorage.getItem('@mi-au-food:user'));
-  // const token = localStorage.getItem('@mi-au-food:token');
-  // const [newInfo, SetNewInfo] = useState([]);
-  // const id = userObject.id;
-  // const baseUrl = `https://json-server-kenziegroup.herokuapp.com/users/${id}`;
   const { user } = useAuth();
 
   const [isOpen, setIsOpen] = useState(false);

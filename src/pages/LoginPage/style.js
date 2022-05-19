@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import backMobile from '../../assets/cachorro-piscando.svg';
 
 export const MainContainer = styled.div`
-  background: linear-gradient(180deg, rgba(255, 245, 245, 0.8) 39.84%, rgba(231, 105, 0, 0.24) 76.04%, rgba(231, 0, 0, 0.8) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 245, 245, 0.8) 39.84%,
+    rgba(231, 105, 0, 0.24) 76.04%,
+    rgba(231, 0, 0, 0.8) 100%
+  );
   min-height: 100vh;
 
   header {
@@ -27,7 +32,8 @@ export const MainContainer = styled.div`
       margin-bottom: 1rem;
 
       h2 {
-        text-shadow: 2px 0 var(--title), -2px 0 var(--title), 0 -2px var(--title), 0 2px var(--title);
+        text-shadow: 2px 0 var(--title), -2px 0 var(--title),
+          0 -2px var(--title), 0 2px var(--title);
       }
     }
   }
@@ -143,7 +149,6 @@ export const Form = styled.form`
     input {
       height: 45px;
     }
-  
   }
 `;
 export const IMG = styled.img`

@@ -40,7 +40,7 @@ export const Container = styled.div`
     width: 100%;
   }
   &:hover {
-    background-color: #fc943d;
+    background-color: var(--secondary-color-1);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -97,14 +97,15 @@ export const ButtonEditar = styled.p`
   margin-left: 10px;
   width: 100px;
   font-size: 30px;
-  background-color: #e76900;
+
   &:not(:last-child) {
   }
   &:hover {
     color: ice;
+    background-color: var(--secondary-color);
   }
-  background-color: #ffa459;
-  color: #fff5f5;
+  background-color: var(--secondary-color-1);
+  color: var(--background);
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OrderBox = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color-1);
   margin-bottom: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -11,7 +11,7 @@ export const OrderBox = styled.div`
     width: 350px;
     padding-left: 30px;
   }&:hover {
-    background-color: #fa9948;
+    background-color: var(--secondary-color);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -30,26 +30,25 @@ export const OrderBox = styled.div`
 `;
 
 export const Order = styled.div`
+
 @media (max-width: 1296px) {
   flex-direction: row;
 }
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
   margin-top: 2px;
-  
-  background-color: #fff5f5;
+  background-color: var(--background);
   padding: 10px;
+
   p {
     margin-top: 5px;
-    
   }&:hover {
-    background-color: #fcdede;
+    background-color: var(--quaternary-color-1);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  
   }
 `;
 export const MarginOrder = styled.div`

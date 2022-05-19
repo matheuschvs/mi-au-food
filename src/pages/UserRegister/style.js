@@ -14,9 +14,9 @@ export const Container = styled.div`
     justify-content: center;
     background: linear-gradient(
       180deg,
-      rgba(255, 245, 245, 0.8) 39.84%,
-      rgba(231, 105, 0, 0.24) 76.04%,
-      rgba(231, 0, 0, 0.8) 100%
+      var(--background) 39.84%,
+      var(--secondary-color-2) 76.04%,
+      var(--primary-color) 100%
     );
   }
 `;
@@ -31,8 +31,9 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 2rem;
   line-height: 28px;
-  text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
-  color: rgba(231, 0, 0, 0.95);
+  text-shadow: -1px 0px var(--background), 1px 0px var(--background),
+    0px -1px var(--background), 0px 1px var(--background);
+  color: var(--primary-color);
   @media (min-width: 1024px) {
     margin-top: 0px;
     top: 5%;
@@ -165,7 +166,7 @@ export const Form = styled.form`
     text-align: center;
     width: 60vw;
     max-width: 290px;
-    color: #ffffff;
+    color: var(--background);
     font-size: 1.2rem;
   }
   button {
@@ -179,26 +180,26 @@ export const Form = styled.form`
     height: 40px;
     left: 1225px;
     top: 597.4px;
-    background: rgba(231, 0, 0, 0.95);
-    border: 1px dashed rgba(231, 0, 0, 0.95);
+    background: var(--primary-color);
+    border: 1px dashed var(--primary-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    color: #fff5f5;
+    color: var(--background);
     margin-top: 1.2rem;
     &:hover {
-      background: rgba(200, 0, 0, 0.95);
+      background: var(--primary-color);
     }
   }
   h3 {
     text-align: center;
-    color: #fff5f5;
+    color: var(--primary-color);
     font-size: 0.8rem;
     margin-top: 1.4rem;
   }
   a {
     text-decoration: none;
     text-align: center;
-    color: #fff5f5;
+    color: var(--primary-color);
     font-size: 0.8rem;
     margin-top: 1.4rem;
     cursor: pointer;
@@ -256,11 +257,11 @@ export const Form = styled.form`
       height: 45px;
       left: 1225px;
       top: 597.4px;
-      background: rgba(231, 0, 0, 0.95);
-      border: 1px dashed rgba(231, 0, 0, 0.95);
+      background: var(--primary-color);
+      border: 1px dashed var(--primary-color);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
-      color: #fff5f5;
+      color: var(--primary-color);
       margin-left: 10%;
       margin-top: 1.8rem;
     }
