@@ -27,12 +27,7 @@ export const LoginPage = () => {
   });
 
   const redirectTo = async (user) => {
-    console.log(user)
-    if(user.cpf){
-      navigate('/perfil/usuario', { replace: true });
-    } else if (user.type ==='shop'){
-      navigate('/perfil/loja', { replace: true });
-    }
+    navigate('/perfil', { replace: true });
   };
 
   const onSubmitFunction = data => {

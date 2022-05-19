@@ -38,11 +38,10 @@ export const ShopForm = ({modal, setModal})=>{
   })
 
   const onSubmit = (data) => {
-    data.type = "shop"
-    editProfile(data)
+    const newData = {...data, type: 'shop'}
+    editProfile(newData)
     setModal(false)
   }
-
 
   return(
     <Dialog modal={modal}>

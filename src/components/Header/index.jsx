@@ -66,7 +66,7 @@ export const Header = () => {
   };
 
   const goUserProfile = () => {
-    return navigate('/perfil/usuario', { replace: true });
+    return navigate('/perfil', { replace: true });
   };
 
   return (

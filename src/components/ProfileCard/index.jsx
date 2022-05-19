@@ -8,7 +8,7 @@ import { ShopForm } from "../ShopForm"
 export const ProfileCard = () =>{
 
   const {user} = useAuth();
-  const [modal, setModal]= useState(open)
+  const [modal, setModal]= useState(false)
   const [adress, setAdress] = useState({})
   
   useEffect(()=>{
