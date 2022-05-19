@@ -20,14 +20,14 @@ export const ProfileCard = () => {
   return (
     <>
       <Section>
-        <p>Nome: {user.name}</p>
-        <p>Email: {user.email}</p>
+        <p><span>Nome:</span>  {user.name}</p>
+        <p><span>Email:</span> {user.email}</p>
         <p>
-          Cidade: {adress.localidade}, {adress.uf}
+          <span>Cidade:</span> {adress.localidade}, {adress.uf}
         </p>
-        <p>Contato: {user.contato}</p>
+        <p><span>Contato:</span> {user.contato}</p>
         <p>
-          Endereço: {adress.logradouro} - {adress.bairro}
+          <span>Endereço:</span> {adress.logradouro} - {adress.bairro}
         </p>
         <ProductButton onClick={() => setModal(true)}>Editar</ProductButton>
       </Section>
