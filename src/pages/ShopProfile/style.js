@@ -5,15 +5,15 @@ export const Main = styled.main`
   max-width: 1200px;
   width: 95%;
   margin: auto;
-  p{
+  p {
     font-family: 'Ubuntu';
   }
 
-  h2{
+  h2 {
     margin: 20px;
   }
 
-  span{
+  span {
     font-weight: 700;
   }
 `;
@@ -25,4 +25,4 @@ export const Li = styled.li`
   margin: 4px;
   border-bottom: 2px solid var(--secondary-color);
   height: 40px;
-`
+`;
