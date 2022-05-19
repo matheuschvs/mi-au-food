@@ -43,18 +43,6 @@ export const UserCard = () => {
     });
   }
 
-  // useEffect(() => {
-  //   axios
-  //     .get(baseUrl, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //     .then(response => {
-  //       SetNewInfo(response.data);
-  //     });
-  // }, []);
-
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
       <Container>
@@ -83,6 +71,9 @@ export const UserCard = () => {
           <p>
             <strong>CPF:</strong> {user.cpf}
           </p>
+          <ButtonEditar text="Editar" onClick={toggleModal}>
+            Editar
+          </ButtonEditar>
         </InfoDiv>
         <StyledModal
           isOpen={isOpen}
@@ -95,9 +86,6 @@ export const UserCard = () => {
         >
           <FormUser toggleModal={toggleModal} />
         </StyledModal>
-        <ButtonEditar text="Editar" onClick={toggleModal}>
-          Editar
-        </ButtonEditar>
       </Container>
     </ModalProvider>
   );

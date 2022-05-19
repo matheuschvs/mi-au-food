@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
 
 export const StyledModal = Modal.styled`
+  min-width: 310px;
   width: 30%;
-  height: 50%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;

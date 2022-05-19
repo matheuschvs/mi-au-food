@@ -99,6 +99,7 @@ export const PetCard = () => {
                   <p>Name: {info.name}</p>
                   <p>Raça: {info.breed}</p>
                   <p>Idade: {info.age}</p>
+                  <ButtonEditar onClick={toggleModal}>Editar</ButtonEditar>
                 </InfoDiv>
                 <StyledModal
                   isOpen={isOpen}
@@ -151,7 +152,6 @@ export const PetCard = () => {
                     <p type="submit">Enviar</p>
                   </Form>
                 </StyledModal>
-                <ButtonEditar onClick={toggleModal}>Editar</ButtonEditar>
               </PetContainer>
             );
           })}

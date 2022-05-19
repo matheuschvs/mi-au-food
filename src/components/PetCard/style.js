@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
 
 export const StyledModal = Modal.styled`
+  min-width: 310px;
   width: 30%;
   height: 50%;
   display: flex;
@@ -19,10 +20,12 @@ export const FadingBackground = styled(BaseModalBackground)`
 
 export const PetContainer = styled.div`
   background-color: #ffa459;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin: 20px 30px 20px 30px;
+  margin-bottom: 20px;;
   height: 170px;
+  padding: 10px;
   
   border-radius: 100px 0px 0px 100px;
   
@@ -34,7 +37,6 @@ export const PetContainer = styled.div`
   
   }
   img {
-    margin-left: 10px;
     height: 150px;
     width: 150px;
     border-radius: 258px;
@@ -49,33 +51,35 @@ export const PetContainer = styled.div`
   }
 
   p {
-    padding: 5px;
-    margin: 5px;
+
     font-size: 20px;
     
   }
-  @media (max-width: 1296px) {
-    width: 95%;
-    height: 200px;
-    margin: 20px 30px 20px 30px;
-    img {
-      border-radius: 200px;
-      height: 190px;
-      width: 190px;
-    }
-  }
-  @media (max-width: 800px) {
-    width: 220px;
+  @media (max-width: 600px) {
+    width: 300px;
     height: 100%;
-    border-radius: 300px 300px 0px 0px;
-    flex-direction: column;
-    padding: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    border-radius: 0px 0px 0px 0px;
+
+  img {
+    width: 100%;
+    height: 100px;
+    border-radius: 0px;
+    margin-left: 0px;
   }
+  p{
+    font-size: 25px;
+  }
+  }
+
 `;
 
 export const PetsMain = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   h3 {
     font-size: 30px;
@@ -89,23 +93,22 @@ export const PetsMain = styled.div`
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+
   @media (max-width: 1296px) {
-    margin: 50px;
     p {
-      font-size: 25px;
+      font-size: 20px;
     }
     h3 {
       margin: 20px;
     }
-  }
-  @media (max-width: 800px) {
-    flex-direction: row;
+    width: 100%;
   }
 `;
 
 export const ButtonEditar = styled.p`
   cursor: pointer;
-  margin: 20px 30px 20px 30px;
+  margin-top: 30px;
+  width: 100px;
   font-size: 20px;
   background-color: #fc943d;
   &:not(:last-child) {

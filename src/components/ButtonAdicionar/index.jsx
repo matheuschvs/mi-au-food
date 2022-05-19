@@ -7,10 +7,13 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from '../UserForm/style';
+import { useAuth } from '../../context/auth';
 
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
+
+  const { user } = useAuth();
 
   function toggleModal(e) {
     setOpacity(0);
@@ -30,6 +33,14 @@ export const ButtonAdicionar = ({ text }) => {
     });
   }
 
+  // const addPet = data => {
+  //   API.put(`/users{user.id}`,data, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     }
+  //   })
+  // };
+
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -37,6 +48,8 @@ export const ButtonAdicionar = ({ text }) => {
         /^[a-zA-Z]+$/,
         'Nome de usuário inválido. Somente letras, sem espaços.',
       ),
+    email: yup.string().required('Digite sua senha para continuar'),
+    password: yup.string().required('Digite sua senha para continuar'),
     breed: yup.string(),
     age: yup.number(),
     img: yup.string(),
@@ -63,45 +76,53 @@ export const ButtonAdicionar = ({ text }) => {
         backgroundProps={{ opacity }}
       >
         <Form>
-          <DivInput>
+          <DivInput onSubmit={handleSubmit(submitChange)}>
             <p>Editar informações</p>
             <Input
               placeholder="Nome"
-              type="name"
+              type="text"
               label="Nome"
               name="name"
-              register={register}
+              {...register('name')}
+            ></Input>
+            <Input
+              placeholder="Foto"
+              type="text"
+              label="Url da imagem"
+              name="img"
+              {...register('img')}
             ></Input>
             <Input
               placeholder="Raça"
-              type="breed"
+              type="text"
               label="Raça"
               name="breed"
-              register={register}
+              {...register('bred')}
             ></Input>
             <Input
               placeholder="Idade"
-              type="age"
+              type="number"
               label="Idade"
               name="age"
-              register={register}
+              {...register('age')}
             ></Input>
+            <span>É preciso email e senha para cadastrar pets</span>
             <Input
-              placeholder="Foto do perfil"
-              type="img"
-              label="Url da imagem"
-              name="img"
-              register={register}
-            ></Input>
+              placeholder="Email"
+              type="email"
+              label="Email"
+              name="email"
+              {...register('email')}
+            ></Input>{' '}
             <Input
-              placeholder="Url da Foto"
-              type="img"
-              label="Imagem"
-              name="img"
-              register={register}
+              placeholder="Senha"
+              type="password"
+              label="senha"
+              name="password"
+              {...register('password')}
             ></Input>
           </DivInput>
-          <p>Enviar</p>
+          <p type="submit">Enviar</p>
         </Form>
       </StyledModal>
     </ModalProvider>
