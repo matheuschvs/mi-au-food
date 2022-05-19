@@ -1,9 +1,9 @@
-/* eslint-disable*/
 import { UserCard } from '../../components/UserCard';
 import { PetCard } from '../../components/PetCard';
-import { UserContainer, Main } from './style';
 import { OrderList } from '../../components/OrderList';
 import { ButtonAdicionar } from '../../components/ButtonAdicionar';
+
+import { UserContainer, Main } from './style';
 
 export const UserProfile = () => {
   const userInfo = JSON.parse(localStorage.getItem('@mi-au-food:user'));
@@ -11,7 +11,7 @@ export const UserProfile = () => {
   return (
     <Main>
       <UserContainer>
-        <h2>Seja bem vind(a/o) {userInfo.name}</h2>
+        <h2>Olá {userInfo.name}</h2>
         <h3>Suas informações</h3>
         <UserCard />
         <ButtonAdicionar text="Adicionar Pets" />

@@ -1,4 +1,4 @@
-/* eslint-disable */
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   HeaderBar,
@@ -18,7 +18,6 @@ import menuIcon from '../../assets/menu1.svg';
 import userIcon from '../../assets/UserIconRed.png';
 import logoutIcon from '../../assets/logoutIcon.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
-import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/auth';
 
 export const Header = () => {
@@ -55,7 +54,7 @@ export const Header = () => {
   };
 
   const goCart = () => {
-    return navigate('/carinho', { replace: true });
+    return navigate('/carrinho', { replace: true });
   };
 
   const goLogin = () => {
@@ -67,7 +66,13 @@ export const Header = () => {
   };
 
   const goUserProfile = () => {
-    return navigate('/perfil/usuario', { replace: true });
+    if (user.type === 'user') {
+      return navigate('/perfil/usuario', { replace: true });
+    }
+
+    if (user.type === 'shop') {
+      return navigate('/perfil/loja', { replace: true });
+    }
   };
 
   return (

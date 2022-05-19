@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
+import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import {
   BackgroundIMG,
   Container,

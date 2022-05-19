@@ -6,6 +6,7 @@ import { StyledMain, ProductButton, Head3 } from './style';
 import { Card } from '../../components/Card'
 import { StyledDisplay } from '../../components/Display/style';
 import { useCart } from '../../context/cart';
+import { QuantityController } from '../../components/QuantityController';
 
 export const Product = () => {
   const params = useParams();
@@ -14,7 +15,6 @@ export const Product = () => {
 
   const item = catalogue.find(product =>Number(product.id) === Number(params.productId))
   const options = catalogue.filter(product => product.type === item.type && product.petType === item.petType && product.id !== item.id)
-
   return <>
   {!!item?( 
   <StyledMain>
