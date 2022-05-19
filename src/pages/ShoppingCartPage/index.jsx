@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-disable import/order */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-shadow */
@@ -22,6 +23,7 @@ import {
   Todo,
   Esconder,
   Final,
+  CleanCar,
 } from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
@@ -102,7 +104,7 @@ export const ShoppingCartPage = () => {
                 <img src={item.img}></img>
                 <h2>{item.name}</h2>
                 <h3>Quantidade</h3>
-                <h4>1</h4>
+
                 <h3>Preço</h3>
                 <h5>R$ {item.price}</h5>
                 <Botoes>
@@ -126,9 +128,11 @@ export const ShoppingCartPage = () => {
               {' '}
               <button onClick={finalizarComprar}>Finalizar Comprar</button>
             </Final>
-            <button onClick={cleanCart} type="button">
-              Limpar o carrinho
-            </button>
+            <CleanCar>
+              <button onClick={cleanCart} type="button">
+                Limpar o carrinho
+              </button>
+            </CleanCar>
           </Total>
         </Main>
       )}

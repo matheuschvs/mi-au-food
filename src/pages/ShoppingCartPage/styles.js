@@ -1,145 +1,69 @@
 import styled from 'styled-components';
 
-export const Carrinho = styled.div`
-  h1 {
-    width: 224px;
-    font-size: 50px;
-    margin-left: 120px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-`;
+export const Carrinho = styled.div``;
 
 export const Main = styled.div`
-  h2 {
-    margin-top: 25px;
-    margin-left: 50px;
-    width: 639px;
-    font-size: 20px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 170px 150px;
+
   li {
     display: flex;
     background-color: white;
-    border-radius: 20px;
-    width: 1200px;
-    height: 200px;
-    margin-top: 1px;
-    margin-left: 120px;
-    margin-bottom: 20px;
+    border-radius: 1px;
+    border: 1px solid #00000040;
+    width: 1000px;
+    margin-top: 20px;
   }
   img {
-    width: 150px;
-    height: 150px;
-
-    margin-left: 10px;
-    margin-top: 25px;
+    width: 192px;
+    height: 192px;
+    margin-top: 5px;
+  }
+  h2 {
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    padding-top: 15px;
   }
   h3 {
-    width: 172px;
+    padding-left: 10px;
     font-size: 20px;
-
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 5px;
-    font-weight: normal;
+    font-family: 'Ubuntu';
     position: relative;
-    left: 180px;
-  }
-  h4 {
-    font-size: 16px;
-    margin-top: 40px;
-    position: relative;
-    left: 108px;
+    left: 100px;
   }
   h5 {
-    font-size: 20px;
-    width: 144px;
-    margin-top: 40px;
+    padding-top: 40px;
+    width: 90px;
     position: relative;
-    right: -45px;
-  }
-
-  @media only screen and (min-width: 400px) and (max-width:500px) {
-    li {
-      position: relative;
-     float: left;
-     right: 120px;
-     
-      width: 400px;
-      border: 1px solid red;
-      height: 100px;
-    }
-    img {
-      width: 50px;
-      height: 50px;
-      margin-top: 50px;
-      position: relative;
-      bottom: 25px;
-    }
-    h2 {
-    margin-top: 10px;
-    margin-left: 50px;
-   width: 0px;
-    font-size: 12px;
-  }
-  h3 {
-  font-size: 12px;
-  position: relative;
-  left: 150px;
-  right: 100px;
+    left: 50px;
+    font-size: 20px;
   }
 `;
 
 export const Botoes = styled.div`
   display: flex;
-
-  img {
-    width: 29.65px;
-    height: 29.65;
-    margin-left: 25px;
-    position: relative;
-    right: 205px;
-    bottom: 50px;
-  }
+  padding-top: 40px;
+  position: relative;
+  right: 120px;
 `;
 export const Lixo = styled.div`
-  background-color: #ffa459;
-  width: 70px;
-  height: 67px;
-  border-radius: 30px;
+  padding-top: 100px;
+
   position: relative;
-  top: 100px;
-  right: 150px;
-  text-align: center;
+  right: 60px;
+
   img {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    margin-top: 10px;
-    margin-right: 7px;
+    width: 50px;
+    height: 30px;
   }
 `;
 export const Total = styled.div`
-  h2 {
-    font-size: 30px;
-
-    margin-left: 1000px;
-  }
-  button {
-    margin-top: 20px;
-    margin-left: 1000px;
-    background-color: red;
-    color: white;
-    width: 250px;
-    height: 30px;
-    border: 0px;
-    border-radius: 8px;
-    font-size: 20px;
-  }
+  float: right;
+  padding: 20px 210px;
 `;
-export const Not = styled.div`
-  text-align: center;
-`;
+export const Not = styled.div``;
 
 export const Todo = styled.div``;
 
@@ -147,10 +71,38 @@ export const Esconder = styled.div`
   display: none;
 `;
 export const Final = styled.div`
+  padding-top: 15px;
+
   button {
-    width: 250px;
-    height: 30px;
-    background-color: red;
-    color: white;
+    background-color: #ffa459;
+    padding: 8px 32px;
+    color: #fff5f5;
+    border-bottom: 2px solid var(--secondary-color);
+    border: 0px;
+    border-radius: 20px;
+    font-family: 'Ubuntu';
+    width: 209, 38px;
+    height: 48px;
+    font-size: 18px;
+    font-weight: bold;
   }
+`;
+export const CleanCar = styled.div`
+padding-top: 5px;
+
+button{
+  background-color: #ffa459;
+    padding: 8px 32px;
+    color: #fff5f5;
+    border-bottom: 2px solid var(--secondary-color);
+    border: 0px;
+    border-radius: 20px;
+    font-family: 'Ubuntu';
+    width: 209, 38px;
+    height: 48px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
 `;
