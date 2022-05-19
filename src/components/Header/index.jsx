@@ -146,7 +146,6 @@ export const Header = () => {
             <h3 onClick={() => goRegister()}>Seja uma loja parceira</h3>
           </div>
           <ContainerIMG>
-            <CartIcon src={cartIcon} alt="imagem carrinho" />
             <MenuIcon
               onClick={showModalLogoff}
               src={menuIcon}
