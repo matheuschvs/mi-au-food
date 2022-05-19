@@ -20,7 +20,7 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="product-registration" element={<ProductRegistration />} />
+        <Route path="novo-produto" element={<ProductRegistration />} />
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />
