@@ -12,7 +12,7 @@ export const InputStyled = styled.div`
   min-height: 21px;
   padding-left: 2rem;
   transition: 0.8s;
-  background: #fff5f5;
+  background: var(--background);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   div {

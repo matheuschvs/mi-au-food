@@ -1,5 +1,13 @@
-/* eslint-disable */
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+
+import { toast } from 'react-toastify';
 
 import { API } from '../../services/api';
 
@@ -13,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     const localUser = localStorage.getItem('@mi-au-food:user');
     const localToken = localStorage.getItem('@mi-au-food:token');
 
-    const parsedUser = JSON.parse(localUser)
+    const parsedUser = JSON.parse(localUser);
 
     if (localUser) {
       setUser(parsedUser);
@@ -27,7 +35,8 @@ export const AuthProvider = ({ children }) => {
   const Logoff = () => {
     setUser({});
     setToken('');
-    localStorage.clear()
+    toast.success('Até a próxima!');
+    localStorage.clear();
   };
 
   const signIn = async (userInfo, callback = () => {}) => {
@@ -66,16 +75,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const editProfile = (data) =>{
-    API.patch(`users/${user.id}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      }
-    }).then((response) =>{
-      setUser(response.data)
-      localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data))
-    })
-  }
+  const editProfile = useCallback(
+    data => {
+      API.patch(`users/${user.id}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(response => {
+        setUser(response.data);
+        localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
+      });
+    },
+    [token, user.id],
+  );
 
   const value = useMemo(
     () => ({
@@ -86,7 +98,7 @@ export const AuthProvider = ({ children }) => {
       editProfile,
       Logoff,
     }),
-    [user, token],
+    [user, token, editProfile],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

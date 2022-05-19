@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import {
   HeaderBar,
   CartIcon,
@@ -13,6 +14,7 @@ import {
   ContainerModal,
   ContainerModalLogoff,
 } from './style';
+import { ToggleTheme } from '../ToggleTheme';
 import cartIcon from '../../assets/shopcart.svg';
 import menuIcon from '../../assets/menu1.svg';
 import userIcon from '../../assets/UserIconRed.png';
@@ -94,6 +96,7 @@ export const Header = () => {
         <HeaderLogin boxShadow={boxShadow}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <LogedIcons>
+            <ToggleTheme />
             <CartIcon
               onClick={() => goCart()}
               src={cartIcon}
@@ -140,13 +143,13 @@ export const Header = () => {
         <HeaderBar boxShadow={boxShadow} animate={defaultAnimation} transition={defaultTransition}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <div>
+            <ToggleTheme />
             <button onClick={() => goLogin()} type="button">
               Entrar
             </button>
             <h3 onClick={() => goRegister()}>Seja uma loja parceira</h3>
           </div>
           <ContainerIMG>
-            <CartIcon src={cartIcon} alt="imagem carrinho" />
             <MenuIcon
               onClick={showModalLogoff}
               src={menuIcon}
