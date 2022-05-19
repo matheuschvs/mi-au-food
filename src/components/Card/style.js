@@ -23,7 +23,7 @@ box-shadow: 0px 4px 4px 0px #00000040;
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     }
   p{
     font-size:  ${(props)=>props.cartSize? "1rem":"1.5rem"};

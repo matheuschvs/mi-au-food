@@ -13,14 +13,22 @@ export const AuthProvider = ({ children }) => {
     const localUser = localStorage.getItem('@mi-au-food:user');
     const localToken = localStorage.getItem('@mi-au-food:token');
 
+    const parsedUser = JSON.parse(localUser)
+
     if (localUser) {
-      setUser(localUser);
+      setUser(parsedUser);
     }
 
     if (localToken) {
       setToken(localToken);
     }
   }, []);
+
+  const Logoff = () => {
+    setUser({});
+    setToken('');
+    localStorage.clear()
+  };
 
   const signIn = async (userInfo, callback = () => {}) => {
     try {
@@ -34,7 +42,7 @@ export const AuthProvider = ({ children }) => {
       setUser(userResponse);
       setToken(accessToken);
 
-      callback();
+      callback(userResponse);
     } catch (err) {
       throw new Error('Algo deu errado no login.');
     }
@@ -58,12 +66,25 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const editProfile = (data) =>{
+    API.patch(`users/${user.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    }).then((response) =>{
+      setUser(response.data)
+      localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data))
+    })
+  }
+
   const value = useMemo(
     () => ({
       user,
       token,
       signIn,
       signUp,
+      editProfile,
+      Logoff,
     }),
     [user, token],
   );

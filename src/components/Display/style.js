@@ -10,6 +10,7 @@ flex-wrap: nowrap;
 overflow-x: auto;
 scroll-snap-type: x mandatory;
 margin: auto;
+margin-bottom: 100px;
 
     @media (min-width: 850px){
       max-width: 1200px;
