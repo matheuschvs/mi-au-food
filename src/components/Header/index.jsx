@@ -1,4 +1,4 @@
-/* eslint-disable */
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   HeaderBar,
@@ -18,7 +18,6 @@ import menuIcon from '../../assets/menu1.svg';
 import userIcon from '../../assets/UserIconRed.png';
 import logoutIcon from '../../assets/logoutIcon.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
-import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/auth';
 
 export const Header = () => {

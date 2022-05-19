@@ -4,7 +4,7 @@ export const Main = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 5.93rem 1.143rem 0;
-  
+
   @media (max-width: 798px) {
     flex-direction: column;
     margin-left: 50px;
