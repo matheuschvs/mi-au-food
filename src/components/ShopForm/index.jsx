@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '../../context/auth';
 import { Dialog } from './style';
 import { useState } from 'react';
+import { ProductButton } from '../../pages/Product/style';
 
 export const ShopForm = ({modal, setModal})=>{
   const { editProfile } = useAuth()
@@ -38,59 +39,58 @@ export const ShopForm = ({modal, setModal})=>{
   })
 
   const onSubmit = (data) => {
-    data.type = "shop"
-    editProfile(data)
+    const newData = {...data, type: 'shop'}
+    editProfile(newData)
     setModal(false)
   }
-
 
   return(
     <Dialog modal={modal}>
       <div>
     <form onSubmit= {handleSubmit(onSubmit)}>
-      <label>Email:</label>
+      <label>Email</label>
       <input
         {...register("email")}
         placeholder="email"
         value = {usuario.email}
       />
-      <label>Senha:</label>
+      <label>Senha</label>
       <input
         {...register("password")}
         placeholder="password"
         type="password"
       />
-      <label>Nome da Loja:</label>
+      <label>Nome da Loja</label>
       <input
         {...register("name")}
         placeholder="Nome"
         value = {name}
         onChange={(evt)=> setName(evt.target.value)}
       />
-      <label>Contato:</label>
+      <label>Contato</label>
       <input
         {...register("contato")}
         placeholder="Contato"
         value = {contato}
         onChange={(evt)=> setContato(evt.target.value)}
       />
-      <label>CEP:</label>
+      <label>CEP</label>
       <input
         {...register("cep")}
         placeholder="CEP"
         value = {cep}
         onChange={(evt)=> setCep(evt.target.value)}
       />
-      <label>CNPJ:</label>
+      <label>CNPJ</label>
       <input
         {...register("cnpj")}
         placeholder="CNPJ"
         value = {cnpj} 
         onChange={(evt)=> setCnpj(evt.target.value)}
       />
-      <button type="submit">Concluir</button>
+      <ProductButton type="submit">Concluir</ProductButton>
       </form>
-      <button onClick={() => setModal(false)}>Cancelar</button>
+      <ProductButton onClick={() => setModal(false)}>Cancelar</ProductButton>
       </div>
       </Dialog>
     

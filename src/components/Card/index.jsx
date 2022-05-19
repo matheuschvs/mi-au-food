@@ -12,7 +12,7 @@ export const Card = ({ product, cartSize }) => {
   const { addToCart, removeFromCart } = useCart();
 
   return (
-    <Container key={product.id} cartSize={cartSize}>
+    <Container cartSize={cartSize}>
       <figure onClick={() => navigate(`../produto/${product.id}`)}>
         <img alt="" src={product.img} />
       </figure>
