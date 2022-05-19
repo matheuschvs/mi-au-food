@@ -10,8 +10,49 @@ export const Container = styled(motion.main)`
     text-decoration: none;
   }
 
+  .swiper {
+    display: none;
+
+    width: 64vw;
+    height: 25.125rem;
+    margin-top: -15.5rem;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 1.3rem;
+    height: 100%;
+    padding: 1.5rem;
+    background: var(--secondary-color);
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--background);
+  }
+
   @media only screen and (min-width: 1024px) {
     padding: 5.187rem 6.25rem 0;
+
+    .swiper {
+      display: block;
+    }
   }
 `;
 
@@ -264,6 +305,7 @@ export const Partners = styled.section`
     display: inline-flex;
     min-width: 13rem;
     background: var(--secondary-color-2);
+    border-radius: 0.5rem;
     border-color: var(--secondary-color-2);
     font: 400 1.143rem 'Ubuntu', sans-serif;
 
@@ -505,7 +547,7 @@ export const Contact = styled.footer`
     margin-left: 8.375rem;
 
     address {
-      margin-bottom: 10rem;
+      margin-bottom: 8rem;
     }
   }
 `;

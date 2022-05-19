@@ -1,5 +1,3 @@
-/* eslint-disable*/
-
 import { useCart } from '../../context/cart';
 import { RangeButton } from './style';
 

@@ -14,10 +14,9 @@ export const UserProfile = () => {
         <h2>Seja bem vind(a/o) {userInfo.name}</h2>
         <h3>Suas informações</h3>
         <UserCard />
-        <ButtonAdicionar text="Adicionar" />
-        <h4>Seus Pets</h4>
-        <PetCard />
+        <ButtonAdicionar text="Adicionar Pets" />
       </UserContainer>
+      <PetCard />
       <OrderList />
     </Main>
   );

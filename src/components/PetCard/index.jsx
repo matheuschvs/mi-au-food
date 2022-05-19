@@ -1,7 +1,7 @@
 /* eslint-disable*/
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { ButtonEditar, InfoDiv, PetContainer } from './style';
+import { ButtonEditar, InfoDiv, PetContainer, PetsMain } from './style';
 import { FadingBackground } from './style';
 import Modal, { ModalProvider } from 'styled-react-modal';
 import { StyledModal } from './style';
@@ -50,6 +50,18 @@ export const PetCard = () => {
       });
   }, []);
 
+  const patchAxios = data => {
+    axios.patch(
+      baseUrl,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+      data,
+    );
+  };
+
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -70,9 +82,14 @@ export const PetCard = () => {
     resolver: yupResolver(schema),
   });
 
+  const submitChange = data => {
+    patchAxios(data);
+  };
+
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
-      <div>
+      <PetsMain>
+        <h3>Seus Pets</h3>
         {pets &&
           pets.map(info => {
             return (
@@ -93,7 +110,7 @@ export const PetCard = () => {
                   backgroundProps={{ opacity }}
                 >
                   <Form>
-                    <DivInput>
+                    <DivInput onSubmit={handleSubmit(submitChange)}>
                       <p>Editar informações</p>
                       <Input
                         placeholder="Nome"
@@ -131,14 +148,14 @@ export const PetCard = () => {
                         register={register}
                       ></Input>
                     </DivInput>
-                    <p>Enviar</p>
+                    <p type="submit">Enviar</p>
                   </Form>
                 </StyledModal>
                 <ButtonEditar onClick={toggleModal}>Editar</ButtonEditar>
               </PetContainer>
             );
           })}
-      </div>
+      </PetsMain>
     </ModalProvider>
   );
 };
