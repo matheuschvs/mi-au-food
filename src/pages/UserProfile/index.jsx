@@ -19,6 +19,7 @@ import Modal, { ModalProvider } from 'styled-react-modal';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { InfoUser } from '../../components/InfoUser';
 
 export const UserProfile = () => {
   const userInfo = JSON.parse(localStorage.getItem('@mi-au-food:user'));
@@ -69,6 +70,7 @@ export const UserProfile = () => {
 
   return (
     <>
+      <InfoUser />
       <ModalProvider backgroundComponent={FadingBackground}>
         <BoasVindas>Seja bem vind(a/o) {userInfo.name}</BoasVindas>
         <Main>

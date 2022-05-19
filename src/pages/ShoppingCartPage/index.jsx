@@ -1,3 +1,5 @@
+/* eslint-disable import/order */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-expressions */
@@ -9,24 +11,80 @@
 import { useState } from 'react';
 import { Card } from '../../components/Card';
 import { useCart } from '../../context/cart';
-import { Main, Botoes, Lixo, Carrinho, Total, Not, Todo } from './styles';
+import {
+  Main,
+  Botoes,
+  Lixo,
+  Carrinho,
+  Total,
+  Not,
+  Todo,
+  Esconder,
+} from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
+import axios from 'axios';
+import { InfoUser } from '../../components/InfoUser';
 
 export const ShoppingCartPage = () => {
-  const { cart, cartReducer, removeFromCart, reduceQuantity } = useCart();
+  const {
+    cart,
+    cartReducer,
+    removeFromCart,
+    reduceQuantity,
+    cleanCart,
+    setCart,
+  } = useCart();
   // const { addToCart, removeFromCart, reduceQuantity } = useCart()
-  const [currentSale, setCurrentSale] = useState(cart);
-  console.log(reduceQuantity);
-  console.log(cart);
-  const CleanCar = () => {
-    setCurrentSale([]);
+  const [final, setFinal] = useState([]);
+  const [esconder, setEsconder] = useState(false);
+  const [idPedido, setIdPedido] = useState();
+
+  console.log();
+
+  const token = localStorage.getItem('@mi-au-food:token');
+  const idLocal = localStorage.getItem('@mi-au-food:user');
+
+  const user = JSON.parse(idLocal);
+
+  const authAxios = axios.create({
+    baseURL: 'https://json-server-kenziegroup.herokuapp.com/request',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const { name, email, tel, address, cpf, img, type, pets } = user;
+
+  const finalizarComprar = () => {
+    authAxios
+      .post(
+        `https://json-server-kenziegroup.herokuapp.com/request`,
+
+        {
+          product: { ...cart },
+          info: {
+            status: 'Aguardando',
+            totalCarrinho: cartReducer,
+          },
+
+          user: { name, email, tel, address, cpf, img, type, pets },
+        },
+
+        <InfoUser final={final} />,
+      )
+
+      .catch(err => console.log(err));
   };
 
   return (
     <Todo>
+      <Esconder>
+        <InfoUser authAxios={authAxios} />
+      </Esconder>
+
       <Carrinho>
         <h1>Carrinho</h1>
       </Carrinho>
@@ -62,12 +120,13 @@ export const ShoppingCartPage = () => {
             <h2>
               Total({cart.length} item) R$ {cartReducer}
             </h2>
-            <button onClick={CleanCar} type="button">
+            <button onClick={cleanCart} type="button">
               Limpar o carrinho
             </button>
           </Total>
         </Main>
       )}
+      <button onClick={finalizarComprar}>Finalizar Comprar</button>
     </Todo>
   );
 };
