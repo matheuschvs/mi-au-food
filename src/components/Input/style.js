@@ -6,6 +6,7 @@ export const InputStyled = styled.div`
   border-bottom: 2px solid #cddfe3;
   width: 70%;
   max-height: 5vh;
+  min-height: 21px;
   margin-top: 1.4rem;
   position: relative;
   min-height: 21px;

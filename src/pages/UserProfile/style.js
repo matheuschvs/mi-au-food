@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Main = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 5.93rem 1.143rem 0;
+  padding: 9.93rem 6.25rem;
 
   @media (max-width: 798px) {
     flex-direction: column;
@@ -24,9 +24,8 @@ export const BoasVindas = styled.h1`
 export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 
-  background-color: ;
   &:hover {
     background-color: #fcdede;
   }
@@ -68,9 +67,6 @@ export const PetContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  button {
   }
 
   p {

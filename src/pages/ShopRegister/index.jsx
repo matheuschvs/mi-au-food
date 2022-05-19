@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
-import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import {
   BackgroundIMG,
   Container,
@@ -84,7 +83,7 @@ export const ShopRegister = () => {
   };
 
   return (
-    <Container animate={defaultAnimation} transition={defaultTransition}>
+    <Container>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
         <IMG6 src={image6} alt="imagem gato tela registro" />

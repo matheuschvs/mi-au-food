@@ -19,6 +19,7 @@ import userIcon from '../../assets/UserIconRed.png';
 import logoutIcon from '../../assets/logoutIcon.png';
 import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { AuthContext } from '../../context/auth';
+import { useCart } from '../../context/cart';
 
 export const Header = () => {
   /* eslint-disable */
@@ -30,6 +31,8 @@ export const Header = () => {
   const [modalMobile, setModalMobile] = useState(false);
 
   const [modalLogoff, setModalLogoff] = useState(false);
+
+  const { cart } = useCart();
 
   const showModal = () => {
     setUserModal(!userModal);
@@ -46,27 +49,33 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const goHome = () => {
-    return navigate('/inicio', { replace: true });
+    return navigate('/inicio');
   };
 
   const goStore = () => {
-    return navigate('/loja', { replace: true });
+    return navigate('/loja');
   };
 
   const goCart = () => {
-    return navigate('/carinho', { replace: true });
+    return navigate('/carrinho');
   };
 
   const goLogin = () => {
-    return navigate('/entrar', { replace: true });
+    return navigate('/entrar');
   };
 
   const goRegister = () => {
-    return navigate('/registro/loja', { replace: true });
+    return navigate('/registro/loja');
   };
 
   const goUserProfile = () => {
-    return navigate('/perfil', { replace: true });
+    if (user.type === 'user') {
+      return navigate('/perfil/usuario');
+    }
+
+    if (user.type === 'shop') {
+      return navigate('/perfil/loja');
+    }
   };
 
   return (
@@ -80,6 +89,7 @@ export const Header = () => {
               src={cartIcon}
               alt="imagem carrinho"
             />
+            {cart.length > 0 && <p>{cart.length}</p>}
             <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
             <h3>{user.name}</h3>
             <IconUser onClick={showModal} src={userIcon} alt="imagem usuario" />

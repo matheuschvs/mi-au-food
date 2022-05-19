@@ -5,13 +5,16 @@ import { useForm } from 'react-hook-form';
 import { DivInput, Form } from './style';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useAuth } from '../../context/auth';
 
-export const FormUser = () => {
+export const FormUser = ({ toggleModal }) => {
   const userObject = JSON.parse(localStorage.getItem('@mi-au-food:user'));
   const token = localStorage.getItem('@mi-au-food:token');
   const [newInfo, SetNewInfo] = useState([]);
   const id = userObject.id;
   const baseUrl = `https://json-server-kenziegroup.herokuapp.com/users/${id}`;
+
+  const { editProfile } = useAuth();
 
   const schema = yup.object().shape({
     name: yup.string().required(),
@@ -31,29 +34,32 @@ export const FormUser = () => {
     resolver: yupResolver(schema),
   });
 
-  const patchAxios = (data, callBack = () => {}) => {
-    axios.patch(baseUrl, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  };
+  // const patchAxios = (data, callBack = () => {}) => {
+  //   axios.patch(baseUrl, data, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   });
+  // };
 
-  const attInfo = () => {
-    axios
-      .get(baseUrl, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(response => {
-        console.log(response.data);
-        localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
-      });
-  };
+  // const attInfo = () => {
+  //   axios
+  //     .get(baseUrl, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //     .then(response => {
+  //       console.log(response.data);
+  //       localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
+  //     });
+  // };
 
   const submitChange = data => {
-    patchAxios(data);
+    // patchAxios(data);
+    // attInfo();
+    editProfile(data);
+    toggleModal();
   };
 
   return (
@@ -109,7 +115,7 @@ export const FormUser = () => {
           name="cpf"
           {...register('cpf')}
         ></input>
-        <button type="submit" onClick={attInfo}>
+        <button type="submit">
           Enviar
         </button>
       </DivInput>
