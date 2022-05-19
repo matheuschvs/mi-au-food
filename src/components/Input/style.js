@@ -6,8 +6,10 @@ export const InputStyled = styled.div`
   border-bottom: 2px solid #cddfe3;
   width: 70%;
   max-height: 5vh;
+  min-height: 21px;
   margin-top: 1.4rem;
   position: relative;
+  min-height: 21px;
   padding-left: 2rem;
   transition: 0.8s;
   background: #fff5f5;
@@ -42,7 +44,7 @@ export const InputStyled = styled.div`
     left: 25px;
     top: 3px;
     transition: 0.8s;
-    top: ${props => (props.valid ? '-2rem' : '3px')};
+    top: ${props => (props.valid ? '-2rem' : '-10px')};
     left: ${props => (props.valid ? '5px' : '25px')};
     font-size: 1rem;
     padding-top: 15px;
@@ -54,5 +56,8 @@ export const InputStyled = styled.div`
       left: 5px;
       font-weight: bold;
     }
+  }
+  @media (min-width: 1024px) {
+    min-height: 45px;
   }
 `;

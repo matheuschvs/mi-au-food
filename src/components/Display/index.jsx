@@ -1,16 +1,15 @@
-/* eslint-disable */
-
-import { StyledDisplay } from "./style";
-import { Card } from "../Card";
-import { useCatalogue } from "../../context/catalogue";
+import { StyledDisplay } from './style';
+import { Card } from '../Card';
+import { useCatalogue } from '../../context/catalogue';
 
 export const Display = () => {
-  const { catalogue } = useCatalogue()
+  const { catalogue } = useCatalogue();
 
-  return(
+  return (
     <StyledDisplay>
-      {catalogue.map((product) => <Card product={product}  /> )}
+      {catalogue.map(product => (
+        <Card key={product.id} product={product} />
+      ))}
     </StyledDisplay>
-  )
-}
-
+  );
+};
