@@ -18,7 +18,7 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const Container = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color);
 
     display: flex;
     align-items: center;
@@ -91,4 +91,15 @@ export const ButtonEditar = styled.p`
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+`;
+
+export const EmptyUser = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10px;
+  width: 171px;
+  height: 181px;
+  border-radius: 250px;
 `;
