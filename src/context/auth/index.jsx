@@ -24,6 +24,12 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  const Logoff = () => {
+    setUser({});
+    setToken('');
+    localStorage.clear()
+  };
+
   const signIn = async (userInfo, callback = () => {}) => {
     try {
       const response = await API.post('signin', userInfo);
@@ -66,6 +72,7 @@ export const AuthProvider = ({ children }) => {
       token,
       signIn,
       signUp,
+      Logoff,
     }),
     [user, token],
   );

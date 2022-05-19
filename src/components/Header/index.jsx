@@ -24,7 +24,7 @@ import { AuthContext } from '../../context/auth';
 export const Header = () => {
   /* eslint-disable */
 
-  const { token, user } = useContext(AuthContext);
+  const { token, user, Logoff } = useContext(AuthContext);
 
   const [userModal, setUserModal] = useState(false);
 
@@ -107,7 +107,7 @@ export const Header = () => {
                 <LogoutIcon src={logoutIcon} alt="ícone logout" />
                 <h2
                   onClick={() => {
-                    goHome();
+                    Logoff();
                     showModal();
                   }}
                 >
@@ -182,6 +182,7 @@ export const Header = () => {
             <h2
               onClick={() => {
                 showModalMob();
+                Logoff();
               }}
             >
               Sair
