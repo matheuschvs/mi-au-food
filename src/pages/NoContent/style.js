@@ -4,12 +4,7 @@ export const Container = styled.main`
   padding: 6.25rem 1rem;
   min-height: 100vh;
 
-  background: linear-gradient(
-    180deg,
-    rgba(255, 245, 245, 0.8) 39.84%,
-    rgba(231, 105, 0, 0.24) 76.04%,
-    rgba(231, 0, 0, 0.8) 100%
-  );
+  background: var(--gradient);
 
   text-align: center;
 

@@ -71,6 +71,9 @@ export const GlobalStyle = createGlobalStyle`
     --text: #342C2C;
 
     --background: #FFF5F5;
+    --background-2: #FFF;
+
+    --gradient: linear-gradient(180deg,rgba(255,245,245,0.8) 39.84%,rgba(231,105,0,0.24) 76.04%,rgba(231,0,0,0.8) 100%);
 
     --title-1: 700 4rem 'Ubuntu', sans-serif;
     --title-2: 700 2rem 'Ubuntu', sans-serif;
