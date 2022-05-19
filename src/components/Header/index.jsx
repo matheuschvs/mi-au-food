@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   HeaderBar,
@@ -25,14 +25,12 @@ export const Header = () => {
   /* eslint-disable */
 
   const { token, user, Logoff } = useContext(AuthContext);
+  const { cart } = useCart();
 
   const [userModal, setUserModal] = useState(false);
-
   const [modalMobile, setModalMobile] = useState(false);
-
   const [modalLogoff, setModalLogoff] = useState(false);
-
-  const { cart } = useCart();
+  const [boxShadow, setBoxShadow] = useState('none');
 
   const showModal = () => {
     setUserModal(!userModal);
@@ -78,10 +76,22 @@ export const Header = () => {
     }
   };
 
+  const handleScroll = () => {
+    if (document.documentElement.scrollTop > 10) {
+      setBoxShadow('0px 4px 4px rgba(0, 0, 0, 0.25)')
+    } else {
+      setBoxShadow('none')
+    }
+  }
+
+  useEffect(() => {
+    window.onscroll = () => handleScroll();
+  }, []);
+
   return (
     <>
       {token ? (
-        <HeaderLogin>
+        <HeaderLogin boxShadow={boxShadow}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <LogedIcons>
             <CartIcon
@@ -127,7 +137,7 @@ export const Header = () => {
           )}
         </HeaderLogin>
       ) : (
-        <HeaderBar animate={defaultAnimation} transition={defaultTransition}>
+        <HeaderBar boxShadow={boxShadow} animate={defaultAnimation} transition={defaultTransition}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <div>
             <button onClick={() => goLogin()} type="button">
