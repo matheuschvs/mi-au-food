@@ -81,6 +81,7 @@ export const Header = () => {
               src={cartIcon}
               alt="imagem carrinho"
             />
+            <p>1</p>
             <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
             <h3>{user.name}</h3>
             <IconUser onClick={showModal} src={userIcon} alt="imagem usuario" />
