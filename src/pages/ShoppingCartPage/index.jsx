@@ -64,16 +64,13 @@ export const ShoppingCartPage = () => {
         `https://json-server-kenziegroup.herokuapp.com/request`,
 
         {
-          product: { ...cart },
-          info: {
-            status: 'Aguardando',
-            totalCarrinho: cartReducer,
-          },
+          product: cart,
 
-          user: { name, email, tel, address, cpf, img, type, pets },
+          status: 'Aguardando',
+          totalCarrinho: cartReducer,
+
+          user: { name, email, tel, address, cpf, type },
         },
-
-        <InfoUser final={final} />,
       )
 
       .catch(err => console.log(err));
@@ -81,9 +78,8 @@ export const ShoppingCartPage = () => {
 
   return (
     <Todo>
-      <Esconder>
-        <InfoUser authAxios={authAxios} />
-      </Esconder>
+      <InfoUser authAxios={authAxios} />
+      <Esconder></Esconder>
 
       <Carrinho>
         <h1>Carrinho</h1>
