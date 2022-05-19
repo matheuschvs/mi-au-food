@@ -1,4 +1,3 @@
-/* eslint-disable import/newline-after-import */
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from '../layouts/Layout';
@@ -16,6 +15,7 @@ import { ShopRegister } from '../pages/ShopRegister';
 import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
 import { ProductRegistration } from '../pages/ProductRegistration';
+
 export const Router = () => {
   return (
     <Routes>
@@ -46,10 +46,9 @@ export const Router = () => {
         <Route
           path="carrinho"
           element={
-            <ShoppingCartPage />
-            // <RequireAuth>
-
-            // </RequireAuth>
+            <RequireAuth>
+              <ShoppingCartPage />
+            </RequireAuth>
           }
         />
         <Route path="*" element={<NoContent />} />

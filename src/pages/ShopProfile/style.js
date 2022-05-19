@@ -17,10 +17,10 @@ export const Main = styled.main`
   span {
     font-weight: 700;
   }
-  ul{
+  ul {
     margin-bottom: 1rem;
   }
-  li{
+  li {
     border-bottom: 2px solid var(--secondary-color);
     margin: 4px;
     text-align: center;
@@ -28,8 +28,8 @@ export const Main = styled.main`
     display: flex;
     justify-content: space-between;
   }
-  @media (min-width:800px){
-    li{
+  @media (min-width: 800px) {
+    li {
       text-align: left;
     }
   }
@@ -40,16 +40,16 @@ export const Li = styled.li`
   align-items: center;
   justify-content: space-evenly;
   height: 200px;
-  div{
+  div {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
   }
 
-  @media (min-width:800px){
+  @media (min-width: 800px) {
     height: 40px;
-    div{
+    div {
       flex-direction: row;
     }
   }
@@ -61,4 +61,4 @@ export const Order = styled.div`
   margin: auto;
   padding: 0.5rem;
   margin-bottom: 2rem;
-`
+`;
