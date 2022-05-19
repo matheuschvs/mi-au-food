@@ -8,7 +8,6 @@ import { Container, CartButton } from './style';
 const Contend = () => {
   const { cart, cartReducer } = useCart();
   const navigate = useNavigate();
-  console.log(cart);
   return (
     <>
       {cart.length > 0 ? (

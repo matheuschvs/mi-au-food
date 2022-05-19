@@ -8,6 +8,7 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 margin: 1rem;
+padding-top: 100px;
 
 
 div{
