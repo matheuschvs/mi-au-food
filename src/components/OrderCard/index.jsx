@@ -1,39 +1,70 @@
 /* eslint-disable*/
-import { useState } from 'react';
 import { Li } from '../../pages/ShopProfile/style';
 import { ProductButton } from '../../pages/Product/style';
-import { OrderPopUp } from '../OrderPopUp';
 import { useAuth } from '../../context/auth';
+import { API } from '../../services/api';
 
-export const OrderCard = ({ order }) => {
-  const { user } = useAuth();
-  const [modal, setModal] = useState(false)
-  const handleModal= () => {
-    setModal(true)
-    console.log(order)
+export const OrderCard = ({ setOrders, order, setDisplayOrder }) => {
+  const { user,token } = useAuth();
+  const updatePage = ()=>{
+    API.get(`request`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(response => {
+      setOrders(response.data);
+    })   
   }
-  const handleUpdate = () =>{
+  
+  const handleAcept = () =>{
     order.status = 'Andamento'
     const newOrder = {...order, shopId:user.id }
-    console.log(newOrder)
+    API.put(`request/${order.id}`, newOrder, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(()=> updatePage())
   }
-  const handleDelivery = () =>{
-    order.status ='Entregue'
-    console.log(order)
+
+  const handleUpdate = (status) =>{
+    if(status === 'delivery'){
+      order.status ='Entregue'
+    } else if(status === 'cancel'){
+      order.status ='Cancelado'
+    }
+    API.put(`request/${order.id}`, order, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(()=> updatePage())
   }
+
+  const showAll = () =>{
+    setDisplayOrder(order)
+  }
+
   return(
-    <Li onClick={handleModal}>
-      <p>{order.user.name}</p>
-      <p>{order.status}</p>
-      <p>R$ {order.totalCarrinho}</p>
-      <OrderPopUp order={order} modal={modal} setModal={setModal}>
+    <Li>
+      <div>
+        <p>{order.user.name}</p>
+        <p>{order.status}</p>
+        <p>R$ {order.totalCarrinho}</p>
+      </div>
+      <div>
         {order.status === 'Aguardando'?(
-          <ProductButton onClick={handleUpdate}>Aceitar Pedido</ProductButton>
-        ):(
-        <ProductButton onClick={handleDelivery}>Confirmar entrega</ProductButton>
-        )}
-        <ProductButton onClick={() => setModal(false)}>Fechar</ProductButton>
-      </OrderPopUp>
+            <ProductButton onClick={handleAcept}>Aceitar Pedido</ProductButton>
+          ):(
+            <>
+              <ProductButton onClick={()=>handleUpdate('delivery')}>Entregue</ProductButton>
+              <ProductButton onClick={()=>handleUpdate('cancel')}>Cancelar</ProductButton>
+            </>
+          )}
+          <ProductButton onClick={showAll}>Ver mais</ProductButton>        
+      </div>
+
     </Li>
   )
 }

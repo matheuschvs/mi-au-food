@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useParams } from 'react-router-dom';
 import { useCatalogue } from '../../context/catalogue';
 import { StyledMain, ProductButton, Head3 } from './style';
