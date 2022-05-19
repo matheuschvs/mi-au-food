@@ -2,8 +2,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/auth';
-import { useContext } from 'react';
+import { useAuth } from '../../context/auth';
 import loginBG from '../../assets/Rectangle 15.png';
 import { Form, MainDiv, IMG, MainContainer } from './style';
 import { Input } from '../../components/Input';
@@ -11,14 +10,13 @@ import { Button } from '../../components/Button';
 import { MiauFoodIcon } from '../../components/MiauFood Icon';
 
 export const LoginPage = () => {
-  const { user, signIn } = useContext(AuthContext);
+  const { user, signIn } = useAuth();
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
     email: yup.string().required('É preciso um email para acessar o site'),
     password: yup.string().required('É preciso uma senha para acessar o site'),
   });
-
   const {
     register,
     handleSubmit,
@@ -27,10 +25,11 @@ export const LoginPage = () => {
     resolver: yupResolver(schema),
   });
 
-  const redirectTo = () => {
-    if(user.type === 'user'){
+  const redirectTo = async (user) => {
+    console.log(user)
+    if(user.cpf){
       navigate('/perfil/usuario', { replace: true });
-    } else if (user.type === 'shop'){
+    } else if (user.type ==='shop'){
       navigate('/perfil/loja', { replace: true });
     }
   };

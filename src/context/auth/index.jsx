@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       setUser(userResponse);
       setToken(accessToken);
 
-      callback();
+      callback(userResponse);
     } catch (err) {
       throw new Error('Algo deu errado no login.');
     }
@@ -58,12 +58,24 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const editProfile = (data) =>{
+    API.patch(`users/${user.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    }).then((response) =>{
+      setUser(response.data)
+      localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data))
+    })
+  }
+
   const value = useMemo(
     () => ({
       user,
       token,
       signIn,
       signUp,
+      editProfile
     }),
     [user, token],
   );
