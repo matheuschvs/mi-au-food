@@ -130,10 +130,10 @@ export const Container = styled.div`
   }
 `;
 export const CartButton = styled.button`
-  background: var(--secondary-color);
+  background: var(--secondary-color-1);
   border-radius: 1.5rem;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   margin: 10px;
   height: 3rem;
   font-family: 'Ubuntu';

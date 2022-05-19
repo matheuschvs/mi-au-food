@@ -1,8 +1,10 @@
 /* eslint-disable */
-
 import { useNavigate } from 'react-router-dom';
+import { Trash2 } from 'react-feather';
+
 import { useCart } from '../../context/cart';
 import { QuantityController } from '../QuantityController';
+
 import { Container, CardButton } from './style';
 
 export const Card = ({ product, cartSize }) => {
@@ -26,7 +28,7 @@ export const Card = ({ product, cartSize }) => {
               </p>
               <CardButton onClick={() => removeFromCart(product)}>
                 {' '}
-                T
+                <Trash2 color="var(--text)" size="1.2rem" />
               </CardButton>
             </div>
             <div>

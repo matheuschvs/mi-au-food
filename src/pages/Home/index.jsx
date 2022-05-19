@@ -1,20 +1,16 @@
-/* eslint-disable*/
 import { Container } from './style';
 import { Display } from '../../components/Display';
 import { Cart } from '../../components/Cart';
 import { NavBar } from '../../components/NavBar';
 
 export const Home = () => {
-
-  return(
-
+  return (
     <Container>
-      <NavBar/>
+      <NavBar />
       <div>
-      <Display />
-      <Cart/>
+        <Display />
+        <Cart />
       </div>
-    </Container>     
-
+    </Container>
   );
 };

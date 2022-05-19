@@ -46,32 +46,32 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const goHome = () => {
-    return navigate('/inicio', { replace: true });
+    return navigate('/inicio');
   };
 
   const goStore = () => {
-    return navigate('/loja', { replace: true });
+    return navigate('/loja');
   };
 
   const goCart = () => {
-    return navigate('/carrinho', { replace: true });
+    return navigate('/carrinho');
   };
 
   const goLogin = () => {
-    return navigate('/entrar', { replace: true });
+    return navigate('/entrar');
   };
 
   const goRegister = () => {
-    return navigate('/registro/loja', { replace: true });
+    return navigate('/registro/loja');
   };
 
   const goUserProfile = () => {
     if (user.type === 'user') {
-      return navigate('/perfil/usuario', { replace: true });
+      return navigate('/perfil/usuario');
     }
 
     if (user.type === 'shop') {
-      return navigate('/perfil/loja', { replace: true });
+      return navigate('/perfil/loja');
     }
   };
 
