@@ -56,9 +56,6 @@ export const Container = styled.li`
     align-items: center;
     justify-content: space-between;
   }
-
-  @media (min-width: 850px) {
-  }
 `;
 export const CardButton = styled.button`
   width: 2rem;

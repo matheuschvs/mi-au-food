@@ -33,6 +33,7 @@ export const CartProvider = ({ children }) => {
 
   const cleanCart = () => {
     setCart([]);
+    return localStorage.removeItem('@mi-au-food:cart');
   };
 
   const removeFromCart = useCallback(
