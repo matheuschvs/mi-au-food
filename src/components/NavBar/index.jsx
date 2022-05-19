@@ -1,26 +1,41 @@
-/* eslint-disable*/
+import { Search } from 'react-feather';
 
-import { useState } from "react"
-import { useCatalogue } from "../../context/catalogue"
-import { NavStyled } from "./style"
+import { useCatalogue } from '../../context/catalogue';
 
-export const NavBar = () =>{
-  const { setRoot, filter } = useCatalogue()
+import { NavStyled } from './style';
 
-  return(
+export const NavBar = () => {
+  const { setRoot, filter } = useCatalogue();
+
+  return (
     <NavStyled>
       <section>
-        <button onClick={() =>setRoot("")}>Todos</button>
-        <button onClick={() =>setRoot("?type=Comida")}>Alimentos</button>
-        <button onClick={() =>setRoot("?type=Brinquedo")}>Brinquedos</button>
-        <button onClick={() =>setRoot("?type=Medicamento")}>Farmácia</button>
-        <button onClick={() =>setRoot("?type=Higiene")}>Higiene</button>
-        <button onClick={() =>setRoot("?type=Acessório")}>Acessórios</button>
+        <button type="button" onClick={() => setRoot('')}>
+          Todos
+        </button>
+        <button type="button" onClick={() => setRoot('?type=Comida')}>
+          Alimentos
+        </button>
+        <button type="button" onClick={() => setRoot('?type=Brinquedo')}>
+          Brinquedos
+        </button>
+        <button type="button" onClick={() => setRoot('?type=Medicamento')}>
+          Farmácia
+        </button>
+        <button type="button" onClick={() => setRoot('?type=Higiene')}>
+          Higiene
+        </button>
+        <button type="button" onClick={() => setRoot('?type=Acessório')}>
+          Acessórios
+        </button>
       </section>
       <div>
-        <input type="text" onChange={(evt) => filter(evt.target.value.toLocaleLowerCase())} />
+        <Search color="var(--primary-color)" size="1.2rem" />
+        <input
+          type="text"
+          onChange={evt => filter(evt.target.value.toLocaleLowerCase())}
+        />
       </div>
-
-  </NavStyled>
-  )
-}
+    </NavStyled>
+  );
+};

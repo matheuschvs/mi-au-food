@@ -31,6 +31,11 @@ export const CartProvider = ({ children }) => {
     [cart],
   );
 
+  const cleanCart = () => {
+    setCart([]);
+    return localStorage.removeItem('@mi-au-food:cart');
+  };
+
   const removeFromCart = useCallback(
     product => {
       const list = cart.filter(item => item !== product);
@@ -61,7 +66,15 @@ export const CartProvider = ({ children }) => {
   }, 0);
 
   const value = useMemo(
-    () => ({ cart, addToCart, removeFromCart, reduceQuantity, cartReducer }),
+    () => ({
+      cart,
+      addToCart,
+      removeFromCart,
+      reduceQuantity,
+      cartReducer,
+      cleanCart,
+      setCart,
+    }),
     [addToCart, removeFromCart, reduceQuantity, cart, cartReducer],
   );
 

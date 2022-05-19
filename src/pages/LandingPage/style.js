@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import dogBackground from '../../assets/dog-face-mobile.png';
 
 export const Container = styled(motion.main)`
-  padding: 5.93rem 1.143rem 0;
+  padding: 5rem 1.143rem 0;
 
   a {
     text-decoration: none;
@@ -284,7 +284,7 @@ export const Cards = styled.section`
 `;
 
 export const Partners = styled.section`
-  background: var(--secondary-color-1);
+  background: #ffa459;
   background-image: url(${dogBackground});
   background-blend-mode: darken;
   background-size: 120vw 100%;

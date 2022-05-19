@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
 export const Main = styled.div`
-  
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3vw;
-    
-  }
+  display: flex;
+  justify-content: space-around;
+  padding-top: 9.93rem;
 
-  @media (max-width: 1296px) {
+  @media (max-width: 1280px) {
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
@@ -29,7 +26,6 @@ export const UserContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
-  background-color: ;
   &:hover {
     background-color: #fcdede;
   }
@@ -48,6 +44,9 @@ export const UserContainer = styled.div`
   h4 {
     font-size: 30px;
     margin: 10px;
+  }
+  @media (max-width: 570px) {
+    align-items: center;
   }
 `;
 
@@ -71,9 +70,6 @@ export const PetContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  button {
   }
 
   p {

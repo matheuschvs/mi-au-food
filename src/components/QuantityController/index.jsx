@@ -3,11 +3,12 @@ import { RangeButton } from './style';
 
 export const QuantityController = ({ product }) => {
   const { addToCart, reduceQuantity } = useCart();
+
   return (
     <>
-      <RangeButton onClick={() => addToCart(product)}> + </RangeButton>
-      <span>{product.quantity}</span>
       <RangeButton onClick={() => reduceQuantity(product)}> - </RangeButton>
+      <span>{product.quantity}</span>
+      <RangeButton onClick={() => addToCart(product)}> + </RangeButton>
     </>
   );
 };

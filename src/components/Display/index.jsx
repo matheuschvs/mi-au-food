@@ -8,7 +8,7 @@ export const Display = () => {
   return (
     <StyledDisplay>
       {catalogue.map(product => (
-        <Card product={product} />
+        <Card key={product.id} product={product} />
       ))}
     </StyledDisplay>
   );
