@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   HeaderBar,
   CartIcon,
@@ -11,6 +11,7 @@ import {
   UserModal,
   LogoutIcon,
   ContainerModal,
+  ContainerModalLogoff,
 } from './style';
 import cartIcon from '../../assets/shopcart.svg';
 import menuIcon from '../../assets/menu1.svg';
@@ -29,8 +30,14 @@ export const Header = () => {
 
   const [modalMobile, setModalMobile] = useState(false);
 
+  const [modalLogoff, setModalLogoff] = useState(false);
+
   const showModal = () => {
     setUserModal(!userModal);
+  };
+
+  const showModalLogoff = () => {
+    setModalLogoff(!modalLogoff);
   };
 
   const showModalMob = () => {
@@ -41,6 +48,10 @@ export const Header = () => {
 
   const goHome = () => {
     return navigate('/inicio', { replace: true });
+  };
+
+  const goStore = () => {
+    return navigate('/loja', { replace: true });
   };
 
   const goCart = () => {
@@ -56,7 +67,7 @@ export const Header = () => {
   };
 
   const goUserProfile = () => {
-    return navigate('/usuario', { replace: true });
+    return navigate('/perfil/usuario', { replace: true });
   };
 
   return (
@@ -117,50 +128,110 @@ export const Header = () => {
           </div>
           <ContainerIMG>
             <CartIcon src={cartIcon} alt="imagem carrinho" />
-            <MenuIcon onClick={showModalMob} src={menuIcon} alt="imagem menu" />
+            <MenuIcon
+              onClick={showModalLogoff}
+              src={menuIcon}
+              alt="imagem menu"
+            />
           </ContainerIMG>
         </HeaderBar>
       )}
-      {modalMobile && <ContainerModal>
-        <div>
-          <h1>Mi-Au Food</h1>
-          <p onClick={showModalMob}>x</p>
-        </div>
-        <h2
-          onClick={() => {
-            goUserProfile();
-            showModalMob();
-          }}
-        >
-          Meu perfil
-        </h2>
-        <h2
-          onClick={() => {
-            goCart();
-            showModalMob();
-          }}
-        >
-          Meu carrinho
-        </h2>
-        <h2
-          onClick={() => {
-            goHome();
-            showModalMob();
-          }}
-        >
-          Catálogo
-        </h2>
-        <section>
-          <LogoutIcon src={logoutIcon} alt="ícone logout" />
+      {modalMobile && (
+        <ContainerModal>
+          <div>
+            <h1>Mi-Au Food</h1>
+            <p onClick={showModalMob}>x</p>
+          </div>
           <h2
             onClick={() => {
+              goUserProfile();
               showModalMob();
             }}
           >
-            Sair
+            Meu perfil
           </h2>
-        </section>
-      </ContainerModal>}
+          {user.type === 'user' ? (
+            <h2
+              onClick={() => {
+                goCart();
+                showModalMob();
+              }}
+            >
+              Meu carrinho
+            </h2>
+          ) : (
+            <h2
+              onClick={() => {
+                goStore();
+                showModalMob();
+              }}
+            >
+              Meus pedidos
+            </h2>
+          )}
+          <h2
+            onClick={() => {
+              goHome();
+              showModalMob();
+            }}
+          >
+            Catálogo
+          </h2>
+          <section>
+            <LogoutIcon src={logoutIcon} alt="ícone logout" />
+            <h2
+              onClick={() => {
+                showModalMob();
+              }}
+            >
+              Sair
+            </h2>
+          </section>
+        </ContainerModal>
+      )}
+      {modalLogoff && (
+        <ContainerModalLogoff>
+          <div>
+            <h1>Mi-Au Food</h1>
+            <p onClick={showModalLogoff}>x</p>
+          </div>
+          <h2
+            onClick={() => {
+              goUserProfile();
+              showModalLogoff();
+            }}
+          >
+            Catálogo
+          </h2>
+          <h3>Você ainda não está logado</h3>
+          <section>
+            <button
+              onClick={() => {
+                showModalLogoff();
+                goLogin();
+              }}
+            >
+              Entrar
+            </button>
+            <Link
+              to="/registro/usuario"
+              onClick={() => {
+                showModalLogoff();
+              }}
+            >
+              Crie sua conta
+            </Link>
+            <Link
+              to="/registro/loja"
+              onClick={() => {
+                showModalLogoff();
+              }}
+            >
+              Seja uma loja parceira
+            </Link>
+          </section>
+        </ContainerModalLogoff>
+      )}
     </>
   );
 };
