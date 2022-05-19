@@ -7,7 +7,7 @@ export const MainContainer = styled.div`
   min-height: 100vh;
 
   header {
-    margin-top: 2rem;
+    padding-top: 2rem;
     margin-left: 6.25rem;
     margin-bottom: 80px;
   }
@@ -80,7 +80,7 @@ export const Form = styled.form`
     max-width: 90%;
   }
   h1 {
-    color: white;
+    color: var(--background);
     font-size: 50px;
   }
 

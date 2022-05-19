@@ -1,5 +1,11 @@
-/* eslint-disable */
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import { toast } from 'react-toastify';
 
@@ -55,8 +61,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await API.post('signup', userInfo);
 
-      console.log(userInfo);
-
       const { user: userResponse, accessToken } = response.data;
 
       localStorage.setItem('@mi-au-food:user', JSON.stringify(userResponse));
@@ -71,16 +75,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const editProfile = data => {
-    API.patch(`users/${user.id}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then(response => {
-      setUser(response.data);
-      localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
-    });
-  };
+  const editProfile = useCallback(
+    data => {
+      API.patch(`users/${user.id}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(response => {
+        setUser(response.data);
+        localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
+      });
+    },
+    [token, user.id],
+  );
 
   const value = useMemo(
     () => ({
@@ -91,7 +98,7 @@ export const AuthProvider = ({ children }) => {
       editProfile,
       Logoff,
     }),
-    [user, token],
+    [user, token, editProfile],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
