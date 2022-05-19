@@ -1,7 +1,6 @@
-/* eslint-disable*/
-import { Adicionar, StyledModal } from './style';
+/* eslint-disable */
+
 import { useState } from 'react';
-import { FadingBackground } from './style';
 import { ModalProvider } from 'styled-react-modal';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,15 +9,18 @@ import { DivInput, Form, Input } from '../UserForm/style';
 import { useAuth } from '../../context/auth';
 import { API } from '../../services/api';
 
+import { Adicionar, StyledModal, FadingBackground } from './style';
+
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
-
+  
   const { user, setUser, token } = useAuth();
 
   const [pets, setPets] = useState(user.pets || []);
 
-  function toggleModal(e) {
+
+  function toggleModal() {
     setOpacity(0);
     setIsOpen(!isOpen);
   }
@@ -95,7 +97,7 @@ export const ButtonAdicionar = ({ text }) => {
         backgroundProps={{ opacity }}
       >
         <Form>
-          <DivInput onSubmit={handleSubmit(submitChange)}>
+          <DivInput>
             <p>Editar informações</p>
             <Input
               placeholder="Nome"

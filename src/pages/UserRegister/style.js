@@ -12,12 +12,7 @@ export const Container = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-      180deg,
-      var(--background) 39.84%,
-      var(--secondary-color-2) 76.04%,
-      var(--primary-color) 100%
-    );
+    background: var(--gradient);
   }
 `;
 
@@ -192,14 +187,14 @@ export const Form = styled.form`
   }
   h3 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--background);
     font-size: 0.8rem;
     margin-top: 1.4rem;
   }
   a {
     text-decoration: none;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--background);
     font-size: 0.8rem;
     margin-top: 1.4rem;
     cursor: pointer;
@@ -261,7 +256,7 @@ export const Form = styled.form`
       border: 1px dashed var(--primary-color);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
-      color: var(--primary-color);
+      color: var(--background);
       margin-left: 10%;
       margin-top: 1.8rem;
     }

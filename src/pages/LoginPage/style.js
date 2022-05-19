@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import backMobile from '../../assets/cachorro-piscando.svg';
 
 export const MainContainer = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(255, 245, 245, 0.8) 39.84%,
-    rgba(231, 105, 0, 0.24) 76.04%,
-    rgba(231, 0, 0, 0.8) 100%
-  );
+  background: var(--gradient);
   min-height: 100vh;
 
   header {
@@ -129,7 +124,7 @@ export const Form = styled.form`
     box-shadow: inset 0px 2px 4px 6px rgba(0, 0, 0, 0.5);
 
     h1 {
-      color: white;
+      color: var(--background);
       font-size: 1.14rem;
     }
 
