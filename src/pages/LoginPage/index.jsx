@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -7,7 +8,7 @@ import loginBG from '../../assets/Rectangle 15.png';
 import { Form, MainDiv, IMG, MainContainer } from './style';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { MiauFoodIcon } from '../../components/MiauFood Icon';
+import { MiauFoodIcon } from '../../components/MiauFoodIcon';
 
 export const LoginPage = () => {
   const { user, signIn } = useAuth();

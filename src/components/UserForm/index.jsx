@@ -2,21 +2,25 @@
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { DivInput, Form, Input } from './style';
+import { DivInput, Form } from './style';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 export const FormUser = () => {
+  const userObject = JSON.parse(localStorage.getItem('@mi-au-food:user'));
+  const token = localStorage.getItem('@mi-au-food:token');
+  const [newInfo, SetNewInfo] = useState([]);
+  const id = userObject.id;
+  const baseUrl = `https://json-server-kenziegroup.herokuapp.com/users/${id}`;
+
   const schema = yup.object().shape({
-    name: yup
-      .string()
-      .matches(
-        /^[a-zA-Z]+$/,
-        'Nome de usuário inválido. Somente letras, sem espaços.',
-      ),
-    email: yup.string(),
-    tel: yup.number(),
-    address: yup.string(),
-    cpf: yup.string(),
-    img: yup.string(),
+    name: yup.string().required(),
+    email: yup.string().required('Digite sua senha para continuar'),
+    password: yup.string().required('Digite sua senha para continuar'),
+    tel: yup.string().required(),
+    address: yup.string().required(),
+    cpf: yup.string().required(),
+    img: yup.string().required(),
   });
 
   const {
@@ -27,54 +31,88 @@ export const FormUser = () => {
     resolver: yupResolver(schema),
   });
 
+  const patchAxios = (data, callBack = () => {}) => {
+    axios.patch(baseUrl, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
+
+  const attInfo = () => {
+    axios
+      .get(baseUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(response => {
+        console.log(response.data);
+        localStorage.setItem('@mi-au-food:user', JSON.stringify(response.data));
+      });
+  };
+
+  const submitChange = data => {
+    patchAxios(data);
+  };
+
   return (
     <Form>
-      <DivInput>
+      <DivInput onSubmit={handleSubmit(submitChange)}>
         <p>Editar informações</p>
-        <Input
+        <input
           placeholder="Nome"
-          type="name"
+          type="text"
           label="Nome"
           name="name"
-          register={register}
-        ></Input>
-        <Input
+          {...register('name')}
+        ></input>
+        <input
           placeholder="Email"
           type="email"
           label="Email"
           name="email"
-          register={register}
-        ></Input>
-        <Input
+          {...register('email')}
+        ></input>
+        <input
+          placeholder="senha"
+          type="password"
+          label="Senha"
+          name="password"
+          {...register('password')}
+        ></input>
+        <input
           placeholder="Foto do perfil"
-          type="img"
+          type="text"
           label="Url da imagem"
           name="img"
-          register={register}
-        ></Input>
-        <Input
+          {...register('img')}
+        ></input>
+        <input
           placeholder="Telefone"
-          type="telefone"
+          type="text"
           label="Telefone"
           name="tel"
-          register={register}
-        ></Input>
-        <Input
+          {...register('tel')}
+        ></input>
+        <input
           placeholder="Endereço"
-          type="address"
+          type="text"
           label="Endereço"
           name="address"
-          register={register}
-        ></Input>
-        <Input
+          {...register('address')}
+        ></input>
+        <input
           placeholder="CPF"
-          type="cpf"
+          type="text"
           label="CPF"
           name="cpf"
-          register={register}
-        ></Input>
+          {...register('cpf')}
+        ></input>
+        <button type="submit" onClick={attInfo}>
+          Enviar
+        </button>
       </DivInput>
-      <p>Enviar</p>
     </Form>
   );
 };

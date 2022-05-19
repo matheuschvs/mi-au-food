@@ -13,14 +13,22 @@ export const AuthProvider = ({ children }) => {
     const localUser = localStorage.getItem('@mi-au-food:user');
     const localToken = localStorage.getItem('@mi-au-food:token');
 
+    const parsedUser = JSON.parse(localUser)
+
     if (localUser) {
-      setUser(JSON.parse(localUser));
+      setUser(parsedUser);
     }
 
     if (localToken) {
       setToken(localToken);
     }
   }, []);
+
+  const Logoff = () => {
+    setUser({});
+    setToken('');
+    localStorage.clear()
+  };
 
   const signIn = async (userInfo, callback = () => {}) => {
     try {
@@ -75,7 +83,8 @@ export const AuthProvider = ({ children }) => {
       token,
       signIn,
       signUp,
-      editProfile
+      editProfile,
+      Logoff,
     }),
     [user, token],
   );

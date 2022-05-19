@@ -120,4 +120,14 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  ::-moz-selection {
+    color: var(--primary-color);
+    background: var(--secondary-color-1);
+  }
+
+  ::selection {
+    color: var(--primary-color);
+    background: var(--secondary-color-1);
+  }
 `;
