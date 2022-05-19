@@ -64,9 +64,15 @@ export const Form = styled.form`
   background-color: var(--primary-color);
   border-radius: 550px 0px 0px 550px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+<<<<<<< HEAD
 
   padding: 8.125rem 6.125rem 6.125rem;
 
+=======
+  input {
+    height: 45px;
+  }
+>>>>>>> 14a7e3286dac3d8a4b857ad59ac43ec41c2d1154
   h1 {
     color: white;
     font-size: 50px;
@@ -115,6 +121,15 @@ export const Form = styled.form`
     a {
       font-size: 0.9rem;
     }
+<<<<<<< HEAD
+=======
+  }
+
+  input {
+    height: 45px;
+  }
+  
+>>>>>>> 14a7e3286dac3d8a4b857ad59ac43ec41c2d1154
   }
 `;
 export const IMG = styled.img`
