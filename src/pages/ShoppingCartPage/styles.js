@@ -47,6 +47,7 @@ export const Botoes = styled.div`
   padding-top: 40px;
   position: relative;
   right: 120px;
+  cursor: pointer;
 `;
 export const Lixo = styled.div`
   padding-top: 100px;
@@ -57,6 +58,7 @@ export const Lixo = styled.div`
   img {
     width: 50px;
     height: 30px;
+    cursor: pointer;
   }
 `;
 export const Total = styled.div`
@@ -85,6 +87,7 @@ export const Final = styled.div`
     height: 48px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
   }
 `;
 export const CleanCar = styled.div`
@@ -102,6 +105,7 @@ button{
     height: 48px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
   }
 }
 
