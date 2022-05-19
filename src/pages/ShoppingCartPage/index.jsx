@@ -1,16 +1,5 @@
-/* eslint-disable import/named */
-/* eslint-disable import/order */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable no-unused-vars */
-import { useState } from 'react';
-import { Card } from '../../components/Card';
+/* eslint-disable */
+
 import { useCart } from '../../context/cart';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -25,12 +14,11 @@ import {
   Final,
   CleanCar,
 } from './styles';
-import iconMais from '../../assets/Button Primary.svg';
-import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
 import { InfoUser } from '../../components/InfoUser';
+import { API } from '../../services/api';
 
 export const ShoppingCartPage = () => {
   const {
@@ -42,17 +30,12 @@ export const ShoppingCartPage = () => {
     setCart,
   } = useCart();
 
-  const [final, setFinal] = useState([]);
-  const [esconder, setEsconder] = useState(false);
-  const [idPedido, setIdPedido] = useState();
   const navigate = useNavigate();
 
-  console.log();
 
   const token = localStorage.getItem('@mi-au-food:token');
-  const idLocal = localStorage.getItem('@mi-au-food:user');
 
-  const user = JSON.parse(idLocal);
+  const user = JSON.parse(localStorage.getItem('@mi-au-food:user'));
 
   const authAxios = axios.create({
     baseURL: 'https://json-server-kenziegroup.herokuapp.com/request',
@@ -64,20 +47,22 @@ export const ShoppingCartPage = () => {
   const { name, email, tel, address, cpf, img, type, pets } = user;
 
   const finalizarComprar = () => {
-    authAxios
-      .post(
-        `https://json-server-kenziegroup.herokuapp.com/request`,
-
-        {
+    API.post(`request`,{
           product: cart,
-
           status: 'Aguardando',
           totalCarrinho: cartReducer,
-
           user: { name, email, tel, address, cpf, type },
-        },
+        },{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+        
       )
-      .then(() => navigate('/perfil/usuario', { replace: true }))
+      .then(() => {
+        navigate('/perfil/usuario', { replace: true })
+        cleanCart()
+      })
 
       .catch(err => console.log(err));
   };
@@ -94,7 +79,7 @@ export const ShoppingCartPage = () => {
 
       {cart.length === 0 ? (
         <Not>
-          <h1>Não existe produto no carrinho</h1>
+          <h2>Não existe produto no carrinho</h2>
         </Not>
       ) : (
         <Main>
@@ -104,12 +89,13 @@ export const ShoppingCartPage = () => {
                 <img src={item.img}></img>
                 <h2>{item.name}</h2>
                 <h3>Quantidade</h3>
+                <QuantityController product={item} />
 
                 <h3>Preço</h3>
                 <h5>R$ {item.price}</h5>
-                <Botoes>
-                  <QuantityController product={item} />
-                </Botoes>
+                {/* <Botoes>
+                  
+                </Botoes> */}
                 <Lixo>
                   <img
                     onClick={() => removeFromCart(item)}
