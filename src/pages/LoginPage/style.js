@@ -67,16 +67,32 @@ export const Form = styled.form`
 
   padding: 8.125rem 6.125rem 6.125rem;
 
+  & > div {
+    padding: 0 2rem;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
   input {
     height: 45px;
+    max-width: 90%;
   }
   h1 {
     color: white;
     font-size: 50px;
   }
 
-  div:last-of-type {
-    margin-bottom: 2rem;
+  div > div {
+    margin-bottom: -1.5rem;
+    width: 90%;
+    text-align: right;
+
+    span {
+      margin-left: 0;
+      font-size: 0.8rem;
+    }
   }
 
   button {
@@ -109,6 +125,11 @@ export const Form = styled.form`
     h1 {
       color: white;
       font-size: 1.14rem;
+    }
+
+    & > div {
+      padding: 0 0.5rem;
+      min-height: 2.5rem;
     }
 
     div {

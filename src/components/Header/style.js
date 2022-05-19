@@ -10,6 +10,8 @@ export const HeaderBar = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
+  box-shadow: ${props => props.boxShadow};
+
   h1 {
     font-size: 2rem;
     color: #ffffff;
@@ -71,6 +73,8 @@ export const HeaderLogin = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
+  box-shadow: ${props => props.boxShadow};
+
   h1 {
     font-size: 1.2rem;
     color: #ffffff;
@@ -149,6 +153,7 @@ export const LogoutIcon = styled.img`
 export const MenuIcon = styled.img`
   display: block;
   margin-right: 10px;
+  cursor: pointer;
   @media (min-width: 1024px) {
     display: none;
   }
@@ -179,7 +184,7 @@ export const UserModal = styled.div`
   top: 10%;
   right: 0%;
   margin-right: 18px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   border: solid 2px var(--primary-color);
@@ -214,15 +219,18 @@ export const UserModal = styled.div`
     height: 0;
     position: absolute;
     align-items: flex-start;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-left: 20px solid var(--primary-color);
+    border-right: 20px solid var(--primary-color);
     border-bottom: 20px solid var(--background);
     top: -20px;
     right: 6%;
   }
 
   @media (min-width: 1024px) {
-    margin-right: 100px;
+    display: flex;
+
+    margin-right: 7.1875rem;
+    margin-top: 0.625rem;
     right: 0%;
   }
 `;

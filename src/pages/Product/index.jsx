@@ -45,8 +45,9 @@ export const Product = () => {
         <>
           <Head3>Achamos que seu pet também vai gostar:</Head3>
           <StyledDisplay>
-          
-          {options.map(product => <Card key={product.id} product={product}/>)}
+            {options.map(product => (
+              <Card key={product.id} product={product} />
+            ))}
           </StyledDisplay>
         </>
       )}
