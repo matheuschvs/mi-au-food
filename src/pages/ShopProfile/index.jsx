@@ -11,7 +11,7 @@ export const ShopProfile = () => {
   const {user} = useAuth();
   const [orders, setOrders] = useState([]);
   const [displayOrder, setDisplayOrder] = useState({});
-  
+
   const token = localStorage.getItem('@mi-au-food:token');
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const ShopProfile = () => {
       setOrders(response.data);
     });
   }, []);
-  
+
   return (
     <Main>
       <ProfileCard />

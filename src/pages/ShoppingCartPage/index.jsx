@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import { useCart } from '../../context/cart';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -11,6 +12,7 @@ import {
   Todo,
   Esconder,
   Final,
+  CleanCar,
 } from './styles';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
@@ -27,6 +29,7 @@ export const ShoppingCartPage = () => {
     cleanCart,
     setCart,
   } = useCart();
+
   const navigate = useNavigate();
 
 
@@ -87,6 +90,7 @@ export const ShoppingCartPage = () => {
                 <h2>{item.name}</h2>
                 <h3>Quantidade</h3>
                 <QuantityController product={item} />
+
                 <h3>Preço</h3>
                 <h5>R$ {item.price}</h5>
                 {/* <Botoes>
@@ -110,9 +114,11 @@ export const ShoppingCartPage = () => {
               {' '}
               <button onClick={finalizarComprar}>Finalizar Comprar</button>
             </Final>
-            <button onClick={cleanCart} type="button">
-              Limpar o carrinho
-            </button>
+            <CleanCar>
+              <button onClick={cleanCart} type="button">
+                Limpar o carrinho
+              </button>
+            </CleanCar>
           </Total>
         </Main>
       )}
