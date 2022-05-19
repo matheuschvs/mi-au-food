@@ -112,3 +112,7 @@ export const Not = styled.div`
 `;
 
 export const Todo = styled.div``;
+
+export const Esconder = styled.div`
+  display: none;
+`;

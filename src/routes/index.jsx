@@ -44,9 +44,10 @@ export const Router = () => {
         <Route
           path="carrinho"
           element={
-            <RequireAuth>
-              <ShoppingCartPage />
-            </RequireAuth>
+            <ShoppingCartPage />
+            // <RequireAuth>
+
+            // </RequireAuth>
           }
         />
         <Route path="*" element={<NoContent />} />
