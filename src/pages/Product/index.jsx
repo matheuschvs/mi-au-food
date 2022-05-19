@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useParams } from 'react-router-dom';
 import { useCatalogue } from '../../context/catalogue';
 import { StyledMain, ProductButton, Head3 } from './style';
@@ -45,8 +46,9 @@ export const Product = () => {
         <>
           <Head3>Achamos que seu pet também vai gostar:</Head3>
           <StyledDisplay>
-          
-          {options.map(product => <Card key={product.id} product={product}/>)}
+            {options.map(product => (
+              <Card key={product.id} product={product} />
+            ))}
           </StyledDisplay>
         </>
       )}

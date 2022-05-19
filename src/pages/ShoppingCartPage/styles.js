@@ -58,6 +58,36 @@ export const Main = styled.div`
     position: relative;
     right: -45px;
   }
+
+  @media only screen and (min-width: 400px) and (max-width:500px) {
+    li {
+      position: relative;
+     float: left;
+     right: 120px;
+     
+      width: 400px;
+      border: 1px solid red;
+      height: 100px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      margin-top: 50px;
+      position: relative;
+      bottom: 25px;
+    }
+    h2 {
+    margin-top: 10px;
+    margin-left: 50px;
+   width: 0px;
+    font-size: 12px;
+  }
+  h3 {
+  font-size: 12px;
+  position: relative;
+  left: 150px;
+  right: 100px;
+  }
 `;
 
 export const Botoes = styled.div`

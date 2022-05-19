@@ -39,7 +39,7 @@ export const ShoppingCartPage = () => {
     cleanCart,
     setCart,
   } = useCart();
-  // const { addToCart, removeFromCart, reduceQuantity } = useCart()
+
   const [final, setFinal] = useState([]);
   const [esconder, setEsconder] = useState(false);
   const [idPedido, setIdPedido] = useState();
