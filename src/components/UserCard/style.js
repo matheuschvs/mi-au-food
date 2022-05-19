@@ -70,8 +70,27 @@ export const Container = styled.div`
     }
  
   }
+  @media (max-width: 800px) {
+    width: 300px;
+    height: 100%;
+    border-radius: 300px 300px 0px 0px;
+    flex-direction: column;
+    padding: 8px;
+    p{
+      font-size: 25px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+  
 `;
-export const InfoDiv = styled.div``;
+export const InfoDiv = styled.div`
+  @media (max-width: 800px) {
+    p {
+      text-align: center;
+    }
+  }
+`;
 
 export const ButtonEditar = styled.p`
   cursor: pointer;

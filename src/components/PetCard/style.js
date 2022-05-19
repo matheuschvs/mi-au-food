@@ -64,6 +64,13 @@ export const PetContainer = styled.div`
       width: 190px;
     }
   }
+  @media (max-width: 800px) {
+    width: 220px;
+    height: 100%;
+    border-radius: 300px 300px 0px 0px;
+    flex-direction: column;
+    padding: 8px;
+  }
 `;
 
 export const PetsMain = styled.div`
@@ -90,6 +97,9 @@ export const PetsMain = styled.div`
     h3 {
       margin: 20px;
     }
+  }
+  @media (max-width: 800px) {
+    flex-direction: row;
   }
 `;
 
