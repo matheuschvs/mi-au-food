@@ -14,7 +14,7 @@ const Contend = () => {
         <>
           <ul>
             {cart.map(product => (
-              <Card product={product} cartSize />
+              <Card key={product.id} product={product} cartSize />
             ))}
           </ul>
           <div>
