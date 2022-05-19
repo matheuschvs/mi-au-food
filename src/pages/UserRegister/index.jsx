@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
+import { toast } from 'react-toastify';
 import {
   BackgroundIMG,
   Container,
@@ -53,7 +54,7 @@ export const UserRegister = () => {
 
   const onSubmitFunction = data => {
     const newData = { ...data, type: 'user' };
-    signUp(newData, navigate('/entrar', { replace: true }));
+    signUp(newData, navigate('/entrar', { replace: true }) && toast.success(`Bem vindo/a ${data.name}`));
   };
 
   return (

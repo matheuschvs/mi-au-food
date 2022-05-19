@@ -3,7 +3,7 @@ import { RangeButton } from './style';
 
 export const QuantityController = ({ product }) => {
   const { addToCart, reduceQuantity } = useCart();
-  
+
   return (
     <>
       <RangeButton onClick={() => reduceQuantity(product)}> - </RangeButton>

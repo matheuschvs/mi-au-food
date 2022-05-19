@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background: var( --secondary-color-1);
+  background: var(--secondary-color-1);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -9,4 +9,4 @@ export const Section = styled.section`
   padding: 1rem;
   max-width: 300px;
   margin: auto;
-`
+`;
