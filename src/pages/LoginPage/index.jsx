@@ -1,8 +1,7 @@
-/*eslint-disable*/
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 import loginBG from '../../assets/Rectangle 15.png';
 import { Form, MainDiv, IMG, MainContainer } from './style';
@@ -13,6 +12,9 @@ import { MiauFoodIcon } from '../../components/MiauFoodIcon';
 export const LoginPage = () => {
   const { user, signIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || null;
 
   const schema = yup.object().shape({
     email: yup.string().required('É preciso um email para acessar o site'),
@@ -26,12 +28,17 @@ export const LoginPage = () => {
     resolver: yupResolver(schema),
   });
 
-  const redirectTo = async (user) => {
-    console.log(user)
-    if(user.cpf){
-      navigate('/perfil/usuario', { replace: true });
-    } else if (user.type ==='shop'){
-      navigate('/perfil/loja', { replace: true });
+  const redirectTo = () => {
+    if (from) {
+      return navigate(from, { replace: true });
+    }
+
+    if (user.type === 'user') {
+      return navigate('/perfil/usuario', { replace: true });
+    }
+
+    if (user.type === 'shop') {
+      return navigate('/perfil/loja', { replace: true });
     }
   };
 

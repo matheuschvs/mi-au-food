@@ -54,7 +54,7 @@ export const Header = () => {
   };
 
   const goCart = () => {
-    return navigate('/carinho', { replace: true });
+    return navigate('/carrinho', { replace: true });
   };
 
   const goLogin = () => {
@@ -66,7 +66,13 @@ export const Header = () => {
   };
 
   const goUserProfile = () => {
-    return navigate('/perfil/usuario', { replace: true });
+    if (user.type === 'user') {
+      return navigate('/perfil/usuario', { replace: true });
+    }
+
+    if (user.type === 'shop') {
+      return navigate('/perfil/loja', { replace: true });
+    }
   };
 
   return (
