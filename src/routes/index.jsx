@@ -1,3 +1,4 @@
+/* eslint-disable import/newline-after-import */
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from '../layouts/Layout';
@@ -14,11 +15,12 @@ import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
 import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
-
+import { ProductRegistration } from '../pages/ProductRegistration';
 export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="product-registration" element={<ProductRegistration />} />
         <Route index element={<LandingPage />} />
         <Route path="inicio" element={<Home />} />
         <Route path="produto/:productId" element={<Product />} />

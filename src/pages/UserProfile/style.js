@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Main = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 9.93rem 6.25rem;
+  padding-top: 9.93rem;
 
-  @media (max-width: 798px) {
+  @media (max-width: 1280px) {
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
@@ -24,7 +24,7 @@ export const BoasVindas = styled.h1`
 export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 
   &:hover {
     background-color: #fcdede;
@@ -44,6 +44,9 @@ export const UserContainer = styled.div`
   h4 {
     font-size: 30px;
     margin: 10px;
+  }
+  @media (max-width: 570px) {
+    align-items: center;
   }
 `;
 
