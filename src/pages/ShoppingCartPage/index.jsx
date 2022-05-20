@@ -12,7 +12,7 @@
 import { useState } from 'react';
 import { Card } from '../../components/Card';
 import { useCart } from '../../context/cart';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Botoes,
   Lixo,
@@ -90,7 +90,9 @@ export const ShoppingCartPage = () => {
       <Carrinho>Carrinho</Carrinho>
 
       {cart.length === 0 ? (
-        <Titulo>Não existe produto no carrinho</Titulo>
+        <Link to="/">
+          <Titulo>Não existe produto no carrinho</Titulo>
+        </Link>
       ) : (
         <div>
           <Lista>
