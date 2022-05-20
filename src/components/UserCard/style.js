@@ -20,19 +20,23 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const Container = styled.div`
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-1);
     display: flex;
     align-items: center;
     border-radius: 100px 0px 0px 100px;
     height: 199px;
     width: 500px;
-    padding: 10px;
-
   }
   img {
     width: 171px;
     height: 181px;
     border-radius: 250px;
+    margin-left: 10px;
+
+    &:hover {
+      border: solid 3px var(--background);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
   }
   div {
     display: flex;
@@ -40,16 +44,19 @@ export const Container = styled.div`
     width: 100%;
   }
   &:hover {
-    background-color: var(--secondary-color-1);
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  transition-duration: 1s;
   
   }
   p {
     padding: 5px;
     margin-left: 20px;
     font-size: 20px;
+    width: fit-content;
+    
   }
 
   @media (max-width: 1296px) {
@@ -61,7 +68,7 @@ export const Container = styled.div`
     img {
       width: 280px;
       height: 288px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      
     }
     
     padding: 8px;
@@ -72,7 +79,7 @@ export const Container = styled.div`
  @media (max-width: 570px) {
   
   display: flex;
-    align-items: flex-start;
+    
     flex-direction: column;
     border-radius: 0px 0px 0px 0px;
 
@@ -81,6 +88,7 @@ export const Container = styled.div`
     height: 200px;
     border-radius: 0px;
     margin-left: 0px;
+    
   }
   p{
     font-size: 25px;
@@ -97,15 +105,15 @@ export const ButtonEditar = styled.p`
   margin-left: 10px;
   width: 100px;
   font-size: 30px;
-
+  color: var(--background);
+  background-color: none;
   &:not(:last-child) {
   }
   &:hover {
-    color: ice;
-    background-color: var(--secondary-color);
+    color: var(--background);
+    background-color: var(--secondary-color-1);
   }
-  background-color: var(--secondary-color-1);
-  color: var(--background);
+
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

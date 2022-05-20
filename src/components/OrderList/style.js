@@ -17,7 +17,7 @@ export const OrderBox = styled.div`
   &:hover {
     background-color: var(--secondary-color);
   }
-  ul{
+  ul {
     width: 100%;
   }
 

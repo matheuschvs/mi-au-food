@@ -1,6 +1,6 @@
 /* eslint-disable*/
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ButtonEditar, InfoDiv, PetContainer, PetsMain } from './style';
 import { FadingBackground } from './style';
 import Modal, { ModalProvider } from 'styled-react-modal';
@@ -38,18 +38,6 @@ export const PetCard = () => {
       setTimeout(resolve, 300);
     });
   }
-
-  // useEffect(() => {
-  //   axios
-  //     .get(baseUrl, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //     .then(response => {
-  //       setPets(response.data.pets);
-  //     });
-  // }, []);
 
   const patchAxios = data => {
     axios.patch(
