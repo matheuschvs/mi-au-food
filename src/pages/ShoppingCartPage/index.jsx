@@ -1,10 +1,4 @@
 /* eslint-disable */
-
-<<<<<<< HEAD
-import { useState } from 'react';
-import { Card } from '../../components/Card';
-=======
->>>>>>> 2ba22b1bf429ff5267ffe162c75e79bd84607b4c
 import { useCart } from '../../context/cart';
 import { Link, useNavigate } from 'react-router-dom';
 import {
