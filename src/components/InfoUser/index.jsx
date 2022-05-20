@@ -15,11 +15,9 @@ export const InfoUser = ({ authAxios }) => {
       .get(`https://json-server-kenziegroup.herokuapp.com/request`)
       .then(response => {
         setDados(response.data);
-        response.data.forEach(item => console.log('item', item));
+        response.data.forEach(() => {});
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => {});
   }, []);
 
   return (

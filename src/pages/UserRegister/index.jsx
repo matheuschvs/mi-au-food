@@ -60,7 +60,7 @@ export const UserRegister = () => {
         password,
         type: 'user',
       };
-      console.log(newData);
+
       await signUp(
         newData,
         navigate('/entrar', { replace: true }),

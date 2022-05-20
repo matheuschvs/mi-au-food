@@ -16,7 +16,6 @@ export const OrderList = () => {
         setDados(response.data);
       })
       .catch(err => {
-        console.log(err);
       });
   }, []);
 

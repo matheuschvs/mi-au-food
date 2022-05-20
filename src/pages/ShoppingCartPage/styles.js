@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import styled from 'styled-components';
 
 export const DivTudo = styled.main`
@@ -7,10 +6,12 @@ export const DivTudo = styled.main`
   max-width: 1200px;
   margin: auto;
   width: 85%;
-  h2{
+  h2 {
     text-align: center;
   }
 `;
+
+export const Titulo = styled.h2``;
 
 export const Lista = styled.ul`
   display: flex;
@@ -29,7 +30,7 @@ export const Lista = styled.ul`
     justify-content: space-between;
     margin: 0.5rem;
   }
-  div{
+  div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -45,12 +46,12 @@ export const Lista = styled.ul`
     flex-direction: row;
     justify-content: space-around;
   }
-  h3{
-    font-size:14px;
+  h3 {
+    font-size: 14px;
   }
   @media (min-width: 768px) {
-    h3{
-      font-size:24px;
+    h3 {
+      font-size: 24px;
     }
   }
 `;
@@ -62,8 +63,8 @@ export const DeleteButton = styled.button`
   border: none;
   margin: 0.5rem;
   background: var(--secondary-color-1);
-  color: var(--background)
-`
+  color: var(--background);
+`;
 
 export const Total = styled.div`
   display: flex;
