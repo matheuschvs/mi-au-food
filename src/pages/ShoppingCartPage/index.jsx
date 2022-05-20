@@ -12,7 +12,6 @@ import {
   Todo,
   Esconder,
   Final,
-  CleanCar,
 } from './styles';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
@@ -20,6 +19,7 @@ import axios from 'axios';
 import { OrderList } from '../../components/OrderList';
 import { InfoUser } from '../../components/InfoUser';
 import { API } from '../../services/api';
+import { useAuth } from '../../context/auth';
 
 export const ShoppingCartPage = () => {
   const {
@@ -34,9 +34,7 @@ export const ShoppingCartPage = () => {
   const navigate = useNavigate();
 
 
-  const token = localStorage.getItem('@mi-au-food:token');
-
-  const user = JSON.parse(localStorage.getItem('@mi-au-food:user'));
+  const {user, token} = useAuth();
 
   const authAxios = axios.create({
     baseURL: 'https://json-server-kenziegroup.herokuapp.com/request',
@@ -45,26 +43,23 @@ export const ShoppingCartPage = () => {
     },
   });
 
-  const { name, email, tel, address, cpf, img, type, pets } = user;
 
   const finalizarComprar = () => {
     API.post(`request`,{
-          product: cart,
-          status: 'Aguardando',
-          totalCarrinho: cartReducer,
-          user: { name, email, tel, address, cpf, type },
+        product: cart, 
+        user: user, 
+        status:"Aguardando", 
+        totalCarrinho: cartReducer 
         },{
           headers: {
             Authorization: `Bearer ${token}`,
           }
-        }
-        
+        }     
       )
       .then(() => {
         navigate('/perfil/usuario', { replace: true })
         cleanCart()
       })
-
       .catch(err => console.log(err));
   };
 
@@ -115,11 +110,9 @@ export const ShoppingCartPage = () => {
               {' '}
               <button onClick={finalizarComprar}>Finalizar Comprar</button>
             </Final>
-            <CleanCar>
               <button onClick={cleanCart} type="button">
                 Limpar o carrinho
               </button>
-            </CleanCar>
           </Total>
         </Main>
       )}

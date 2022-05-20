@@ -4,6 +4,7 @@ export const Main = styled.div`
   display: flex;
   justify-content: space-around;
   padding-top: 9.93rem;
+  font-family: 'Ubuntu';
 
   @media (max-width: 1280px) {
     flex-direction: column;
