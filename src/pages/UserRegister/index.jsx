@@ -22,11 +22,7 @@ import image7 from '../../assets/image7.png';
 import image8 from '../../assets/image8.png';
 import { Input } from '../../components/Input';
 
-/* eslint-disable */
-
 export const UserRegister = () => {
-  /* eslint-disable */
-
   const { signUp } = useContext(AuthContext);
 
   const navigate = useNavigate();
