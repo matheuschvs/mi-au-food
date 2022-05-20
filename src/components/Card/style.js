@@ -7,7 +7,7 @@ export const Container = styled.li`
   display: flex;
   flex-direction: ${props => (props.cartSize ? 'row' : 'column')};
   justify-content: space-around;
-  background: white;
+  background: var(--background-2);
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -55,9 +55,6 @@ export const Container = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  @media (min-width: 850px) {
   }
 `;
 export const CardButton = styled.button`

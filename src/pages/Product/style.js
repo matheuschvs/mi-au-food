@@ -5,8 +5,7 @@ export const StyledMain = styled.main`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 5rem 1rem;
-  padding-top: 100px;
+  padding: 11.25rem 1rem;
 
   div {
     height: 320px;
@@ -60,7 +59,7 @@ export const StyledMain = styled.main`
   }
 
   @media only screen and (min-width: 1100px) {
-    margin: 7rem;
+    padding: 13.25rem 7rem;
   }
 `;
 
@@ -71,7 +70,7 @@ export const ProductButton = styled.button`
   border-radius: 1rem;
   background-color: var(--secondary-color);
   color: var(--background);
-  margin: 20px;
+  margin: 8px;
 
   &:hover {
     background-color: var(--secondary-color-2);

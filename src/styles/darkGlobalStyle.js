@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const DarkGlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -53,27 +53,27 @@ export const GlobalStyle = createGlobalStyle`
   // css global
 
   :root {
-    --primary-color: #E70000;
-    --secondary-color: #E76900;
-    --tertiary-color: #008B8B;
-    --quaternary-color: #00B900;
-    --primary-color-1: #FF5959;
-    --primary-color-2: #900000;
-    --secondary-color-1: #FFA459;
-    --secondary-color-2: #904100;
-    --tertiary-color-1: #3BA9A9;
-    --tertiary-color-2: #005656;
-    --quaternary-color-1: #4AD44A;
-    --quaternary-color-2: #007300;
+    --primary-color: #e70000;
+    --secondary-color: #e76900;
+    --tertiary-color: #008b8b;
+    --quaternary-color: #00b900;
+    --primary-color-1: #900000;
+    --primary-color-2: #ff5959;
+    --secondary-color-1: #904100;
+    --secondary-color-2: #ffa459;
+    --tertiary-color-1: #005656;
+    --tertiary-color-2: #3ba9a9;
+    --quaternary-color-1: #007300;
+    --quaternary-color-2: #4ad44a;
 
-    --title: #170000;
-    --subtitle: #271313;
-    --text: #342C2C;
+    --title: #ffdddd;
+    --subtitle: #f8b8b8;
+    --text: #f8b8b8;
 
-    --background: #FFF5F5;
-    --background-2: #FFF;
+    --background: #0e0000;
+    --background-2: #1a0000;
 
-    --gradient: linear-gradient(180deg,rgba(255,245,245,0.8) 39.84%,rgba(231,105,0,0.24) 76.04%,rgba(231,0,0,0.8) 100%);
+    --gradient: linear-gradient(180deg,rgba(20,0,0,0.8) 39.84%,rgba(231,105,0,0.24) 76.04%,rgba(231,0,0,0.8) 100%);
 
     --title-1: 700 4rem 'Ubuntu', sans-serif;
     --title-2: 700 2rem 'Ubuntu', sans-serif;

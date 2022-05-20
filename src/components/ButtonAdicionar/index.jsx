@@ -1,18 +1,26 @@
-/* eslint-disable*/
-import { Adicionar, StyledModal } from './style';
+/* eslint-disable */
+
 import { useState } from 'react';
-import { FadingBackground } from './style';
 import { ModalProvider } from 'styled-react-modal';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from '../UserForm/style';
+import { useAuth } from '../../context/auth';
+import { API } from '../../services/api';
+
+import { Adicionar, StyledModal, FadingBackground } from './style';
 
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
+  
+  const { user, setUser, token } = useAuth();
 
-  function toggleModal(e) {
+  const [pets, setPets] = useState(user.pets || []);
+
+
+  function toggleModal() {
     setOpacity(0);
     setIsOpen(!isOpen);
   }
@@ -31,12 +39,9 @@ export const ButtonAdicionar = ({ text }) => {
   }
 
   const schema = yup.object().shape({
-    name: yup
-      .string()
-      .matches(
-        /^[a-zA-Z]+$/,
-        'Nome de usuário inválido. Somente letras, sem espaços.',
-      ),
+    name: yup.string(),
+    email: yup.string().required('Digite sua senha para continuar'),
+    password: yup.string().required('Digite sua senha para continuar'),
     breed: yup.string(),
     age: yup.number(),
     img: yup.string(),
@@ -49,6 +54,35 @@ export const ButtonAdicionar = ({ text }) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const addPet = data => {
+    API.put(`/users/${user.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(response => {
+      setUser(response.data);
+      return localStorage.setItem(
+        '@mi-au-food:user',
+        JSON.stringify(response.data),
+      );
+    });
+  };
+
+  //cath error e toast ^^^^
+
+  const submitChange = data => {
+    const dataPet = {
+      ...user,
+      password: data.password,
+      pets: [
+        ...pets,
+        { name: data.name, breed: data.breed, age: data.age, img: data.img },
+      ],
+    };
+    addPet(dataPet);
+    toggleModal();
+  };
 
   return (
     <ModalProvider backgroundComponent={FadingBackground}>
@@ -67,41 +101,49 @@ export const ButtonAdicionar = ({ text }) => {
             <p>Editar informações</p>
             <Input
               placeholder="Nome"
-              type="name"
+              type="text"
               label="Nome"
               name="name"
-              register={register}
+              {...register('name')}
+            ></Input>
+            <Input
+              placeholder="Foto"
+              type="text"
+              label="Url da imagem"
+              name="img"
+              {...register('img')}
             ></Input>
             <Input
               placeholder="Raça"
-              type="breed"
+              type="text"
               label="Raça"
               name="breed"
-              register={register}
+              {...register('breed')}
             ></Input>
             <Input
               placeholder="Idade"
-              type="age"
+              type="number"
               label="Idade"
               name="age"
-              register={register}
+              {...register('age')}
             ></Input>
+            <span>É preciso email e senha para cadastrar pets</span>
             <Input
-              placeholder="Foto do perfil"
-              type="img"
-              label="Url da imagem"
-              name="img"
-              register={register}
-            ></Input>
+              placeholder="Email"
+              type="email"
+              label="Email"
+              name="email"
+              {...register('email')}
+            ></Input>{' '}
             <Input
-              placeholder="Url da Foto"
-              type="img"
-              label="Imagem"
-              name="img"
-              register={register}
+              placeholder="Senha"
+              type="password"
+              label="senha"
+              name="password"
+              {...register('password')}
             ></Input>
+            <button type="submit">Enviar</button>
           </DivInput>
-          <p>Enviar</p>
         </Form>
       </StyledModal>
     </ModalProvider>

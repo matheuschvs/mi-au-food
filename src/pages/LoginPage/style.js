@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import backMobile from '../../assets/cachorro-piscando.svg';
 
 export const MainContainer = styled.div`
-  background: linear-gradient(180deg, rgba(255, 245, 245, 0.8) 39.84%, rgba(231, 105, 0, 0.24) 76.04%, rgba(231, 0, 0, 0.8) 100%);
+  background: var(--gradient);
   min-height: 100vh;
 
   header {
-    margin-top: 2rem;
+    padding-top: 2rem;
     margin-left: 6.25rem;
     margin-bottom: 80px;
   }
@@ -27,7 +27,8 @@ export const MainContainer = styled.div`
       margin-bottom: 1rem;
 
       h2 {
-        text-shadow: 2px 0 var(--title), -2px 0 var(--title), 0 -2px var(--title), 0 2px var(--title);
+        text-shadow: 2px 0 var(--title), -2px 0 var(--title),
+          0 -2px var(--title), 0 2px var(--title);
       }
     }
   }
@@ -67,16 +68,32 @@ export const Form = styled.form`
 
   padding: 8.125rem 6.125rem 6.125rem;
 
+  & > div {
+    padding: 0 2rem;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
   input {
     height: 45px;
+    max-width: 90%;
   }
   h1 {
-    color: white;
+    color: var(--background);
     font-size: 50px;
   }
 
-  div:last-of-type {
-    margin-bottom: 2rem;
+  div > div {
+    margin-bottom: -1.5rem;
+    width: 90%;
+    text-align: right;
+
+    span {
+      margin-left: 0;
+      font-size: 0.8rem;
+    }
   }
 
   button {
@@ -107,8 +124,13 @@ export const Form = styled.form`
     box-shadow: inset 0px 2px 4px 6px rgba(0, 0, 0, 0.5);
 
     h1 {
-      color: white;
+      color: var(--background);
       font-size: 1.14rem;
+    }
+
+    & > div {
+      padding: 0 0.5rem;
+      min-height: 2.5rem;
     }
 
     div {
@@ -122,7 +144,6 @@ export const Form = styled.form`
     input {
       height: 45px;
     }
-  
   }
 `;
 export const IMG = styled.img`

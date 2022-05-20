@@ -1,9 +1,12 @@
 /* eslint-disable */
 
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Card } from '../../components/Card';
+=======
+>>>>>>> 2ba22b1bf429ff5267ffe162c75e79bd84607b4c
 import { useCart } from '../../context/cart';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Esconder,
   Button,
@@ -12,13 +15,17 @@ import {
   Total,
   DeleteButton,
 } from './styles';
-import iconMais from '../../assets/Button Primary.svg';
-import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
+import { OrderList } from '../../components/OrderList';
 import { InfoUser } from '../../components/InfoUser';
+<<<<<<< HEAD
 import { Trash2 } from 'react-feather';
+=======
+import { API } from '../../services/api';
+import { useAuth } from '../../context/auth';
+>>>>>>> 2ba22b1bf429ff5267ffe162c75e79bd84607b4c
 
 export const ShoppingCartPage = () => {
   const {
@@ -30,17 +37,10 @@ export const ShoppingCartPage = () => {
     setCart,
   } = useCart();
 
-  const [final, setFinal] = useState([]);
-  const [esconder, setEsconder] = useState(false);
-  const [idPedido, setIdPedido] = useState();
   const navigate = useNavigate();
 
-  console.log();
 
-  const token = localStorage.getItem('@mi-au-food:token');
-  const idLocal = localStorage.getItem('@mi-au-food:user');
-
-  const user = JSON.parse(idLocal);
+  const {user, token} = useAuth();
 
   const authAxios = axios.create({
     baseURL: 'https://json-server-kenziegroup.herokuapp.com/request',
@@ -49,37 +49,39 @@ export const ShoppingCartPage = () => {
     },
   });
 
-  const { name, email, tel, address, cpf, img, type, pets } = user;
 
   const finalizarComprar = () => {
-    authAxios
-      .post(
-        `https://json-server-kenziegroup.herokuapp.com/request`,
-
-        {
-          product: cart,
-
-          status: 'Aguardando',
-          totalCarrinho: cartReducer,
-
-          user: { name, email, tel, address, cpf, type },
-        },
+    API.post(`request`,{
+        product: cart, 
+        user: user, 
+        status:"Aguardando", 
+        totalCarrinho: cartReducer 
+        },{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }     
       )
-      .then(() => navigate('/perfil/usuario', { replace: true }))
-
+      .then(() => {
+        navigate('/perfil/usuario', { replace: true })
+        cleanCart()
+      })
       .catch(err => console.log(err));
   };
 
   return (
     <DivTudo>
       <Esconder>
-        <InfoUser authAxios={authAxios} />
+        <OrderList authAxios={authAxios} />
       </Esconder>
 
       <h2>Carrinho</h2>
 
       {cart.length === 0 ? (
-        <h2>Não existe produto no carrinho</h2>
+
+        <Link to="/">
+          <Titulo>Não existe produto no carrinho</Titulo>
+        </Link>
       ) : (
         <>
           <Lista>

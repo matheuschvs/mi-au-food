@@ -1,47 +1,41 @@
 /* eslint-disable*/
 import { useState, useEffect } from 'react';
-import { MarginOrder, Order, OrderBox } from './style';
-import axios from 'axios';
+import { Order, OrderBox } from './style';
+import { useAuth } from '../../context/auth';
+import { API } from '../../services/api';
 
 export const OrderList = () => {
-  // const [orders, setOrders] = useState([]);
-  // const token = localStorage.getItem('@mi-au-food:token');
-  // const baseUrl = `https://json-server-kenziegroup.herokuapp.com/users/${id}`;
-  // useEffect(() => {
-  //   axios
-  //     .get(baseUrl, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //     .then(response => {
-  //       setOrders(response.data);
-  //     });
-  // }, []);
+  const [dados, setDados] = useState([]);
+  const { user, token } = useAuth();
+
+  useEffect(() => {
+    API.get(`request`, {
+      headers: { Authorization: `Bearer ${token}`}
+    }).then(response => {
+        setDados(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
-    <MarginOrder>
-      <OrderBox>
-        <h3>Seus Pedidos</h3>
-        <Order>
-          <p>Pedido: id</p>
-          <p>Status: Enviado</p>
-          <p>Valor: R$110,00</p>
-          <p>Ok</p>
-        </Order>
-        <Order>
-          <p>Pedido: id</p>
-          <p>Status: Enviado</p>
-          <p>Valor: R$110,00</p>
-          <p>Ok</p>
-        </Order>
-        <Order>
-          <p>Pedido: id</p>
-          <p>Status: Enviado</p>
-          <p>Valor: R$110,00</p>
-          <p>Ok</p>
-        </Order>
-      </OrderBox>
-    </MarginOrder>
+    <OrderBox>
+      <h3>Seus Pedidos</h3>
+      <Order>
+        <ul>
+          {dados.map((pedido)=>{
+            if(pedido.user.id == user.id) {
+              return (
+            <li className={pedido.status} key={pedido.id}>
+              <p>Id: {pedido.id}</p>
+              <p>Status: {pedido.status}</p>
+              <p>Valor: R$ {pedido.totalCarrinho.toFixed(2)}</p>
+            </li>
+            )}
+          })}
+        </ul>
+      </Order>
+    </OrderBox>
   );
 };

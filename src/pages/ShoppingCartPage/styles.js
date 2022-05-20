@@ -1,6 +1,5 @@
 /* eslint-disable*/
 import styled from 'styled-components';
-import { CardButton } from '../../components/Card/style';
 
 export const DivTudo = styled.main`
   padding-top: 6.93em;
@@ -65,7 +64,6 @@ export const DeleteButton = styled.button`
   background: var(--secondary-color-1);
   color: var(--background)
 `
-
 
 export const Total = styled.div`
   display: flex;
