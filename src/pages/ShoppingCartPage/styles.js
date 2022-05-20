@@ -60,9 +60,6 @@ export const Botoes = styled.div`
 export const Lixo = styled.div`
   padding-top: 100px;
 
-  position: relative;
-  right: 85px;
-
   img {
     width: 50px;
     height: 30px;
