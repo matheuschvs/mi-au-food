@@ -9,7 +9,7 @@ export const OrderBox = styled.div`
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   height: fit-content;
-  font-family:'Ubuntu';
+  font-family: 'Ubuntu';
 
   div {
     width: 350px;
@@ -21,36 +21,35 @@ export const OrderBox = styled.div`
     width: 100%;
   }
 
-  li{
+  li {
     padding: 0.5rem;
     border-top: 3px solid var(--background);
   }
 
-  .Aguardando{
+  .Aguardando {
     background-color: var(--secondary-color-1);
   }
 
-  .Andamento{
-    background-color: var(--tertiary-color-1)
+  .Andamento {
+    background-color: var(--tertiary-color-1);
   }
 
-  .Entregue{
-    background-color: var(--quaternary-color-1)
+  .Entregue {
+    background-color: var(--quaternary-color-1);
   }
 
-  .Cancelado{
-    background-color: var(--primary-color-1)
+  .Cancelado {
+    background-color: var(--primary-color-1);
   }
 
   h3 {
     padding: 20px;
   }
   @media (max-width: 1296px) {
-    div{
+    div {
       width: 100%;
     }
   }
-
 `;
 
 export const Order = styled.div`
