@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from '../UserForm/style';
 import { useAuth } from '../../context/auth';
 import { API } from '../../services/api';
+import { Button } from '../UserForm/style';
 
 import { Adicionar, StyledModal, FadingBackground } from './style';
 

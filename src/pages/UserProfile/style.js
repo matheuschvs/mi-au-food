@@ -14,13 +14,16 @@ const appearFromLeft = keyframes`
 export const Main = styled.div`
   display: flex;
   justify-content: space-around;
-  padding-top: 9.93rem;
   font-family: 'Ubuntu';
+  margin-top: 13rem;
   animation: ${appearFromLeft} 1s;
   height: 1200px;
   @media (max-width: 1280px) {
     flex-direction: column;
     padding: 1rem;
+  }
+  @media (max-width: 600px) {
+    margin-top: 18rem;
   }
 `;
 
