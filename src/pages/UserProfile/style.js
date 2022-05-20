@@ -7,8 +7,7 @@ export const Main = styled.div`
 
   @media (max-width: 1280px) {
     flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 1rem;
   }
 `;
 
@@ -25,7 +24,6 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   &:hover {
     background-color: var(--background);
   }

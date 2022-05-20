@@ -37,7 +37,7 @@ export const OrderList = () => {
           <Order>
             <p>Pedido: id {item.id}</p>
             <p>Status: {item.status}</p>
-            <p>Valor: R$ {item.totalCarrinho}</p>
+            <p>Valor: R$ {item.totalCarrinho.toFixed(2)}</p>
             <p>Ok</p>
           </Order>
         ))}

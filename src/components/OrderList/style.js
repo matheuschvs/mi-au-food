@@ -26,6 +26,7 @@ export const OrderBox = styled.div`
     }
     
   }
+
  
 `;
 
@@ -49,6 +50,9 @@ export const Order = styled.div`
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  }
+  @media (max-width: 340px) {
+    flex-wrap: wrap;
   }
 `;
 export const MarginOrder = styled.div`
