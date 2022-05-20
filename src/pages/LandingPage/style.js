@@ -5,6 +5,7 @@ import dogBackground from '../../assets/dog-face-mobile.png';
 
 export const Container = styled(motion.main)`
   padding: 5rem 1.143rem 0;
+  overflow-x: hidden;
 
   a {
     text-decoration: none;
