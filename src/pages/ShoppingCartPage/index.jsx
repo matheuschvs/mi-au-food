@@ -20,12 +20,10 @@ import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
 import { OrderList } from '../../components/OrderList';
 import { InfoUser } from '../../components/InfoUser';
-<<<<<<< HEAD
 import { Trash2 } from 'react-feather';
-=======
 import { API } from '../../services/api';
 import { useAuth } from '../../context/auth';
->>>>>>> 2ba22b1bf429ff5267ffe162c75e79bd84607b4c
+
 
 export const ShoppingCartPage = () => {
   const {
