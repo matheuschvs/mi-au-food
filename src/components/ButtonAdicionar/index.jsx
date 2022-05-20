@@ -14,11 +14,10 @@ import { Adicionar, StyledModal, FadingBackground } from './style';
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
-  
+
   const { user, setUser, token } = useAuth();
 
   const [pets, setPets] = useState(user.pets || []);
-
 
   function toggleModal() {
     setOpacity(0);
@@ -97,7 +96,7 @@ export const ButtonAdicionar = ({ text }) => {
         backgroundProps={{ opacity }}
       >
         <Form>
-          <DivInput>
+          <DivInput onSubmit={handleSubmit(submitChange)}>
             <p>Editar informações</p>
             <Input
               placeholder="Nome"
