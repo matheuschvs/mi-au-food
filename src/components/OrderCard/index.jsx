@@ -51,7 +51,7 @@ export const OrderCard = ({ setOrders, order, setDisplayOrder }) => {
       <div>
         <p>{order.user.name}</p>
         <p>{order.status}</p>
-        <p>R$ {order.totalCarrinho}</p>
+        <p>R$ {order.totalCarrinho.toFixed(2)}</p>
       </div>
       <div>
         {order.status === 'Aguardando'?(
