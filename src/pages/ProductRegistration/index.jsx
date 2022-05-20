@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { Navigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -43,7 +44,9 @@ export const ProductRegistration = () => {
       .required('Erro: Necessário preencher o campo animal'),
   });
 
-  const { user, token } = useAuth();
+  const { user } = useAuth();
+  const token = localStorage.getItem('@mi-au-food:token');
+  const location = useLocation();
 
   const {
     register,
@@ -96,7 +99,7 @@ export const ProductRegistration = () => {
     setModal(false);
   };
 
-  return (
+  return token !== '' ? (
     <Container>
       <BotaoModal>
         <button type="button" onClick={openModal}>
@@ -156,5 +159,7 @@ export const ProductRegistration = () => {
         </ul>
       </List>
     </Container>
+  ) : (
+    <Navigate to="/entrar" state={{ from: location }} replace />
   );
 };

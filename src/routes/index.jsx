@@ -50,14 +50,7 @@ export const Router = () => {
             </RequireAuth>
           }
         />
-        <Route
-          path="novo-produto"
-          element={
-            <RequireAuth>
-              <ProductRegistration />
-            </RequireAuth>
-          }
-        />
+        <Route path="novo-produto" element={<ProductRegistration />} />
         <Route path="*" element={<NoContent />} />
       </Route>
       <Route
