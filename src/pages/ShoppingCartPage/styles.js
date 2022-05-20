@@ -1,13 +1,20 @@
+/* eslint-disable no-unused-vars */
 import styled from 'styled-components';
+import { CardButton } from '../../components/Card/style';
 
-export const Carrinho = styled.div``;
+export const DivTudo = styled.div`
+  padding: 5.93em;
+`;
 
-export const Main = styled.div`
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  padding: 170px 150px;
+export const Titulo = styled.h1``;
 
+export const Carrinho = styled.h1`
+  margin-top: 80px;
+`;
+
+export const Lista = styled.div`
+  ul {
+  }
   li {
     display: flex;
     background-color: white;
@@ -15,45 +22,46 @@ export const Main = styled.div`
     border: 1px solid #00000040;
     width: 1000px;
     margin-top: 20px;
+    margin-bottom: 10px;
   }
   img {
     width: 192px;
     height: 192px;
     margin-top: 5px;
+    margin-bottom: 5px;
   }
   h2 {
     font-size: 20px;
     font-family: 'Ubuntu';
     padding-top: 15px;
+    margin-left: 20px;
+    width: 1000px;
   }
   h3 {
-    padding-left: 10px;
-    font-size: 20px;
-    font-family: 'Ubuntu';
-    position: relative;
-    left: 100px;
+    height: 10px;
   }
   h5 {
     padding-top: 40px;
-    width: 90px;
-    position: relative;
-    left: 50px;
+    width: 120px
+    
     font-size: 20px;
   }
 `;
 
 export const Botoes = styled.div`
+  button {
+  }
   display: flex;
-  padding-top: 40px;
-  position: relative;
-  right: 120px;
+  margin-top: 50px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
 `;
 export const Lixo = styled.div`
   padding-top: 100px;
 
   position: relative;
-  right: 60px;
+  right: 85px;
 
   img {
     width: 50px;
@@ -62,51 +70,36 @@ export const Lixo = styled.div`
   }
 `;
 export const Total = styled.div`
-  float: right;
-  padding: 20px 210px;
+  display: flex;
+  margin-left: 100px;
+  h2 {
+  }
 `;
-export const Not = styled.div``;
-
-export const Todo = styled.div``;
-
 export const Esconder = styled.div`
   display: none;
 `;
-export const Final = styled.div`
-  padding-top: 15px;
-
-  button {
-    background-color: #ffa459;
-    padding: 8px 32px;
-    color: #fff5f5;
-    border-bottom: 2px solid var(--secondary-color);
-    border: 0px;
-    border-radius: 20px;
-    font-family: 'Ubuntu';
-    width: 209, 38px;
-    height: 48px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+export const BotaoDiv = styled.div`
+  display: flex;
+  padding-top: 240px;
 `;
-export const CleanCar = styled.div`
-padding-top: 5px;
-
-button{
-  background-color: #ffa459;
-    padding: 8px 32px;
-    color: #fff5f5;
-    border-bottom: 2px solid var(--secondary-color);
-    border: 0px;
-    border-radius: 20px;
-    font-family: 'Ubuntu';
-    width: 209, 38px;
-    height: 48px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
+export const Button = styled.button`
+  background: var(--secondary-color-1);
+  margin-right: 80px;
+  color: #fff5f5;
+  border-bottom: 2px solid var(--secondary-color);
+  border: 0px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Ubuntu';
+  width: 250px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+`;
+export const BotaoeTotal = styled.div`
+  display: flex;
+  h2 {
+    margin-top: 10px;
   }
-}
-
 `;
