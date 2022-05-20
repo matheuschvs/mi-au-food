@@ -10,9 +10,11 @@ export const HeaderBar = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
+  box-shadow: ${props => props.boxShadow};
+
   h1 {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--background);
     font-style: var(--title-1);
     cursor: pointer;
     font-weight: 500;
@@ -52,7 +54,7 @@ export const HeaderBar = styled.header`
     }
     h3 {
       margin-right: 100px;
-      color: #ffffff;
+      color: var(--background);
       font-size: 1rem;
       font-weight: 400;
       cursor: pointer;
@@ -71,14 +73,22 @@ export const HeaderLogin = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
+  box-shadow: ${props => props.boxShadow};
+
   h1 {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: var(--background);
     font-style: var(--title-1);
     cursor: pointer;
     font-weight: 500;
     margin-left: 10px;
   }
+
+  button {
+    background: var(--background);
+    color: var(--title);
+  }
+
   @media (min-width: 420px) {
     h1 {
       font-size: 2rem;
@@ -104,7 +114,7 @@ export const HeaderLogin = styled.header`
   h3 {
     display: none;
     margin-right: 13px;
-    color: #ffffff;
+    color: var(--background);
     font-size: 1rem;
     font-weight: 400;
   }
@@ -149,6 +159,7 @@ export const LogoutIcon = styled.img`
 export const MenuIcon = styled.img`
   display: block;
   margin-right: 10px;
+  cursor: pointer;
   @media (min-width: 1024px) {
     display: none;
   }
@@ -164,6 +175,11 @@ export const ContainerIMG = styled.section`
 export const LogedIcons = styled.section`
   display: flex;
   align-items: center;
+
+  button {
+    margin-right: 1rem;
+  }
+
   @media (min-width: 1024px) {
   }
 `;
@@ -179,7 +195,7 @@ export const UserModal = styled.div`
   top: 10%;
   right: 0%;
   margin-right: 18px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   border: solid 2px var(--primary-color);
@@ -214,15 +230,18 @@ export const UserModal = styled.div`
     height: 0;
     position: absolute;
     align-items: flex-start;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-left: 20px solid var(--primary-color);
+    border-right: 20px solid var(--primary-color);
     border-bottom: 20px solid var(--background);
     top: -20px;
     right: 6%;
   }
 
   @media (min-width: 1024px) {
-    margin-right: 100px;
+    display: flex;
+
+    margin-right: 7.1875rem;
+    margin-top: 0.625rem;
     right: 0%;
   }
 `;
@@ -342,7 +361,7 @@ export const ContainerModalLogoff = styled.div`
       border: 1px dashed rgba(231, 0, 0, 0.95);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
-      color: #fff5f5;
+      color: var(--background);
       margin-top: 1.2rem;
       &:hover {
         background: rgba(200, 0, 0, 0.95);

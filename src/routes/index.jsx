@@ -14,6 +14,7 @@ import { UserRegister } from '../pages/UserRegister';
 import { ShopRegister } from '../pages/ShopRegister';
 import { UserProfile } from '../pages/UserProfile';
 import { ShopProfile } from '../pages/ShopProfile';
+import { ProductRegistration } from '../pages/ProductRegistration';
 
 export const Router = () => {
   return (
@@ -44,10 +45,17 @@ export const Router = () => {
         <Route
           path="carrinho"
           element={
-            <ShoppingCartPage />
-            // <RequireAuth>
-
-            // </RequireAuth>
+            <RequireAuth>
+              <ShoppingCartPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="novo-produto"
+          element={
+            <RequireAuth>
+              <ProductRegistration />
+            </RequireAuth>
           }
         />
         <Route path="*" element={<NoContent />} />

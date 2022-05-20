@@ -13,6 +13,7 @@ export const NavStyled = styled.nav`
     border-bottom: 1px solid var(--title);
   }
   button {
+    color: var(--title);
     border: none;
     font-family: 'Ubuntu';
     background: none;
@@ -40,6 +41,7 @@ export const NavStyled = styled.nav`
     border: none;
     min-width: 200px;
     width: 100%;
+    color: var(--title);
   }
 
   @media (min-width: 1100px) {

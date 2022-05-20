@@ -7,7 +7,7 @@ export const ButtonStyled = styled.button`
     border: 1px dashed rgba(231, 0, 0, 0.95);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transform: matrix(1, 0, 0, 1, 0, 0);
-    color: white;
+    color: var(--background-2);
     margin-right: 10px;
     height: 50px;
     width: 150px;
@@ -26,5 +26,5 @@ export const ButtonStyled = styled.button`
   font-weight: 400;
   font-size: 25px;
 
-  color: #fff5f5;
+  color: var(--background);
 `;

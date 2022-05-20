@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const Main = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 9.93rem 6.25rem;
+  padding-top: 9.93rem;
+  font-family: 'Ubuntu';
 
-  @media (max-width: 798px) {
+  @media (max-width: 1280px) {
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
@@ -24,10 +25,10 @@ export const BoasVindas = styled.h1`
 export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 
   &:hover {
-    background-color: #fcdede;
+    background-color: var(--background);
   }
 
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -45,10 +46,13 @@ export const UserContainer = styled.div`
     font-size: 30px;
     margin: 10px;
   }
+  @media (max-width: 570px) {
+    align-items: center;
+  }
 `;
 
 export const PetContainer = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color);
   display: flex;
   align-items: center;
   margin-left: 4vw;
@@ -82,7 +86,7 @@ export const ButtonDiv = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-top: 20px;
-  background-color: #ffa459;
+  background-color: var(--secondary-color-2);
 `;
 export const ButtonAdicionar = styled.p`
   font-size: 30px;
@@ -90,9 +94,9 @@ export const ButtonAdicionar = styled.p`
   color: white;
 
   &:hover {
-    background-color: #e76900;
+    background-color: var(--secondary-color);
   }
-  background-color: #ffa459;
+  background-color: var(--secondary-color-1);
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

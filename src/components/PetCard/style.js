@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
 
 export const StyledModal = Modal.styled`
+  min-width: 310px;
   width: 30%;
   height: 50%;
   display: flex;
@@ -18,23 +19,24 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const PetContainer = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color);
+  width: 100%;
   display: flex;
   align-items: center;
-  margin: 20px 30px 20px 30px;
+  margin-bottom: 20px;;
   height: 170px;
+  padding: 10px;
   
   border-radius: 100px 0px 0px 100px;
   
   &:hover {
-    background-color: #fc943d;
+    background-color: var(--secondary-color-1);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   
   }
   img {
-    margin-left: 10px;
     height: 150px;
     width: 150px;
     border-radius: 258px;
@@ -49,62 +51,72 @@ export const PetContainer = styled.div`
   }
 
   p {
-    padding: 5px;
-    margin: 5px;
+
     font-size: 20px;
     
   }
-  @media (max-width: 1296px) {
-    width: 95%;
-    height: 200px;
-    margin: 20px 30px 20px 30px;
-    img {
-      border-radius: 200px;
-      height: 190px;
-      width: 190px;
-    }
+  @media (max-width: 600px) {
+    width: 300px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    border-radius: 0px 0px 0px 0px;
+
+  img {
+    width: 100%;
+    height: 100px;
+    border-radius: 0px;
+    margin-left: 0px;
   }
+  p{
+    font-size: 25px;
+  }
+  }
+
 `;
 
 export const PetsMain = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   h3 {
     font-size: 30px;
     text-align: right;
     margin: 20px;
   }
-  background-color: #fff5f5;
+  background-color: var(--background);
   &:hover {
-    background-color: #fcdede;
+    background-color: var(--background);
   }
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+
   @media (max-width: 1296px) {
-    margin: 50px;
     p {
-      font-size: 25px;
+      font-size: 20px;
     }
     h3 {
       margin: 20px;
     }
+    width: 100%;
   }
 `;
 
 export const ButtonEditar = styled.p`
   cursor: pointer;
-  margin: 20px 30px 20px 30px;
+  margin-top: 30px;
+  width: 100px;
   font-size: 20px;
-  background-color: #fc943d;
+  background-color: var(--secondary-color-1);
   &:not(:last-child) {
   }
   &:hover {
-    color: ice;
+    background-color: var(--secondary-color);
   }
-  background-color: #ffa459;
-  color: #fff5f5;
+  color: var(--background);
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

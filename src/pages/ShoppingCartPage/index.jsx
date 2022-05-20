@@ -1,16 +1,5 @@
-/* eslint-disable import/named */
-/* eslint-disable import/order */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable no-unused-vars */
-import { useState } from 'react';
-import { Card } from '../../components/Card';
+/* eslint-disable */
+
 import { useCart } from '../../context/cart';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -24,12 +13,13 @@ import {
   BotaoeTotal,
   Lista,
 } from './styles';
-import iconMais from '../../assets/Button Primary.svg';
-import iconMenos from '../../assets/Button menor.svg';
 import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
+import { OrderList } from '../../components/OrderList';
 import { InfoUser } from '../../components/InfoUser';
+import { API } from '../../services/api';
+import { useAuth } from '../../context/auth';
 
 export const ShoppingCartPage = () => {
   const {
@@ -41,17 +31,10 @@ export const ShoppingCartPage = () => {
     setCart,
   } = useCart();
 
-  const [final, setFinal] = useState([]);
-  const [esconder, setEsconder] = useState(false);
-  const [idPedido, setIdPedido] = useState();
   const navigate = useNavigate();
 
-  console.log();
 
-  const token = localStorage.getItem('@mi-au-food:token');
-  const idLocal = localStorage.getItem('@mi-au-food:user');
-
-  const user = JSON.parse(idLocal);
+  const {user, token} = useAuth();
 
   const authAxios = axios.create({
     baseURL: 'https://json-server-kenziegroup.herokuapp.com/request',
@@ -60,31 +43,30 @@ export const ShoppingCartPage = () => {
     },
   });
 
-  const { name, email, tel, address, cpf, img, type, pets } = user;
 
   const finalizarComprar = () => {
-    authAxios
-      .post(
-        `https://json-server-kenziegroup.herokuapp.com/request`,
-
-        {
-          product: cart,
-
-          status: 'Aguardando',
-          totalCarrinho: cartReducer,
-
-          user: { name, email, tel, address, cpf, type },
-        },
+    API.post(`request`,{
+        product: cart, 
+        user: user, 
+        status:"Aguardando", 
+        totalCarrinho: cartReducer 
+        },{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }     
       )
-      .then(() => navigate('/perfil/usuario', { replace: true }))
-
+      .then(() => {
+        navigate('/perfil/usuario', { replace: true })
+        cleanCart()
+      })
       .catch(err => console.log(err));
   };
 
   return (
     <DivTudo>
       <Esconder>
-        <InfoUser authAxios={authAxios} />
+        <OrderList authAxios={authAxios} />
       </Esconder>
 
       <Carrinho>Carrinho</Carrinho>
