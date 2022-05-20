@@ -91,10 +91,6 @@ export const PetsMain = styled.div`
     font-size: 30px;
     text-align: right;
   }
-  background-color: var(--background);
-  &:hover {
-    background-color: var(--background);
-  }
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

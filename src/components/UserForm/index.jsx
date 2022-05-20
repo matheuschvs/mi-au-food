@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from './style';
 import { useAuth } from '../../context/auth';
+import { ButtonStyled } from './style';
 
 export const FormUser = ({ toggleModal }) => {
   const { editProfile } = useAuth();
@@ -84,7 +85,9 @@ export const FormUser = ({ toggleModal }) => {
           name="cpf"
           {...register('cpf')}
         ></Input>
-        <button type="submit">Enviar</button>
+        <ButtonStyled type="submit">
+          <p>Enviar</p>
+        </ButtonStyled>
       </DivInput>
     </Form>
   );

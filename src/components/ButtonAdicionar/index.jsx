@@ -8,17 +8,17 @@ import { useForm } from 'react-hook-form';
 import { DivInput, Form, Input } from '../UserForm/style';
 import { useAuth } from '../../context/auth';
 import { API } from '../../services/api';
+import { Button } from '../UserForm/style';
 
 import { Adicionar, StyledModal, FadingBackground } from './style';
 
 export const ButtonAdicionar = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
-  
+
   const { user, setUser, token } = useAuth();
 
   const [pets, setPets] = useState(user.pets || []);
-
 
   function toggleModal() {
     setOpacity(0);
@@ -97,7 +97,7 @@ export const ButtonAdicionar = ({ text }) => {
         backgroundProps={{ opacity }}
       >
         <Form>
-          <DivInput>
+          <DivInput onSubmit={handleSubmit(submitChange)}>
             <p>Editar informações</p>
             <Input
               placeholder="Nome"

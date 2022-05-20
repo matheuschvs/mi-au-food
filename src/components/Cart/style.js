@@ -1,6 +1,17 @@
 /* eslint-disable */
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
 
 export const Container = styled.div`
   footer {
@@ -14,6 +25,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 1rem 1rem 0 0;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   }
   aside {
     display: none;
@@ -105,6 +117,8 @@ export const Container = styled.div`
       border-radius: 1rem;
       text-align: center;
       padding: 0.6rem 0;
+      filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+      animation: ${appearFromLeft} 1s;
     }
     aside h2 {
       margin: 10px;
@@ -139,6 +153,11 @@ export const CartButton = styled.button`
   font-family: 'Ubuntu';
   font-size: 1.2rem;
   color: var(--background);
+  transition: all 0.3s;
+
+  &:hover {
+    background: var(--secondary-color);
+  }
 `;
 
 export const CartDialog = styled.dialog``;

@@ -111,8 +111,30 @@ export const ShopRegister = () => {
     <Container>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
-        <IMG6 src={image6} alt="imagem gato tela registro" />
-        <IMG5 src={image5} alt="imagem mulher com cachorro" />
+        <IMG6
+          src={image6}
+          alt="imagem gato tela registro"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, -45, 0],
+          }}
+          transition={{
+            scale: { delay: 0.2, duration: 0.8 },
+            rotate: { delay: 0.8, duration: 3 },
+          }}
+        />
+        <IMG5
+          src={image5}
+          alt="imagem mulher com cachorro"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0],
+          }}
+          transition={{
+            scale: { delay: 0.2, duration: 0.8 },
+            rotate: { delay: 0.8, duration: 3 },
+          }}
+        />
       </ContainerIMG>
       <BackgroundIMG />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>

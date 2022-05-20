@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import backMobile from '../../assets/cachorro-piscando.svg';
 
 export const MainContainer = styled.div`
-  background: var(--gradient);
+  background: var(--background);
   min-height: 100vh;
+  overflow-x: hidden;
 
   header {
     padding-top: 2rem;
@@ -55,7 +57,7 @@ export const MainDiv = styled.div`
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled(motion.form)`
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -146,10 +148,12 @@ export const Form = styled.form`
     }
   }
 `;
-export const IMG = styled.img`
+
+export const IMG = styled(motion.img)`
   width: 26%;
   height: 100%;
   margin-left: 15%;
+
   @media (max-width: 1562px) {
     display: none;
   }
