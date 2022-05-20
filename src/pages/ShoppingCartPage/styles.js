@@ -1,78 +1,77 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable*/
 import styled from 'styled-components';
 import { CardButton } from '../../components/Card/style';
 
-export const DivTudo = styled.div`
-  padding: 5.93em;
-`;
-
-export const Titulo = styled.h1``;
-
-export const Carrinho = styled.h1`
-  margin-top: 80px;
-`;
-
-export const Lista = styled.div`
-  ul {
+export const DivTudo = styled.main`
+  padding-top: 6.93em;
+  font-family: 'Ubuntu';
+  max-width: 1200px;
+  margin: auto;
+  width: 85%;
+  h2{
+    text-align: center;
   }
+`;
+
+export const Lista = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   li {
     display: flex;
-    background-color: white;
-    border-radius: 1px;
+    border-radius: 1rem;
     border: 1px solid #00000040;
-    width: 1000px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 130px;
+    margin-top: 0.5rem;
+    max-width: 600px;
+    margin: auto;
+    justify-content: space-between;
+    margin: 0.5rem;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   img {
-    width: 192px;
-    height: 192px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 90px;
+    height: 90px;
+    margin: 0.5rem;
+    border-radius: 1rem;
   }
-  h2 {
-    font-size: 20px;
-    font-family: 'Ubuntu';
-    padding-top: 15px;
-    margin-left: 20px;
-    width: 1000px;
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
-  h3 {
-    height: 10px;
+  h3{
+    font-size:14px;
   }
-  h5 {
-    padding-top: 40px;
-    width: 120px
-    
-    font-size: 20px;
+  @media (min-width: 768px) {
+    h3{
+      font-size:24px;
+    }
   }
 `;
 
-export const Botoes = styled.div`
-  button {
-  }
-  display: flex;
-  margin-top: 50px;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-`;
-export const Lixo = styled.div`
-  padding-top: 100px;
+export const DeleteButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: none;
+  margin: 0.5rem;
+  background: var(--secondary-color-1);
+  color: var(--background)
+`
 
-  position: relative;
-  right: 85px;
 
-  img {
-    width: 50px;
-    height: 30px;
-    cursor: pointer;
-  }
-`;
 export const Total = styled.div`
   display: flex;
-  margin-left: 100px;
-  h2 {
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 export const Esconder = styled.div`
@@ -84,22 +83,19 @@ export const BotaoDiv = styled.div`
 `;
 export const Button = styled.button`
   background: var(--secondary-color-1);
-  margin-right: 80px;
-  color: #fff5f5;
+  color: var(--background);
   border-bottom: 2px solid var(--secondary-color);
-  border: 0px;
+  border: none;
   border-radius: 20px;
   text-align: center;
   font-family: 'Ubuntu';
   width: 250px;
-  height: 60px;
+  height: 40px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  margin: 0.5rem auto;
 `;
 export const BotaoeTotal = styled.div`
   display: flex;
-  h2 {
-    margin-top: 10px;
-  }
 `;

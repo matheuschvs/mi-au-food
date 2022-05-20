@@ -1,28 +1,16 @@
-/* eslint-disable import/named */
-/* eslint-disable import/order */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
+
 import { useState } from 'react';
 import { Card } from '../../components/Card';
 import { useCart } from '../../context/cart';
 import { useNavigate } from 'react-router-dom';
 import {
-  Botoes,
-  Lixo,
-  Carrinho,
   Esconder,
   Button,
   DivTudo,
-  Titulo,
-  BotaoeTotal,
   Lista,
+  Total,
+  DeleteButton,
 } from './styles';
 import iconMais from '../../assets/Button Primary.svg';
 import iconMenos from '../../assets/Button menor.svg';
@@ -30,6 +18,7 @@ import iconLixo from '../../assets/lixo.svg';
 import { QuantityController } from '../../components/QuantityController';
 import axios from 'axios';
 import { InfoUser } from '../../components/InfoUser';
+import { Trash2 } from 'react-feather';
 
 export const ShoppingCartPage = () => {
   const {
@@ -87,50 +76,51 @@ export const ShoppingCartPage = () => {
         <InfoUser authAxios={authAxios} />
       </Esconder>
 
-      <Carrinho>Carrinho</Carrinho>
+      <h2>Carrinho</h2>
 
       {cart.length === 0 ? (
-        <Titulo>Não existe produto no carrinho</Titulo>
+        <h2>Não existe produto no carrinho</h2>
       ) : (
-        <div>
+        <>
           <Lista>
-            <ul>
               {cart.map(item => (
                 <li key={item.id}>
-                  <img src={item.img}></img>
-                  <h2>{item.name}</h2>
-                  <h3>Quantidade</h3>
-                  <Botoes>
-                    <QuantityController product={item} />
-                  </Botoes>
-                  <h3>Preço</h3>
-
-                  <h5>R$ {item.price}</h5>
-
-                  <Lixo>
-                    <img
-                      onClick={() => removeFromCart(item)}
-                      src={iconLixo}
-                    ></img>
-                  </Lixo>
+                  <div>
+                    <img src={item.img}></img>
+                  </div>
+                  <div>
+                    <h3>{item.name}</h3>
+                    <section>
+                      <div>
+                        <h4>Quantidade</h4>
+                        <section>
+                        <QuantityController product={item} />
+                        </section>
+                      </div>
+                      <div>
+                        <h4>Preço</h4>
+                        <h5>R$ {item.price}</h5>
+                      </div>
+                    </section>  
+                  </div>
+                  <DeleteButton onClick={() => removeFromCart(item)}>
+                    <Trash2/>
+                  </DeleteButton>
                 </li>
               ))}
-            </ul>
+
           </Lista>
-
-          <BotaoeTotal>
-            <Button onClick={finalizarComprar}>Finalizar Comprar</Button>
-
-            <Button onClick={cleanCart} type="button">
-              Limpar o carrinho
-            </Button>
-
-            <h2>
-              Total({cart.length} item) R${' '}
-              {cartReducer.toFixed(2).replace('.', ',')}
-            </h2>
-          </BotaoeTotal>
-        </div>
+          <h2>
+            Total: R${' '}
+            {cartReducer.toFixed(2).replace('.', ',')}
+          </h2>
+          <Total>
+          <Button onClick={finalizarComprar}>Finalizar Comprar</Button>
+          <Button onClick={cleanCart} type="button">
+            Limpar o carrinho
+          </Button>                    
+          </Total>
+        </>
       )}
     </DivTudo>
   );
