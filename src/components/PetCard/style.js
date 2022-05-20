@@ -19,18 +19,19 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const PetContainer = styled.div`
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-1);
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 20px;;
   height: 170px;
-  padding: 10px;
-  
+  padding: 1rem;
   border-radius: 100px 0px 0px 100px;
   
   &:hover {
-    background-color: var(--secondary-color-1);
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -41,6 +42,11 @@ export const PetContainer = styled.div`
     width: 150px;
     border-radius: 258px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-width:  1px;
+
+    &:hover {
+      border: solid 2px var(--background);
+    }
   
   }
   div {
@@ -56,7 +62,7 @@ export const PetContainer = styled.div`
     
   }
   @media (max-width: 600px) {
-    width: 300px;
+    width: 100%;
     height: 100%;
     justify-content: space-between;
     align-items: flex-start;
@@ -80,11 +86,10 @@ export const PetsMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+
   h3 {
     font-size: 30px;
     text-align: right;
-    margin: 20px;
   }
   background-color: var(--background);
   &:hover {
@@ -95,12 +100,15 @@ export const PetsMain = styled.div`
   transition-duration: 0.4s;
 
   @media (max-width: 1296px) {
+    width: 100%;
     p {
       font-size: 20px;
     }
     h3 {
       margin: 20px;
     }
+  }
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;

@@ -10,8 +10,9 @@ export const OrderList = () => {
 
   useEffect(() => {
     API.get(`request`, {
-      headers: { Authorization: `Bearer ${token}`}
-    }).then(response => {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(response => {
         setDados(response.data);
       })
       .catch(err => {
@@ -24,15 +25,16 @@ export const OrderList = () => {
       <h3>Seus Pedidos</h3>
       <Order>
         <ul>
-          {dados.map((pedido)=>{
-            if(pedido.user.id == user.id) {
+          {dados.map(pedido => {
+            if (pedido.user.id == user.id) {
               return (
-            <li className={pedido.status} key={pedido.id}>
-              <p>Id: {pedido.id}</p>
-              <p>Status: {pedido.status}</p>
-              <p>Valor: R$ {pedido.totalCarrinho.toFixed(2)}</p>
-            </li>
-            )}
+                <li className={pedido.status} key={pedido.id}>
+                  <p>Id: {pedido.id}</p>
+                  <p>Status: {pedido.status}</p>
+                  <p>Valor: R$ {pedido.totalCarrinho.toFixed(2)}</p>
+                </li>
+              );
+            }
           })}
         </ul>
       </Order>

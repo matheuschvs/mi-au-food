@@ -8,8 +8,7 @@ export const Main = styled.div`
 
   @media (max-width: 1280px) {
     flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 1rem;
   }
 `;
 
@@ -36,15 +35,15 @@ export const UserContainer = styled.div`
 
   h2 {
     font-size: 40px;
-    margin: 10px;
   }
   h3 {
     font-size: 30px;
-    margin: 20px;
   }
   h4 {
     font-size: 30px;
-    margin: 10px;
+  }
+  @media (max-width: 1280px) {
+    margin-top: 5.93rem;
   }
   @media (max-width: 570px) {
     align-items: center;
@@ -58,7 +57,6 @@ export const PetContainer = styled.div`
   margin-left: 4vw;
   width: 300px;
   border-radius: 100px 0px 0px 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
     margin-left: 3px;
     margin-top: 5px;
@@ -77,7 +75,7 @@ export const PetContainer = styled.div`
     padding: 5px;
   }
   @media (max-width: 1296px) {
-    width: 95%;
+    width: 100%;
   }
 `;
 
