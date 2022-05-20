@@ -19,7 +19,6 @@ import cartIcon from '../../assets/shopcart.svg';
 import menuIcon from '../../assets/menu1.svg';
 import userIcon from '../../assets/UserIconRed.png';
 import logoutIcon from '../../assets/logoutIcon.png';
-import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
 import { AuthContext } from '../../context/auth';
 import { useCart } from '../../context/cart';
 
@@ -93,7 +92,7 @@ export const Header = () => {
   return (
     <>
       {token ? (
-        <HeaderLogin boxShadow={boxShadow}>
+        <HeaderLogin boxshadow={boxShadow}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <LogedIcons>
             <ToggleTheme />
@@ -140,7 +139,7 @@ export const Header = () => {
           )}
         </HeaderLogin>
       ) : (
-        <HeaderBar boxShadow={boxShadow} animate={defaultAnimation} transition={defaultTransition}>
+        <HeaderBar boxshadow={boxShadow}>
           <h1 onClick={() => goHome()}>Mi-Au Food</h1>
           <div>
             <ToggleTheme />
@@ -157,104 +156,109 @@ export const Header = () => {
             />
           </ContainerIMG>
         </HeaderBar>
-      )}
-      {modalMobile && (
-        <ContainerModal>
-          <div>
-            <h1>Mi-Au Food</h1>
-            <p onClick={showModalMob}>x</p>
-          </div>
-          <h2
-            onClick={() => {
-              goUserProfile();
-              showModalMob();
-            }}
-          >
-            Meu perfil
-          </h2>
-          {user.type === 'user' ? (
+      )
+      }
+      {
+        modalMobile && (
+          <ContainerModal>
+            <div>
+              <h1>Mi-Au Food</h1>
+              <p onClick={showModalMob}>x</p>
+            </div>
             <h2
               onClick={() => {
-                goCart();
+                goUserProfile();
                 showModalMob();
               }}
             >
-              Meu carrinho
+              Meu perfil
             </h2>
-          ) : (
+            {user.type === 'user' ? (
+              <h2
+                onClick={() => {
+                  goCart();
+                  showModalMob();
+                }}
+              >
+                Meu carrinho
+              </h2>
+            ) : (
+              <h2
+                onClick={() => {
+                  goStore();
+                  showModalMob();
+                }}
+              >
+                Meus pedidos
+              </h2>
+            )}
             <h2
               onClick={() => {
-                goStore();
+                goHome();
                 showModalMob();
               }}
             >
-              Meus pedidos
+              Catálogo
             </h2>
-          )}
-          <h2
-            onClick={() => {
-              goHome();
-              showModalMob();
-            }}
-          >
-            Catálogo
-          </h2>
-          <section>
-            <LogoutIcon src={logoutIcon} alt="ícone logout" />
+            <section>
+              <LogoutIcon src={logoutIcon} alt="ícone logout" />
+              <h2
+                onClick={() => {
+                  showModalMob();
+                  Logoff();
+                }}
+              >
+                Sair
+              </h2>
+            </section>
+          </ContainerModal>
+        )
+      }
+      {
+        modalLogoff && (
+          <ContainerModalLogoff>
+            <div>
+              <h1>Mi-Au Food</h1>
+              <p onClick={showModalLogoff}>x</p>
+            </div>
             <h2
               onClick={() => {
-                showModalMob();
-                Logoff();
+                goUserProfile();
+                showModalLogoff();
               }}
             >
-              Sair
+              Catálogo
             </h2>
-          </section>
-        </ContainerModal>
-      )}
-      {modalLogoff && (
-        <ContainerModalLogoff>
-          <div>
-            <h1>Mi-Au Food</h1>
-            <p onClick={showModalLogoff}>x</p>
-          </div>
-          <h2
-            onClick={() => {
-              goUserProfile();
-              showModalLogoff();
-            }}
-          >
-            Catálogo
-          </h2>
-          <h3>Você ainda não está logado</h3>
-          <section>
-            <button
-              onClick={() => {
-                showModalLogoff();
-                goLogin();
-              }}
-            >
-              Entrar
-            </button>
-            <Link
-              to="/registro/usuario"
-              onClick={() => {
-                showModalLogoff();
-              }}
-            >
-              Crie sua conta
-            </Link>
-            <Link
-              to="/registro/loja"
-              onClick={() => {
-                showModalLogoff();
-              }}
-            >
-              Seja uma loja parceira
-            </Link>
-          </section>
-        </ContainerModalLogoff>
-      )}
+            <h3>Você ainda não está logado</h3>
+            <section>
+              <button
+                onClick={() => {
+                  showModalLogoff();
+                  goLogin();
+                }}
+              >
+                Entrar
+              </button>
+              <Link
+                to="/registro/usuario"
+                onClick={() => {
+                  showModalLogoff();
+                }}
+              >
+                Crie sua conta
+              </Link>
+              <Link
+                to="/registro/loja"
+                onClick={() => {
+                  showModalLogoff();
+                }}
+              >
+                Seja uma loja parceira
+              </Link>
+            </section>
+          </ContainerModalLogoff>
+        )
+      }
     </>
   );
 };

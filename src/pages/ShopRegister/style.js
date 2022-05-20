@@ -1,7 +1,16 @@
-/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
-import RegisterBG from '../../assets/imageBackground.png';
 import { motion } from 'framer-motion';
+
+import RegisterBG from '../../assets/imageBackground.png';
+
+const appearFromRight = keyframes`
+    from{
+        transform: translateX(5000px)
+    }
+    to{
+        transform: translateX(0px)
+    }
+`;
 
 export const Container = styled(motion.div)`
   align-items: center;
@@ -11,10 +20,13 @@ export const Container = styled(motion.div)`
   max-width: 100vw;
   background: url(${RegisterBG}) no-repeat;
   background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+
   @media (min-width: 1024px) {
     display: flex;
-    justify-content: center;
-    background: var(--gradient);
+    justify-content: space-between;
+    background: var(--background);
 
     section {
       display: block;
@@ -53,7 +65,7 @@ export const BackgroundIMG = styled.div`
   }
 `;
 
-export const IMG5 = styled.img`
+export const IMG5 = styled(motion.img)`
   width: 32rem;
   height: 32rem;
   margin-left: 6vw;
@@ -64,7 +76,7 @@ export const IMG5 = styled.img`
   }
 `;
 
-export const IMG6 = styled.img`
+export const IMG6 = styled(motion.img)`
   transform: rotate(-20deg);
   @media (min-width: 1024px) {
     position: absolute;
@@ -81,7 +93,6 @@ export const ContainerIMG = styled.section`
   @media (min-width: 1024px) {
     display: block;
     column-count: 2;
-    margin: 0 auto;
     max-width: 500px;
     margin-left: 5vw;
     justify-content: center;
@@ -90,7 +101,6 @@ export const ContainerIMG = styled.section`
   @media (min-width: 1200px) {
     display: block;
     column-count: 2;
-    margin: 0 auto;
     max-width: 500px;
     margin-left: 4vw;
     justify-content: center;
@@ -98,30 +108,7 @@ export const ContainerIMG = styled.section`
   }
 `;
 
-const appearFromLeft = keyframes`
-    from{
-        opacity: 0;
-        transform: translateX(-50px)
-    }
-    to{
-        opacity: 0.8;
-        transform: translateX(0px)
-    }
-`;
-
-const appearFromTop = keyframes`
-    from{
-        opacity: 0;
-        transform: translateY(-150px)
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0px)
-    }
-`;
-
-export const Form = styled.form`
-  animation: ${appearFromLeft} 1s;
+export const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,6 +125,8 @@ export const Form = styled.form`
   box-shadow: inset 0px 3px 4px 3px rgba(255, 245, 245, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 8px;
+  animation: ${appearFromRight} 0.8s;
+
   div {
     display: flex;
     flex-direction: column;
@@ -223,7 +212,6 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 60vw;
     max-width: 60vw;
@@ -248,9 +236,7 @@ export const Form = styled.form`
   @media (min-width: 1200px) {
     width: 50vw;
     max-width: 55vw;
-    position: absolute;
     height: 75vh;
-    right: 0%;
     div {
       margin-left: 10%;
     }

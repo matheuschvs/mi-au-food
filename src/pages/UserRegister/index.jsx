@@ -70,13 +70,50 @@ export const UserRegister = () => {
     <Container>
       <Title>Mi-Au Food</Title>
       <ContainerIMG>
-        <IMG5 src={image5} alt="imagem mulher com cachorro" />
-        <IMG7 src={image7} alt="imagem homem com cachorro" />
-        <IMG8 src={image8} alt="imagem mulher com gato filhote" />
-        <IMG6 src={image6} alt="imagem gato plano de fundo" />
+        <IMG5
+          src={image5}
+          alt="imagem mulher com cachorro"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0],
+          }}
+          transition={{ delay: 1.4, duration: 0.2 }}
+        />
+        <IMG7
+          src={image7}
+          alt="imagem homem com cachorro"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0],
+          }}
+          transition={{ delay: 0.8, duration: 0.2 }}
+        />
+        <IMG8
+          src={image8}
+          alt="imagem mulher com gato filhote"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0],
+          }}
+          transition={{ delay: 1.2, duration: 0.2 }}
+        />
+        <IMG6
+          src={image6}
+          alt="imagem gato plano de fundo"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0],
+          }}
+          transition={{ delay: 1, duration: 0.2 }}
+        />
       </ContainerIMG>
       <BackgroundIMG />
-      <Form onSubmit={handleSubmit(onSubmitFunction)}>
+      <Form
+        onSubmit={handleSubmit(onSubmitFunction)}
+        animate={{
+          x: [3000, 0],
+        }}
+      >
         <div>
           <h1>Registre-se e faça parte da família Mi-Au Food</h1>
           <Input

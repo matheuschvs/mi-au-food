@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, GitHub, Linkedin } from 'react-feather';
 
-import { defaultAnimation, defaultTransition } from '../../utils/defaultMotion';
-
 import { GoToButton } from '../../components/GoToButton';
 import { Button } from '../../components/Button';
 import { Carousel } from '../../components/Carousel';
@@ -32,7 +30,7 @@ const devs = [
 export const LandingPage = () => {
   return (
     <>
-      <Container animate={defaultAnimation} transition={defaultTransition}>
+      <Container animate={{ opacity: [0.5, 1], y: [-1800, 0] }}>
         <Opening>
           <h1>Mi-Au Food</h1>
           <h2>Seu pet feliz de verdade</h2>

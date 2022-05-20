@@ -23,7 +23,7 @@ export const Container = styled.main`
   }
 
   @media only screen and (min-width: 1100px) {
-    padding: 6.25rem;
+    padding: 9.25rem 6.25rem;
     margin: 0;
     max-width: unset;
   }

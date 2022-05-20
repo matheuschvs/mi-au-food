@@ -59,8 +59,20 @@ export const LoginPage = () => {
         <MiauFoodIcon />
       </header>
       <MainDiv>
-        <IMG src={loginBG} />
-        <Form onSubmit={handleSubmit(onSubmitFunction)}>
+        <IMG src={loginBG} alt="cachorro piscando"
+          animate={{
+            scale: [0, 1.1, 1],
+            rotate: [0, 45, 0]
+          }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        />
+        <Form
+          onSubmit={handleSubmit(onSubmitFunction)}
+          animate={{
+            x: [3000, 0]
+          }}
+          transition={{ duration: 0.8 }}
+        >
           <h1>Faça seu Login</h1>
           <Input
             label="Email"

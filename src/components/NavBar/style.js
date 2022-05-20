@@ -19,6 +19,11 @@ export const NavStyled = styled.nav`
     background: none;
     margin: 1rem;
     font-size: 1.4rem;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 
   div {
