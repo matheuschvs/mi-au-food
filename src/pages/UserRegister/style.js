@@ -26,8 +26,9 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 2rem;
   line-height: 28px;
-  text-shadow: -1px 0px #fff, 1px 0px #fff, 0px -1px #fff, 0px 1px #fff;
-  color: rgba(231, 0, 0, 0.95);
+  text-shadow: -1px 0px var(--background), 1px 0px var(--background),
+    0px -1px var(--background), 0px 1px var(--background);
+  color: var(--primary-color);
   @media (min-width: 1024px) {
     margin-top: 0px;
     top: 5%;
@@ -174,14 +175,14 @@ export const Form = styled.form`
     height: 40px;
     left: 1225px;
     top: 597.4px;
-    background: rgba(231, 0, 0, 0.95);
-    border: 1px dashed rgba(231, 0, 0, 0.95);
+    background: var(--primary-color);
+    border: 1px dashed var(--primary-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     color: var(--background);
     margin-top: 1.2rem;
     &:hover {
-      background: rgba(200, 0, 0, 0.95);
+      background: var(--primary-color);
     }
   }
   h3 {
@@ -251,8 +252,8 @@ export const Form = styled.form`
       height: 45px;
       left: 1225px;
       top: 597.4px;
-      background: rgba(231, 0, 0, 0.95);
-      border: 1px dashed rgba(231, 0, 0, 0.95);
+      background: var(--primary-color);
+      border: 1px dashed var(--primary-color);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 8px;
       color: var(--background);

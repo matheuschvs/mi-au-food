@@ -13,7 +13,7 @@ export const Form = styled.div`
     cursor: pointer;
     &:hover {
       background-color: none;
-      color:#4AD44A;
+      color:var(--quaternary-color-1);
     }
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;

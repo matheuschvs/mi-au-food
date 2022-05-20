@@ -28,7 +28,7 @@ export const UserContainer = styled.div`
   align-items: flex-end;
 
   &:hover {
-    background-color: #fcdede;
+    background-color: var(--background);
   }
 
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -52,7 +52,7 @@ export const UserContainer = styled.div`
 `;
 
 export const PetContainer = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color);
   display: flex;
   align-items: center;
   margin-left: 4vw;
@@ -86,7 +86,7 @@ export const ButtonDiv = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-top: 20px;
-  background-color: #ffa459;
+  background-color: var(--secondary-color-2);
 `;
 export const ButtonAdicionar = styled.p`
   font-size: 30px;
@@ -94,9 +94,9 @@ export const ButtonAdicionar = styled.p`
   color: white;
 
   &:hover {
-    background-color: #e76900;
+    background-color: var(--secondary-color);
   }
-  background-color: #ffa459;
+  background-color: var(--secondary-color-1);
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

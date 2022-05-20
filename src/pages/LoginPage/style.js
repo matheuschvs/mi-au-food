@@ -27,7 +27,8 @@ export const MainContainer = styled.div`
       margin-bottom: 1rem;
 
       h2 {
-        text-shadow: 2px 0 var(--title), -2px 0 var(--title), 0 -2px var(--title), 0 2px var(--title);
+        text-shadow: 2px 0 var(--title), -2px 0 var(--title),
+          0 -2px var(--title), 0 2px var(--title);
       }
     }
   }
@@ -143,7 +144,6 @@ export const Form = styled.form`
     input {
       height: 45px;
     }
-  
   }
 `;
 export const IMG = styled.img`

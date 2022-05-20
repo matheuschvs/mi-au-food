@@ -97,6 +97,7 @@ export const AuthProvider = ({ children }) => {
       signUp,
       editProfile,
       Logoff,
+      setUser,
     }),
     [user, token, editProfile],
   );

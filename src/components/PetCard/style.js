@@ -19,7 +19,7 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const PetContainer = styled.div`
-  background-color: #ffa459;
+  background-color: var(--secondary-color);
   width: 100%;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ export const PetContainer = styled.div`
   border-radius: 100px 0px 0px 100px;
   
   &:hover {
-    background-color: #fc943d;
+    background-color: var(--secondary-color-1);
   }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -86,9 +86,9 @@ export const PetsMain = styled.div`
     text-align: right;
     margin: 20px;
   }
-  background-color: #fff5f5;
+  background-color: var(--background);
   &:hover {
-    background-color: #fcdede;
+    background-color: var(--background);
   }
 
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -110,14 +110,13 @@ export const ButtonEditar = styled.p`
   margin-top: 30px;
   width: 100px;
   font-size: 20px;
-  background-color: #fc943d;
+  background-color: var(--secondary-color-1);
   &:not(:last-child) {
   }
   &:hover {
-    color: ice;
+    background-color: var(--secondary-color);
   }
-  background-color: #ffa459;
-  color: #fff5f5;
+  color: var(--background);
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

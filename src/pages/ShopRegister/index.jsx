@@ -96,7 +96,7 @@ export const ShopRegister = () => {
         estado,
         type: 'shop',
       };
-      console.log(newData);
+
       await signUp(
         newData,
         navigate('/entrar', { replace: true }),
