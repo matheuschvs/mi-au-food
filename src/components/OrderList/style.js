@@ -6,27 +6,48 @@ export const OrderBox = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  
-  div {
-    width: 350px;
-    padding-left: 30px;
-  }&:hover {
-    background-color: #fa9948;
-  }
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  
+  height: fit-content;
+  font-family:'Ubuntu';
+
+  div {
+    width: 350px;
   }
+  &:hover {
+    background-color: #fa9948;
+  }
+
+  li{
+    padding: 0.5rem;
+    border-top: 3px solid var(--background);
+  }
+
+  .Aguardando{
+    background-color: var(--secondary-color-1);
+  }
+
+  .Andamento{
+    background-color: var(--tertiary-color-1)
+  }
+
+  .Entregue{
+    background-color: var(--quaternary-color-1)
+  }
+
+  .Cancelado{
+    background-color: var(--primary-color-1)
+  }
+
   h3 {
     padding: 20px;
   }
   @media (max-width: 1296px) {
     div{
-      width: 100%;;
+      width: 100%;
     }
-    
   }
- 
+
 `;
 
 export const Order = styled.div`
@@ -39,8 +60,7 @@ export const Order = styled.div`
   
   margin-top: 2px;
   
-  background-color: #fff5f5;
-  padding: 10px;
+  background-color: var(--background);
   p {
     margin-top: 5px;
     

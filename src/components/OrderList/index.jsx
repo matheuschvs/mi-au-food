@@ -27,8 +27,8 @@ export const OrderList = () => {
           {dados.map((pedido)=>{
             if(pedido.user.id == user.id) {
               return (
-            <li key={pedido.id}>
-              <p>Pedido: id {pedido.id}</p>
+            <li className={pedido.status} key={pedido.id}>
+              <p>Id: {pedido.id}</p>
               <p>Status: {pedido.status}</p>
               <p>Valor: R$ {pedido.totalCarrinho.toFixed(2)}</p>
             </li>
