@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+    from{
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+    to{
+        opacity: 0.8;
+        transform: translateX(0px)
+    }
+`;
 
 export const DivTudo = styled.main`
   padding-top: 6.93em;
@@ -6,6 +17,7 @@ export const DivTudo = styled.main`
   max-width: 1200px;
   margin: auto;
   width: 85%;
+  animation: ${appearFromLeft} 1s;
   h2 {
     text-align: center;
   }

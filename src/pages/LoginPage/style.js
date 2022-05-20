@@ -1,11 +1,33 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import backMobile from '../../assets/cachorro-piscando.svg';
+
+const appearFromLeft = keyframes`
+    from{
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+    to{
+        opacity: 0.8;
+        transform: translateX(0px)
+    }
+`;
+
+const appearFromTop = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(-150px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+`;
 
 export const MainContainer = styled.div`
   background: var(--gradient);
   min-height: 100vh;
-
+  animation: ${appearFromLeft} 1s;
   header {
     padding-top: 2rem;
     margin-left: 6.25rem;

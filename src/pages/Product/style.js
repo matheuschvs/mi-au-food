@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+    from{
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+    to{
+        opacity: 0.8;
+        transform: translateX(0px)
+    }
+`;
 
 export const StyledMain = styled.main`
   display: flex;
@@ -6,6 +17,9 @@ export const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
   padding: 11.25rem 1rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: var(--background-2);
+  animation: ${appearFromLeft} 1s;
 
   div {
     height: 320px;

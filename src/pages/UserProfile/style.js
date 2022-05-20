@@ -1,11 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+    from{
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+    to{
+        opacity: 0.8;
+        transform: translateX(0px)
+    }
+`;
 
 export const Main = styled.div`
   display: flex;
   justify-content: space-around;
   padding-top: 9.93rem;
   font-family: 'Ubuntu';
-
+  animation: ${appearFromLeft} 1s;
+  height: 1200px;
   @media (max-width: 1280px) {
     flex-direction: column;
     padding: 1rem;
@@ -25,10 +37,6 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  &:hover {
-    background-color: var(--background);
-  }
 
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
