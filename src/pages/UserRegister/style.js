@@ -1,4 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 import RegisterBG from '../../assets/imageBackground.png';
 
 export const Container = styled.div`
@@ -9,10 +11,12 @@ export const Container = styled.div`
   max-width: 100vw;
   background: url(${RegisterBG}) no-repeat;
   background-size: cover;
+  overflow-x: hidden;
+
   @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
-    background: var(--gradient);
+    background: var(--background);
   }
 `;
 
@@ -48,13 +52,13 @@ export const BackgroundIMG = styled.div`
   }
 `;
 
-export const IMG5 = styled.img`
+export const IMG5 = styled(motion.img)`
   width: 318px;
   height: 333px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
-export const IMG6 = styled.img`
+export const IMG6 = styled(motion.img)`
   @media (min-width: 1024px) {
     margin-left: -85px;
   }
@@ -67,13 +71,13 @@ export const IMG6 = styled.img`
   }
 `;
 
-export const IMG7 = styled.img`
+export const IMG7 = styled(motion.img)`
   width: 208px;
   height: 205px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
-export const IMG8 = styled.img`
+export const IMG8 = styled(motion.img)`
   @media (min-width: 1024px) {
     margin-top: 50px;
     margin-left: 20px;
@@ -109,30 +113,7 @@ export const ContainerIMG = styled.section`
   }
 `;
 
-const appearFromLeft = keyframes`
-    from{
-        opacity: 0;
-        transform: translateX(-50px)
-    }
-    to{
-        opacity: 0.8;
-        transform: translateX(0px)
-    }
-`;
-
-const appearFromTop = keyframes`
-    from{
-        opacity: 0;
-        transform: translateY(-150px)
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0px)
-    }
-`;
-
-export const Form = styled.form`
-  animation: ${appearFromLeft} 1s;
+export const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,6 +129,7 @@ export const Form = styled.form`
   box-shadow: inset 0px 3px 4px 3px rgba(255, 245, 245, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 8px;
+
   div {
     display: flex;
     flex-direction: column;
@@ -200,7 +182,6 @@ export const Form = styled.form`
     cursor: pointer;
   }
   @media (min-width: 1024px) {
-    animation: ${appearFromTop} 1s;
     background: var(--primary-color);
     width: 50vw;
     max-width: 50vw;

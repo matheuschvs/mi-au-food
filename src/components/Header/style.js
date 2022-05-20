@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const HeaderBar = styled.header`
+export const HeaderBar = styled(motion.header)`
   background: var(--primary-color);
   padding: 2rem;
   width: 100vw;
@@ -10,7 +11,7 @@ export const HeaderBar = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
-  box-shadow: ${props => props.boxShadow};
+  box-shadow: ${props => props.boxshadow};
 
   h1 {
     font-size: 2rem;
@@ -62,7 +63,7 @@ export const HeaderBar = styled.header`
   }
 `;
 
-export const HeaderLogin = styled.header`
+export const HeaderLogin = styled(motion.header)`
   background: var(--primary-color);
   padding: 2rem;
   width: 100vw;
@@ -73,7 +74,7 @@ export const HeaderLogin = styled.header`
   top: 0%;
   left: 0;
   z-index: 20;
-  box-shadow: ${props => props.boxShadow};
+  box-shadow: ${props => props.boxshadow};
 
   h1 {
     font-size: 1.2rem;

@@ -153,6 +153,11 @@ export const CartButton = styled.button`
   font-family: 'Ubuntu';
   font-size: 1.2rem;
   color: var(--background);
+  transition: all 0.3s;
+
+  &:hover {
+    background: var(--secondary-color);
+  }
 `;
 
 export const CartDialog = styled.dialog``;
